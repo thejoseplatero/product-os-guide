@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#15202B"/>
+  <text x="32" y="27" text-anchor="middle" font-family="ui-monospace,SF Mono,Menlo,monospace" font-size="20" font-weight="700" fill="#F2F5F6" letter-spacing="1">P</text>
+  <text x="32" y="27" text-anchor="middle" font-family="ui-monospace,SF Mono,Menlo,monospace" font-size="20" font-weight="700" fill="#F2F5F6" letter-spacing="1" opacity="0">.</text>
+  <circle cx="32" cy="36" r="3.2" fill="#C2492B"/>
+  <text x="32" y="56" text-anchor="middle" font-family="ui-monospace,SF Mono,Menlo,monospace" font-size="15" font-weight="700" fill="#F2F5F6" letter-spacing="1">OS</text>
+</svg>

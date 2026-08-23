@@ -5,104 +5,151 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Learn product management by working one real case end to end: the Uber Eats weekday lunch gap. 44 skills from discovery to go to market.">
 <title>Product OS Guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>:root{--bg:#F5F7F3;--surface:#FFFFFF;--ink:#1A232B;--muted:#5B6670;--accent:#0E6F6A;--accent-soft:#DCEDEA;--rule:#D6DCD5;--code-bg:#EEF2EE;--pm:#0E6F6A;--design:#8A4B1F;--core:#3F4F9B;--system:#5B6670}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131A1F;--surface:#1B242B;--ink:#E4EAE6;--muted:#9AA6AE;--accent:#62C4BE;--accent-soft:#1E3634;--rule:#2C373F;--code-bg:#162026;--pm:#62C4BE;--design:#E0A070;--core:#9FACE8;--system:#9AA6AE}}
-:root[data-theme="dark"]{--bg:#131A1F;--surface:#1B242B;--ink:#E4EAE6;--muted:#9AA6AE;--accent:#62C4BE;--accent-soft:#1E3634;--rule:#2C373F;--code-bg:#162026;--pm:#62C4BE;--design:#E0A070;--core:#9FACE8;--system:#9AA6AE}
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Product OS Guide">
+<meta property="og:description" content="One real problem, worked end to end. 44 product skills from discovery through go to market.">
+<meta property="og:image" content="https://thejoseplatero.github.io/product-os-guide/og.png">
+<meta property="og:url" content="https://thejoseplatero.github.io/product-os-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<style>/* Product OS design system, matched to site/index.html in the product-os repo */
+:root{
+  --ground:#F2F5F6; --surface:#FFFFFF; --ink:#15202B; --muted:#5A6B7A; --line:#D3DCE2; --well:#E9EEF1;
+  --action:#2E5EC4; --danger:#C2492B; --success:#177E72;
+  --pm:#2E5EC4; --design:#177E72; --eng:#7A55C9; --leader:#C2492B; --core:#5A6B7E;
+  --tint-pm:#EAF0FB; --tint-design:#E7F3F1; --tint-eng:#F0EAFA; --tint-leader:#FAEDE8; --tint-core:#ECEFF2;
+  --term-bg:#101823; --term-ink:#D7E3EC; --term-dim:#7C919F; --term-green:#5FD3A5;
+  --mono:ui-monospace,"SF Mono","Cascadia Code",Consolas,Menlo,monospace;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --accent:var(--pm); --tint:var(--tint-pm);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0D141C; --surface:#141E29; --ink:#E8EDF1; --muted:#8FA1B0; --line:#26343F; --well:#1A2530;
+  --action:#7BA0EC; --danger:#EC7A55; --success:#46B8AA;
+  --pm:#7BA0EC; --design:#46B8AA; --eng:#A98BE8; --leader:#EC7A55; --core:#93A5B4;
+  --tint-pm:#16233A; --tint-design:#122A28; --tint-eng:#221A33; --tint-leader:#2E1B14; --tint-core:#1B242E;
+  --term-bg:#0A1119;
+}}
+:root[data-theme="dark"]{
+  --ground:#0D141C; --surface:#141E29; --ink:#E8EDF1; --muted:#8FA1B0; --line:#26343F; --well:#1A2530;
+  --action:#7BA0EC; --danger:#EC7A55; --success:#46B8AA;
+  --pm:#7BA0EC; --design:#46B8AA; --eng:#A98BE8; --leader:#EC7A55; --core:#93A5B4;
+  --tint-pm:#16233A; --tint-design:#122A28; --tint-eng:#221A33; --tint-leader:#2E1B14; --tint-core:#1B242E;
+  --term-bg:#0A1119;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
-.page{max-width:44rem;margin:0 auto;padding:3rem 1.25rem 5rem}
-h1,h2,h3,h4{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-0.01em}
-h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700}
-h2{font-size:1.75rem;font-weight:700}
-h3{font-size:1.2rem;font-weight:700}
-h4{font-size:1.05rem;font-weight:700}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased}
+.page{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 5rem}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--action);outline-offset:2px}
+
+/* wordmark bar */
+.brandbar{border-bottom:1px solid var(--line);background:var(--surface)}
+.brandbar-in{max-width:44rem;margin:0 auto;padding:14px 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.wordmark{font:700 13px var(--mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.wordmark .dot{color:var(--leader)}
+.brandbar .kicker{font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (min-width:1200px){.brandbar-in{margin-left:calc(17rem + (100vw - 17rem - 44rem)/2)}}
+
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+h1{font:italic 400 clamp(38px,7vw,68px)/1.05 var(--serif);letter-spacing:-.01em}
+h1 .up{font:700 clamp(30px,5.4vw,54px)/1.1 var(--mono);font-style:normal;letter-spacing:.02em;display:block;margin-top:6px}
+h2{font:700 clamp(24px,3.4vw,31px)/1.15 var(--serif);letter-spacing:-.01em}
+h3{font:700 19px/1.25 var(--serif)}
+h4{font:700 17px/1.3 var(--serif)}
 p{margin:0}
 .stack>*+*{margin-top:1rem}
-.eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.lede{font-size:1.2rem;color:var(--muted);margin-top:1.1rem}
-.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-family:"Bricolage Grotesque",sans-serif;font-size:.9rem;color:var(--muted)}
-.meta strong{color:var(--ink)}
-pre,code{font-family:"JetBrains Mono",Menlo,Consolas,monospace}
-pre{background:var(--code-bg);border:1px solid var(--rule);border-radius:6px;padding:.9rem 1rem;font-size:.85rem;line-height:1.55;overflow-x:auto;margin:.6rem 0 0;white-space:pre}
-code{font-size:.9em}
-.prompt{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 6px 6px 0;padding:.8rem 1rem;font-family:"JetBrains Mono",Menlo,monospace;font-size:.86rem;line-height:1.55;color:var(--ink)}
-.prompt::before{content:"Prompt";display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+.eyebrow{font:700 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);margin-top:1.1rem;max-width:54ch}
+.lede b,.lede strong{color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line);font:12.5px var(--mono);color:var(--muted)}
+.meta strong{color:var(--ink);font-weight:700}
+
+pre,code{font-family:var(--mono)}
+pre{background:var(--term-bg);color:var(--term-ink);border:1px solid var(--line);padding:.9rem 1rem;font-size:13px;line-height:1.75;overflow-x:auto;margin:.6rem 0 0;white-space:pre}
+code{font-size:.88em}
+.prompt{border-left:2px solid var(--accent);background:var(--tint);padding:.8rem 1rem;font:13px/1.7 var(--mono);color:var(--ink)}
+.prompt::before{content:"Prompt";display:block;font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+
 /* guides */
-.guide{margin-top:5rem;padding-top:2.5rem;border-top:2px solid var(--rule)}
-.guide[data-module="pm"]{--accent:var(--pm)}
-.guide[data-module="design"]{--accent:var(--design)}
-.guide[data-module="core"]{--accent:var(--core)}
-.guide[data-module="system"]{--accent:var(--system)}
-.guide[data-module="design"] .prompt,.guide[data-module="core"] .prompt{background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
-.guide h2{margin-top:.4rem}
-.tldr{margin-top:1rem;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--rule);border-radius:8px;font-size:1.08rem}
+.guide{margin-top:4.5rem;padding-top:2.25rem;border-top:1px solid var(--line)}
+.guide[data-module="pm"]{--accent:var(--pm);--tint:var(--tint-pm)}
+.guide[data-module="design"]{--accent:var(--design);--tint:var(--tint-design)}
+.guide[data-module="core"]{--accent:var(--core);--tint:var(--tint-core)}
+.guide[data-module="system"]{--accent:var(--leader);--tint:var(--tint-leader)}
+.guide h2{margin-top:.45rem}
+.tldr{margin-top:1rem;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);font-size:17.5px}
 .readaloud{margin-top:1.8rem}
 .readaloud h3{margin-bottom:.8rem}
 .readaloud p+p{margin-top:1rem}
-.readaloud p{max-width:66ch}
+.readaloud p{max-width:64ch}
 .steps-title{margin-top:2.5rem}
-.step{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.4rem 1.5rem 1.5rem;margin-top:1.2rem}
+.step{background:var(--surface);border:1px solid var(--line);padding:1.4rem 1.5rem 1.5rem;margin-top:1rem}
 .step-head{display:flex;align-items:baseline;gap:.9rem;margin-bottom:.3rem}
-.step-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--accent);flex:none;font-variant-numeric:tabular-nums}
-.step-time{margin-left:auto;font-family:"Bricolage Grotesque",sans-serif;font-size:.8rem;color:var(--muted);flex:none}
-.rows{display:grid;grid-template-columns:6.5rem 1fr;gap:.85rem 1rem;margin:1rem 0 0}
-.rows dt{font-family:"Bricolage Grotesque",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:.25rem}
+.step-num{font:700 11px var(--mono);letter-spacing:.14em;color:var(--accent);flex:none;font-variant-numeric:tabular-nums}
+.step-time{margin-left:auto;font:11.5px var(--mono);color:var(--muted);flex:none}
+.rows{display:grid;grid-template-columns:6.25rem 1fr;gap:.85rem 1rem;margin:1rem 0 0}
+.rows dt{font:700 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:.3rem}
 .rows dd{margin:0}
 .rows dd .prompt{margin-bottom:.4rem}
-.fill{display:inline-block;min-width:3.5rem;border-bottom:1px solid var(--muted)}
 .makeit,.smells{margin-top:2.2rem}
 .makeit h3,.smells h3{margin-bottom:.7rem}
 .makeit p+.prompt,.makeit .prompt+p{margin-top:.8rem}
-ul,ol{padding-left:1.3rem;margin:0}
+ul,ol{padding-left:1.25rem;margin:0}
 li+li{margin-top:.45rem}
 .cmdlist{list-style:none;padding:0;margin-top:.8rem}
-.cmdlist li{padding:.5rem 0;border-bottom:1px solid var(--rule)}
+.cmdlist li{padding:.5rem 0;border-bottom:1px solid var(--line)}
 .cmdlist code{color:var(--accent);font-weight:500}
-hr{border:0;border-top:1px solid var(--rule);margin:3rem 0 0}
-.foot{margin-top:2rem;font-family:"Bricolage Grotesque",sans-serif;font-size:.85rem;color:var(--muted)}
-a{color:var(--accent)}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-/* home */
-.map{display:grid;gap:1rem;margin-top:1.4rem}
-.mod{border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.3rem;background:var(--surface)}
-.mod h3{display:flex;align-items:baseline;gap:.6rem}
-.mod .count{font-size:.8rem;color:var(--muted);font-weight:500}
-.mod p{color:var(--muted);font-size:.98rem;margin-top:.4rem}
-.mod .links{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
-.mod .links a{font-family:"Bricolage Grotesque",sans-serif;font-size:.82rem;text-decoration:none;padding:.25rem .6rem;border:1px solid var(--rule);border-radius:999px;color:var(--ink);background:var(--bg)}
-.mod .links a:hover{border-color:var(--accent)}
-.mod[data-m="pm"]{--accent:var(--pm)}.mod[data-m="design"]{--accent:var(--design)}.mod[data-m="core"]{--accent:var(--core)}
-.mod .swatch{width:.6rem;height:.6rem;border-radius:2px;background:var(--accent);display:inline-block}
-.how{display:grid;gap:1rem;margin-top:1.2rem}
-.how .callout{border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.3rem;background:var(--surface)}
-.how h3{margin-bottom:.4rem}
+hr{border:0;border-top:1px solid var(--line);margin:3rem 0 0}
+.foot{margin-top:2rem;font:12.5px var(--mono);color:var(--muted)}
+
+/* home: phase cards neutral, module color used only where it means something */
+.map{display:grid;gap:0;margin-top:1.4rem;border-top:1px solid var(--line)}
+.mod{border-bottom:1px solid var(--line);padding:1.15rem 0}
+.mod h3{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.mod .ph{font:700 11px var(--mono);letter-spacing:.14em;color:var(--muted);flex:none}
+.mod .count{font:12px var(--mono);color:var(--muted);font-weight:400}
+.mod p{color:var(--muted);font-size:16px;margin-top:.35rem}
+.mod .links{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
+.mod .links a{font:12px var(--mono);text-decoration:none;padding:.28rem .6rem;border:1px solid var(--line);background:var(--surface)}
+.mod .links a:hover{border-color:var(--accent);color:var(--accent)}
+.mod[data-m="pm"]{--accent:var(--pm)}
+.mod[data-m="design"]{--accent:var(--design)}
+.mod[data-m="core"]{--accent:var(--core)}
+.mod .swatch{width:9px;height:9px;background:var(--accent);display:inline-block;flex:none}
+.how{display:grid;gap:0;margin-top:1.2rem;border-top:1px solid var(--line)}
+.how .callout{border-bottom:1px solid var(--line);padding:1.1rem 0}
+.how h3{margin-bottom:.35rem}
+.how p{color:var(--muted);font-size:16px}
+
 /* sidebar */
-.side{position:fixed;left:0;top:0;bottom:0;width:17rem;overflow-y:auto;padding:1.5rem 1.25rem 3rem;background:var(--surface);border-right:1px solid var(--rule);font-family:"Bricolage Grotesque",sans-serif;font-size:.86rem;display:flex;flex-direction:column;gap:.15rem;z-index:5}
-.side a{color:var(--ink);text-decoration:none;padding:.25rem .5rem;border-radius:4px;line-height:1.3}
-.side a:hover{background:var(--bg);color:var(--accent)}
-.side .nav-home{font-weight:700}
-.side .nav-group{margin:1rem 0 .2rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.navbtn{display:none;position:fixed;top:.9rem;right:.9rem;z-index:6;font-family:"Bricolage Grotesque",sans-serif;font-size:.82rem;font-weight:700;padding:.45rem .8rem;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer}
+.side{position:fixed;left:0;top:0;bottom:0;width:17rem;overflow-y:auto;padding:1.25rem 1.1rem 3rem;background:var(--surface);border-right:1px solid var(--line);font:12.5px/1.35 var(--mono);display:flex;flex-direction:column;gap:.1rem;z-index:5}
+.side a{color:var(--ink);text-decoration:none;padding:.3rem .5rem}
+.side a:hover{background:var(--well);color:var(--action)}
+.side .nav-home{font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:11px}
+.side .nav-group{margin:1rem 0 .2rem;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.navbtn{display:none;position:fixed;top:.75rem;right:.9rem;z-index:6;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.5rem .8rem;border:1px solid var(--ink);background:var(--ink);color:var(--ground);cursor:pointer}
 @media (min-width:1200px){.page{margin-left:calc(17rem + (100vw - 17rem - 44rem)/2)}}
 @media (max-width:1199px){.side{transform:translateX(-100%);transition:transform .2s}#navtoggle:checked~.side{transform:none}.navbtn{display:block}}
-@media (max-width:560px){.rows{grid-template-columns:1fr;gap:.3rem 0}.rows dd{margin-bottom:.9rem}.step{padding:1.2rem 1.1rem}}
+@media (max-width:560px){.rows{grid-template-columns:1fr;gap:.3rem 0}.rows dd{margin-bottom:.9rem}.step{padding:1.2rem 1.1rem}.brandbar .kicker{display:none}}
 </style>
 </head>
 <body>
 <input type="checkbox" id="navtoggle" hidden>
 <label for="navtoggle" class="navbtn" aria-label="Open contents">Contents</label>
 <nav class="side"><a href="#top" class="nav-home">Start here</a><a href="#system">The shape of Product OS</a><p class="nav-group">1 · Discover</p><a href="#research-hypothesis">Research Hypothesis</a><a href="#customer-interviews">Customer Interviews</a><a href="#jtbd-framing">JTBD Framing</a><a href="#personas-archetypes">Personas and Archetypes</a><a href="#continuous-discovery">Continuous Discovery</a><a href="#journey-mapping">Journey Mapping</a><p class="nav-group">2 · Shape the value</p><a href="#value-proposition">Value Proposition Canvas and Statements</a><a href="#pmf-canvas">Product-Market Fit Canvas</a><a href="#business-canvases">Business Canvases</a><a href="#four-risks">Four Risks</a><p class="nav-group">3 · Decide and scope</p><a href="#kano-model">The Kano Model</a><a href="#prioritization">Prioritization</a><a href="#innovation-games">Innovation Games</a><a href="#scoping-mvp">Scoping and the MVP</a><a href="#story-mapping">Story Mapping</a><p class="nav-group">4 · Specify</p><a href="#strategy-kernel">Strategy Kernel</a><a href="#metrics-trees">Metrics Trees</a><a href="#okrs">OKRs</a><a href="#prd">Writing the PRD</a><a href="#story-writing">Story Writing</a><a href="#states-and-edges">States and Edges</a><p class="nav-group">5 · Validate</p><a href="#experiment-design">Experiment Design</a><a href="#usability-testing">Usability Testing</a><a href="#heuristic-eval">Heuristic Evaluation</a><p class="nav-group">6 · Go to market</p><a href="#positioning">Positioning</a><a href="#pricing">Pricing</a><a href="#gtm-launch">GTM and Launch</a><a href="#roadmapping">Roadmapping</a><a href="#go-roadmap">GO Product Roadmap</a><p class="nav-group">Reference shelf</p><a href="#moats">Moats</a><a href="#premortem">Pre-mortem</a><a href="#working-backwards">Working Backwards</a><a href="#briefs-and-cases">Briefs and Cases</a><a href="#ux-writing">UX Writing</a><a href="#information-architecture">Information Architecture</a><a href="#visual-hierarchy">Visual Hierarchy</a><a href="#accessibility-audit">Accessibility Audit</a><a href="#design-metrics">Design Metrics</a><a href="#design-system-ops">Design System Ops</a><a href="#design-canvases">Design Canvases</a><a href="#crit-facilitation">Crit Facilitation</a><a href="#stakeholder-comms">Stakeholder Comms</a><a href="#calibration">Calibration</a><a href="#memory-protocol">Memory Protocol</a></nav>
+<div class="brandbar"><div class="brandbar-in">
+<a class="wordmark" href="https://github.com/thejoseplatero/product-os">PRODUCT<span class="dot">&middot;</span>OS</a>
+<span class="kicker">Guide</span>
+</div></div>
 <main class="page" id="top">
 <header>
   <p class="eyebrow">Self-taught guide</p>
-  <h1 style="margin-top:.6rem">Product OS Guide</h1>
-  <p class="lede">One real problem, worked end to end. You start with a single observation about Uber Eats, and build everything yourself: the research, the personas, the value proposition, the cut, the PRD, the launch. Each skill opens with a TLDR, then the full idea, then steps where you search, build, and write the rule in your own words. At the end of every skill you turn your notes into a working skill you can run.</p>
+  <h1 style="margin-top:.7rem">Learn it by<span class="up">SHIPPING IT.</span></h1>
+  <p class="lede">One real problem, worked end to end. You start with a single observation about Uber Eats and build everything yourself: the research, the personas, the value proposition, the cut, the PRD, the launch. Every skill opens with a TLDR, then the full idea, then steps where you search, build, and write the rule in your own words. At the end of each one you turn your notes into a working skill you can run.</p>
   <div class="meta">
-    <span><strong>44 skills</strong> in six phases plus a reference shelf</span>
+    <span><strong>44 skills</strong> in six phases</span>
     <span><strong>Per skill</strong> 45 to 90 min</span>
     <span><strong>You need</strong> Claude and one doc</span>
   </div>
@@ -112,12 +159,12 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <h2>The case</h2>
   <div class="tldr"><strong>Uber Eats has strong overall growth, but weekday lunchtime orders from 11:30am to 1:30pm are 30% lower than dinner orders.</strong></div>
   <p>That observation is everything you have. There is no backlog, no personas, no research, no strategy doc. That is the point. Every artifact gets built by you, in order, from discovery through go to market. Call it the lunch gap.</p>
-  <p>Work the phases in sequence. Each guide uses what earlier guides produced: the interviews feed the personas, the personas feed the value proposition, the value proposition feeds the cut, the cut feeds the PRD. Skip around later; the first pass is a chain.</p>
+  <p>Work the phases in sequence. Each guide uses what earlier guides produced: the interviews feed the personas, the personas feed the value proposition, the value proposition feeds the cut, the cut feeds the PRD. Skip around later. The first pass is a chain.</p>
 </section>
 
 <section class="stack" style="margin-top:3rem">
   <h2>How each guide works</h2>
-  <p>Read the TLDR so you know where you are going. Read the full idea slowly. Then work the steps. Every step has the same shape: a prompt you type into Claude (Search), what you should come away with (Get), the work you do on the lunch gap (Build), and the rule or artifact you write into your doc in your own words (Capture).</p>
+  <p>Read the TLDR so you know where you are going. Read the full idea slowly. Then work the steps. Every step has the same four rows: a prompt you type into Claude (Search), what you should come away with (Get), the work you do on the lunch gap (Build), and the rule or artifact you write into your doc in your own words (Capture).</p>
   <p>The sentence you write is the whole point. The search gives you the material. The learning is the compression. At the end of each skill you paste your notes into Claude and ask for a skill file. What comes out is your playbook with a header on top. You own it because you wrote it.</p>
   <div class="how">
     <div class="callout"><h3>Keep one doc</h3><p>A Google Doc, a Notion page, or a text file. One heading per skill. Your rules and artifacts go under the heading.</p></div>
@@ -128,34 +175,34 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <section style="margin-top:3.5rem">
   <h2>The journey</h2>
-  <p style="margin-top:.8rem;color:var(--muted)">Six phases from observation to launch, then a reference shelf for everything else.</p>
+  <p style="margin-top:.8rem;color:var(--muted);max-width:58ch">Six phases from one observation to a launch, then a reference shelf for everything else. Colors mark the module a skill comes from: <span style="color:var(--pm);font-weight:700">PM</span>, <span style="color:var(--design);font-weight:700">Design</span>, <span style="color:var(--core);font-weight:700">Core</span>.</p>
   <div class="map">
     <div class="mod" data-m="pm">
-      <h3><span class="swatch"></span>1 · Discover <span class="count">why does the gap exist?</span></h3>
+      <h3><span class="ph">PHASE 1</span><span class="swatch"></span>Discover <span class="count">why does the gap exist?</span></h3>
       <div class="links"><a href="#research-hypothesis">Research hypothesis</a><a href="#customer-interviews">Customer interviews</a><a href="#jtbd-framing">JTBD</a><a href="#personas-archetypes">Personas and archetypes</a><a href="#continuous-discovery">Continuous discovery</a><a href="#journey-mapping">Journey mapping</a></div>
     </div>
     <div class="mod" data-m="pm">
-      <h3><span class="swatch"></span>2 · Shape the value <span class="count">what would close it?</span></h3>
+      <h3><span class="ph">PHASE 2</span><span class="swatch"></span>Shape the value <span class="count">what would close it?</span></h3>
       <div class="links"><a href="#value-proposition">Value proposition canvas</a><a href="#pmf-canvas">Product-market fit canvas</a><a href="#business-canvases">Lean Canvas</a><a href="#four-risks">Four risks</a></div>
     </div>
     <div class="mod" data-m="pm">
-      <h3><span class="swatch"></span>3 · Decide and scope <span class="count">what do we build first?</span></h3>
+      <h3><span class="ph">PHASE 3</span><span class="swatch"></span>Decide and scope <span class="count">what do we build first?</span></h3>
       <div class="links"><a href="#kano-model">Kano model</a><a href="#prioritization">Prioritization (RICE, MoSCoW)</a><a href="#innovation-games">Innovation Games (20/20)</a><a href="#scoping-mvp">Scoping and MVP</a><a href="#story-mapping">Story mapping</a></div>
     </div>
     <div class="mod" data-m="pm">
-      <h3><span class="swatch"></span>4 · Specify <span class="count">write it down so a team can build it</span></h3>
+      <h3><span class="ph">PHASE 4</span><span class="swatch"></span>Specify <span class="count">write it so a team can build it</span></h3>
       <div class="links"><a href="#strategy-kernel">Strategy kernel</a><a href="#metrics-trees">Metrics, KPIs, trees</a><a href="#okrs">OKRs</a><a href="#prd">The PRD</a><a href="#story-writing">Story writing</a><a href="#states-and-edges">States and edges</a></div>
     </div>
     <div class="mod" data-m="design">
-      <h3><span class="swatch"></span>5 · Validate <span class="count">does it hold up?</span></h3>
+      <h3><span class="ph">PHASE 5</span><span class="swatch"></span>Validate <span class="count">does it hold up?</span></h3>
       <div class="links"><a href="#experiment-design">Experiment design</a><a href="#usability-testing">Usability testing</a><a href="#heuristic-eval">Heuristic eval</a></div>
     </div>
     <div class="mod" data-m="pm">
-      <h3><span class="swatch"></span>6 · Go to market <span class="count">ship it and say it right</span></h3>
+      <h3><span class="ph">PHASE 6</span><span class="swatch"></span>Go to market <span class="count">ship it and say it right</span></h3>
       <div class="links"><a href="#positioning">Positioning</a><a href="#pricing">Pricing</a><a href="#gtm-launch">GTM and launch</a><a href="#roadmapping">Roadmapping</a><a href="#go-roadmap">GO roadmap</a></div>
     </div>
     <div class="mod" data-m="core">
-      <h3><span class="swatch"></span>Reference shelf <span class="count">reach for these when you need them</span></h3>
+      <h3><span class="ph">SHELF</span><span class="swatch"></span>Reference <span class="count">reach for these when you need them</span></h3>
       <div class="links"><a href="#moats">Moats</a><a href="#premortem">Premortem</a><a href="#working-backwards">Working backwards</a><a href="#briefs-and-cases">Briefs and cases</a><a href="#ux-writing">UX writing</a><a href="#information-architecture">Information architecture</a><a href="#visual-hierarchy">Visual hierarchy</a><a href="#accessibility-audit">Accessibility</a><a href="#design-metrics">Design metrics</a><a href="#design-system-ops">Design system ops</a><a href="#design-canvases">Design canvases</a><a href="#crit-facilitation">Crit facilitation</a><a href="#stakeholder-comms">Stakeholder comms</a><a href="#calibration">Calibration</a><a href="#memory-protocol">Memory protocol</a></div>
     </div>
   </div>
@@ -3266,7 +3313,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   </div>
 </section>
 
-<hr><p class="foot">Jose Platero. Product OS Guide. One case, six phases, 44 skills. Share freely.</p>
+<hr><p class="foot">Jose Platero &middot; Product OS Guide &middot; one case, six phases, 44 skills</p>
 </main>
 
 </body>

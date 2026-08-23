@@ -34,17 +34,25 @@ for label, names in groups:
 css = open(os.path.join(D, "site.css")).read()
 home = open(os.path.join(D, "home.html")).read()
 out = f"""<title>Product OS Guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Product OS Guide">
+<meta property="og:description" content="One real problem, worked end to end. 44 product skills from discovery through go to market.">
+<meta property="og:image" content="https://thejoseplatero.github.io/product-os-guide/og.png">
+<meta property="og:url" content="https://thejoseplatero.github.io/product-os-guide/">
+<meta name="twitter:card" content="summary_large_image">
 <style>{css}</style>
 <input type="checkbox" id="navtoggle" hidden>
 <label for="navtoggle" class="navbtn" aria-label="Open contents">Contents</label>
 <nav class="side">{''.join(nav)}</nav>
+<div class="brandbar"><div class="brandbar-in">
+<a class="wordmark" href="https://github.com/thejoseplatero/product-os">PRODUCT<span class="dot">&middot;</span>OS</a>
+<span class="kicker">Guide</span>
+</div></div>
 <main class="page" id="top">
 {home}
 {sysf or ''}
 {''.join(body)}
-<hr><p class="foot">Jose Platero. Product OS Guide. One case, six phases, 44 skills. Share freely.</p>
+<hr><p class="foot">Jose Platero &middot; Product OS Guide &middot; one case, six phases, 44 skills</p>
 </main>
 """
 OUT = os.path.join(os.path.dirname(D), "index.html")
