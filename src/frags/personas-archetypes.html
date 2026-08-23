@@ -1,0 +1,71 @@
+<section class="guide" id="personas-archetypes" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Personas and Archetypes</h2>
+  <p class="tldr">TLDR: Compress your interview evidence into a small cast of goal-directed characters you can design for, plus behavioral archetypes that cut by what people do. Reach for this once you have real interview evidence and before anyone starts sketching solutions.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>By now you have interview evidence on the lunch gap and a job statement from JTBD Framing. The problem is that raw evidence does not fit in anyone's head during a design argument. Personas are the compression format. The idea comes from Alan Cooper, in <em>The Inmates Are Running the Asylum</em>: design for a specific fictional person with specific goals, built from patterns in real research, and you will serve the real people that person stands for. Design for "the user" and you serve no one, because "the user" stretches to fit whatever the loudest person in the room wants to build.</p>
+    <p>Cooper's personas are goal-directed. What makes a persona is not age, city, or hobbies. It is what the person is trying to accomplish and what stands in their way. That is why the famous failure mode, "Jessica, 29, lives downtown, likes yoga and podcasts", is not a persona at all. It is demographic fiction. Nothing about Jessica's yoga habit tells you whether she can receive a delivery at her desk. The details that earn a place in a persona are the ones that change a design decision.</p>
+    <p>For the lunch gap, your interviews likely split along one line that matters more than any demographic: whether the person controls where they are at noon. A desk-bound office worker can order at 11:40 and eat at the keyboard when food lands. A shift worker, a nurse, a retail associate, gets 30 unpredictable minutes and no desk to deliver to. Same city, same age range, completely different lunch problem. Two personas, both built from quotes and observed behavior in your interview notes, cover most of your evidence.</p>
+    <p>Archetypes go one step further and drop the character entirely. An archetype is a cut by behavior: "orders ahead and schedules" versus "decides at the moment of hunger". One person can move between archetypes across a week. That is also where JTBD fits, and the contrast is worth keeping crisp: personas describe who is struggling, jobs describe when and why they struggle. The same office worker hires a completely different lunch on a deadline day than on a quiet Friday. Personas and jobs answer different questions, so you keep both, and neither replaces the other.</p>
+    <p>The most common mistake, beyond demographic fiction, is inventing personas from imagination and then treating them as evidence. A persona is only as honest as the interviews behind it, so every claim in it should trace back to something someone actually said or did.</p>
+    <p>Why does a PM care? Because personas are how research survives contact with a roadmap discussion. When someone proposes a feature, "which of our two people does this serve, and toward which goal" is a question with a checkable answer. That question kills more bad features than any prioritization framework.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a goal-directed persona?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Alan Cooper's goal-directed personas from The Inmates Are Running the Asylum in simple English. Then contrast a persona with a jobs-to-be-done job statement: which one describes who, which one describes when and why, and how can the same person have different jobs in different circumstances? Use weekday lunch on a delivery marketplace as the example.</div></dd>
+      <dt>Get</dt><dd>A plain definition of a goal-directed persona, and a one-line rule for the persona versus job split: personas compress who, jobs explain when and why, same person, different circumstances.</dd>
+      <dt>Build</dt><dd>Reread the interview notes you produced in Customer Interviews and the job statement from JTBD Framing. Highlight every line that describes a goal, a constraint, or an observed behavior around weekday lunch. Ignore every line that only describes demographics.</dd>
+      <dt>Capture</dt><dd>Write your admission rule for persona details in one sentence. A stem: "A detail earns a place in a persona only when ..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Find the behavioral split in your evidence</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my interview notes about weekday lunch and food delivery: [paste the notes from Customer Interviews]. Cluster the people I spoke to by goals, constraints, and behavior at lunchtime, not by age or demographics. What is the single behavioral split that most changes what a lunch product would need to do for them?</div></dd>
+      <dt>Get</dt><dd>Two or three evidence-based clusters, with the load-bearing split named. Expect something like control over location and timing at noon: desk-bound versus on their feet.</dd>
+      <dt>Build</dt><dd>Test the proposed split against your own notes: for each interviewee, can you place them in a cluster using only what they said and did? If most people fit and the fit would change a design decision, keep the split. If not, ask for a different cut and test again.</dd>
+      <dt>Capture</dt><dd>Write the split you chose and the evidence that supports it in two sentences in your doc.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Draft two personas from the evidence</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Build two goal-directed personas for weekday lunch from these clusters and quotes: [paste]. One desk-bound office worker, one shift worker without a desk. For each: name, one-line context, top three goals at lunchtime, top three constraints, current workaround, and one direct quote from my notes. Flag any detail you had to invent so I can cut it or go verify it.</div></dd>
+      <dt>Get</dt><dd>Two half-page personas where every claim traces to your interview evidence, with invented details clearly flagged instead of blended in.</dd>
+      <dt>Build</dt><dd>Cut every flagged detail you cannot back with evidence. Then run the Jessica test on what remains: delete any line that would not change a design decision. What survives is the persona. Give each a name you can say in a roadmap argument, like Desk-bound Dana and On-shift Sam.</dd>
+      <dt>Capture</dt><dd>Paste both finished personas into your doc, each with its strongest supporting quote underneath.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Add one behavioral archetype</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Using the same lunch interview evidence, define one behavioral archetype that cuts across both of my personas: a pattern of lunchtime ordering behavior, such as plans ahead versus decides when already hungry. Explain how the same person can be in this archetype on Monday and out of it on Friday, and what that means for designing a lunch product.</div></dd>
+      <dt>Get</dt><dd>One archetype defined purely by behavior, with the reminder built in that archetypes are states people move through, not boxes people live in.</dd>
+      <dt>Build</dt><dd>Check the archetype against each of your three lunch gap hypotheses from Research Hypothesis: does the archetype make any hypothesis more or less believable? Note what you see. Then write one line on which persona and which archetype combination the lunch gap hits hardest.</dd>
+      <dt>Capture</dt><dd>Write the archetype and your one-line rule for the difference in your doc. A stem: "A persona is who someone is; an archetype is ..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the admission rule for details, the behavioral split with its evidence, two goal-directed personas with quotes, and one behavioral archetype.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named personas-archetypes. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it: paste your lunch gap interview notes into a fresh chat and prompt "use my personas-archetypes skill to build personas from these notes", and check that it refuses to invent demographic details.</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Demographic fiction: "Jessica, 29, likes yoga" with no goal, no constraint, no evidence.</li>
+      <li>A persona nobody can trace to an interview. That is imagination with a headshot.</li>
+      <li>Five or more personas. If everyone is a persona, no one is; two or three carry a product for years.</li>
+      <li>Personas used to answer when and why questions that belong to jobs, or jobs used to answer who.</li>
+      <li>Details that would not change a single design decision. Decoration, not definition.</li>
+    </ul>
+  </div>
+</section>

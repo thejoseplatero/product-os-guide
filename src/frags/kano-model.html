@@ -1,0 +1,70 @@
+<section class="guide" id="kano-model" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>The Kano Model</h2>
+  <p class="tldr">TLDR: A way to sort candidate features by the kind of satisfaction they create: must-be, performance, delighter, indifferent, or reverse. Reach for it when you have a list of ideas and no idea which ones are table stakes and which ones are wow.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>By this point in the lunch gap work you have a job, two personas, a value proposition, and a Lean Canvas. What you do not have yet is a way to compare the feature ideas that came out of all that. The Kano model, from the Japanese quality researcher Noriaki Kano, gives you one. His insight was that not all features create satisfaction the same way. Some only create anger when they are missing. Some create satisfaction in proportion to how good they are. And some create love out of all proportion to their cost.</p>
+    <p>Kano named five categories. <strong>Must-be</strong> features, also called basics, infuriate people when absent and go unnoticed when present. Food arriving warm is a must-be. Nobody praises it, everybody rages without it. <strong>Performance</strong> features are "more is better": faster delivery, lower fees. You compete here on purpose or not at all. <strong>Delighters</strong>, also called attractive, are unexpected and earn disproportionate love. Cheap delighters are the best return in product. <strong>Indifferent</strong> features move nobody either way, and they still cost money to build. <strong>Reverse</strong> features actively annoy some people when present. A popup upsell at checkout can be reverse: adding it makes the product worse for part of your users.</p>
+    <p>Two rules make the model dangerous to skip. First, delighters decay into basics over time. Live order tracking was magic once. Now its absence is a bug. Yesterday's wow is today's table stakes, so a Kano map has a shelf life. Second, teams over-invest in performance features, because "20 percent faster" fits on a slide and a delighter sounds like a toy.</p>
+    <p>The method is a questionnaire, not a debate. For each candidate feature you ask a pair of questions. The functional form: "If you could pre-order at 10am for a 12:00 delivery, how would you feel?" The dysfunctional form: "If you could not do that, how would you feel?" The answers come from a fixed scale: I like it, I expect it, I am neutral, I can tolerate it, I dislike it. The pair of answers, looked up in Kano's table, gives you the category. Like it when present plus dislike it when absent is performance. Like it when present plus neutral when absent is a delighter. Neutral both ways is indifferent, and that answer just saved you a quarter of building.</p>
+    <p>The common mistake is classifying by team vote instead of asking anyone who resembles a user. Your team knows the roadmap too well to feel surprise, so everything looks like performance to them. Ask the personas, even simulated ones, and let the answer pairs do the sorting. For the lunch gap, this is where your candidate list stops being a list of opinions.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is the Kano model?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Noriaki Kano's model in simple English: must-be, performance, delighter, indifferent, and reverse features. Explain why delighters decay into basics over time, and give one food delivery example of each category.</div></dd>
+      <dt>Get</dt><dd>A one-line definition of each of the five categories, plus the decay rule: yesterday's delighter is today's must-be.</dd>
+      <dt>Build</dt><dd>From your Value Proposition Canvas and Lean Canvas for the lunch gap, list five candidate features: a 15-minute pickup guarantee, group order for offices, pre-order at 10am for 12:00 delivery, a lunch subscription, and a lunchtime deal push notification. Guess each one's category and write your guess down so you can check it later.</dd>
+      <dt>Capture</dt><dd>Write the five categories in your doc in your own words, one line each, and add one sentence that starts "A delighter decays into a basic when ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write the question pairs</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Help me write Kano questionnaire pairs for these five lunch-gap features: [paste your list]. For each feature, write the functional question ("if you had this, how would you feel?") and the dysfunctional question ("if you did not have this, how would you feel?"), with the five-answer scale: like, expect, neutral, tolerate, dislike. Then show me the lookup table that turns an answer pair into a category.</div></dd>
+      <dt>Get</dt><dd>Ten questions, two per feature, plus the classification table you will use to read the answers.</dd>
+      <dt>Build</dt><dd>Read each pair out loud and fix any question that assumes the answer, like "how much would you love ...". A Kano question describes the feature flatly and lets the scale do the feeling.</dd>
+      <dt>Capture</dt><dd>Paste the ten questions and the lookup table into your doc, then write one sentence that starts "A Kano question is broken when ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Run the questionnaire on the personas</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Play the first of the two personas I built in Personas and Archetypes: [paste the persona]. Stay in character. I will ask you Kano question pairs about lunch ordering. Answer only from this persona's life, using the scale: like, expect, neutral, tolerate, dislike.</div></dd>
+      <dt>Get</dt><dd>A full set of answer pairs from persona one. You have no lunch customers on hand, so Claude simulates them, and you say so in your notes: these are simulated respondents, useful for practice and for a first draft, never proof.</dd>
+      <dt>Build</dt><dd>Repeat with the second persona in a fresh conversation so the answers stay independent. Then use the lookup table to classify all five features per persona. Watch for splits: group order may be indifferent to a solo lunch persona and a delighter to one who orders with a team, and the deal push notification may come back reverse.</dd>
+      <dt>Capture</dt><dd>Record the classification grid in your doc: five features down the side, one column per persona, category in each cell. Mark every cell where the two personas disagree.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Read the results</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my Kano grid for the lunch gap features: [paste]. Tell me which features are must-be, which are performance, which are delighters, and which came out indifferent or reverse. Where the two personas disagree, explain what that split means for who the product should serve first. Then tell me which delighter is most likely to decay first.</div></dd>
+      <dt>Get</dt><dd>A sorted read of the grid: what you must do, where you could compete, what could create love, and what to drop. Compare it against the guesses you wrote in step 1 and notice where your team instinct was wrong.</dd>
+      <dt>Build</dt><dd>Write the verdict for each feature in one line, including the ones the grid says to drop. An indifferent feature you decline to build is a real output of this exercise, not a failure of it.</dd>
+      <dt>Capture</dt><dd>Write your Kano results into your doc as the input for the next guide, Prioritization, and add one sentence that starts "I trust a Kano category only when ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the five categories in your words, your question pairs, the lookup table, and your rule for reading a grid with disagreements in it.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named kano-model. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Paste your five lunch-gap candidates plus two new ideas of your own and ask Claude: "use my kano-model skill to build the question pairs and classify these features".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Categories assigned by team vote instead of answer pairs from anyone resembling a user.</li>
+      <li>No indifferent or reverse findings ever. Real questionnaires always produce some.</li>
+      <li>A Kano map more than a year old treated as current, as if delighters do not decay.</li>
+      <li>Every feature classified as performance, because performance is the easiest to justify on a slide.</li>
+      <li>Simulated persona answers presented as validation instead of as a labeled first draft.</li>
+    </ul>
+  </div>
+</section>

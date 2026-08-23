@@ -1,0 +1,71 @@
+<section class="guide" id="stakeholder-comms" data-module="core">
+  <p class="eyebrow">Core</p>
+  <h2>Stakeholder Comms</h2>
+  <p class="tldr">TLDR: how to write to a specific named person: status updates, escalations, asks, and bad news. Reach for it whenever you draft anything one real person will read, in email, Slack, a doc comment, or an exec update.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>A lot of a PM's job is writing to people who can say yes or no. This skill pulls from three sources. Chris Voss, the former FBI negotiator, taught tactical empathy: the person who feels heard is the person who concedes most. Robert Cialdini wrote about pre-suasion: the frame you set before the ask matters more than the ask. And Kim Scott's radical candor says being direct and caring at the same time is the respectful combination.</p>
+    <p>Before you draft anything, load <code>stakeholders.md</code> for the recipient. If the person is not in it, ask two questions: what do they care about, and how do they like to be told things. Then add the answer to memory so next time you already know.</p>
+    <p>The method has five moves. One, <strong>their frame first</strong>. Open with the thing they care about, not the thing you want. One sentence that proves you know their world before you enter it. Two, <strong>BLUF</strong>, bottom line up front. The point lands in the first two lines, whether it is status, an ask, or bad news. Three, the <strong>bad news protocol</strong>: state it plainly with no cushioning adjectives, give the cause in one sentence, give the plan in two, and give the date they will hear from you next. Kim Scott's rule applies: softening the message is for your comfort, not theirs. Four, <strong>the ask is singular and answerable</strong>. "Can you approve the noon courier surge budget by Friday" works. "Thoughts?" does not. Five, <strong>match their channel and length</strong> from memory. A CFO who reads bullets gets bullets.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. Your pre-order flow, the one that promises a 12:00 arrival, slipped two weeks. Your stakeholder is Dana, the head of operations, and memory says she cares about courier utilization in the noon peak and reads Slack, not email, and hates long messages. The draft opens with her frame: "Dana, this affects how many couriers you need standing by at noon." Then the bad news, plain: "The 12:00 pre-order slot slips from Sept 2 to Sept 16." Cause in one sentence: "Kitchens cannot hold a hard noon slot, so we are switching to a 15-minute arrival window." Plan in two: "We are shipping the window version first so you can start staffing against real noon demand this month. The hard slot comes back only if the data says people need it." Next touch: "I will update you Thursday." One ask: "Can you tell me which three neighbourhoods you want the noon window turned on in first?" Five lines, in Slack.</p>
+    <p>The most common mistake is adjective inflation. "Great progress on lunch" tells Dana nothing. "Lunch-window orders up from 31 to 36 percent of sessions, target is 45" tells her everything. Passive voice like "it was decided" hides the person, and readers notice.</p>
+    <p>Why it matters: a PM's output is mostly decisions other people make. Writing that gets a clear yes or no fast, and keeps trust when the news is bad, is the skill that keeps you in the room.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is stakeholder comms?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain tactical empathy from Chris Voss, pre-suasion from Cialdini, and radical candor from Kim Scott, in three short paragraphs. Then say what the three have in common when you write to a busy stakeholder.</div></dd>
+      <dt>Get</dt><dd>Three authors, three ideas, one shared point: the reader's frame comes before your ask, and directness and care go together.</dd>
+      <dt>Build</dt><dd>You have no stakeholder file yet, so build one. Name the three people the lunch gap work would actually need: a head of operations who staffs couriers at noon, a head of restaurant partnerships who has to get kitchens to hold a slot, and a finance lead who sees the cost of a noon surge. Ask Claude to play each of them for five minutes and answer your two memory questions, what they care about and how they like to be told things, and say plainly that these are stand-ins until you meet the real people. Write the three entries into a <code>stakeholders.md</code>.</dd>
+      <dt>Capture</dt><dd>Write one or two sentences into your doc: what you load before drafting, and the two questions you ask when the person is not in it. Start with "Before I draft, I load ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Their frame, then BLUF</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Take this update and rewrite it so the first sentence is about what the reader cares about and the point is in the first two lines: [paste your rambling lunch gap update].</div></dd>
+      <dt>Get</dt><dd>A before and after where the point moved from paragraph three to line one.</dd>
+      <dt>Build</dt><dd>Write the first two lines of an update to the head of operations about the noon peak, using the metric tree you built in Metrics Trees so line two carries a real number rather than a mood. Line one is her frame, courier utilization between 11:30 and 1:30. Line two is the point. Then write the same two lines for the head of restaurant partnerships and notice how much of line one has to change even though the news did not.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc about what line one names and what line two states. Start with "Line one names ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>The bad news protocol</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write a bad news message using this order: plain statement, one-sentence cause, two-sentence plan, the date of the next update. No softening adjectives. The news: the 12:00 pre-order slot for lunch slips two weeks because kitchens cannot hold a hard noon slot.</div></dd>
+      <dt>Get</dt><dd>A message that is short, honest, and still leaves the reader knowing what happens next.</dd>
+      <dt>Build</dt><dd>Write the slip message yourself for the head of operations in five lines or fewer. Then strike every adjective and read it again to see if it still stands. Then send it: ask Claude to play her, reading it in a hurry between meetings, and to reply with her first reaction and her first question. If her question is something your five lines should have answered, your five lines were the wrong five. Rewrite once. These replies are simulated, so use them to find gaps, not to conclude she is fine with it.</dd>
+      <dt>Capture</dt><dd>Write the bad news order into your doc in your own words, all four parts. Start with "Bad news is stated plainly, then ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>One ask, their channel</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my draft. Find every ask in it, tell me which one matters most, and rewrite the message with only that ask, phrased so it can be answered yes or no with a date.</div></dd>
+      <dt>Get</dt><dd>One ask, answerable, with a deadline, in the reader's preferred channel and length.</dd>
+      <dt>Build</dt><dd>Count the asks in your slip message. If there is more than one, cut until there is one, and make that one answerable yes or no with a date. Then rewrite the whole message for the finance lead instead, whose entry in your <code>stakeholders.md</code> says bullets and cost only. Same news about the lunch gap, different reader. Write down what changed and what did not, because what did not change is the part that was actually true.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc about your ask and its deadline, and the rule about how many asks a message carries. Start with "My ask is ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the two memory questions, the five moves, your bad news template, and two worked messages for different readers.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named stakeholder-comms. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Give Claude your <code>stakeholders.md</code> with the three lunch gap people in it, plus the news that the 12:00 slot slipped two weeks, and ask: "use my stakeholder-comms skill to write the slip announcement to the head of operations".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Passive voice around ownership: "mistakes were made", "it was decided".</li>
+      <li>More than one ask in a single message.</li>
+      <li>Adjective inflation on status, like "great progress", instead of the metric.</li>
+      <li>The same update sent to every audience. That is what memory is for.</li>
+      <li>Bad news cushioned with softening words that protect the writer, not the reader.</li>
+    </ul>
+  </div>
+</section>

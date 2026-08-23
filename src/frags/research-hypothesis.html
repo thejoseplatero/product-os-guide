@@ -1,0 +1,71 @@
+<section class="guide" id="research-hypothesis" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Research Hypothesis</h2>
+  <p class="tldr">TLDR: Turn a raw observation into hypotheses sharp enough to be proven wrong, then rank them by which wrong guess hurts most. Reach for this at the very start of any discovery work, before you talk to a single user.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Here is everything you know: Uber Eats is growing, but weekday lunch orders between 11:30am and 1:30pm run 30 percent below dinner orders. That is it. No backlog, no personas, no research. Just the lunch gap. The worst move now is to jump to a fix. The best move is to write down what you think is causing it, in a form that can be killed by evidence.</p>
+    <p>That form is a hypothesis. The discipline comes from the lean startup tradition and from Rob Fitzpatrick's <em>The Mom Test</em>, and the format is simple: <strong>We believe [X] because [Y]; we will know we are wrong when [Z]</strong>. The X is a specific claim about a specific group of people. The Y is your causal reasoning, why you think it is true. The Z is the kill condition, the observable signal that would prove you wrong. Most hypotheses PMs write are really wishes, because they skip the Z. A hypothesis without a kill condition is a belief, and beliefs do not get tested. They get defended.</p>
+    <p>This is what falsifiability means. A good hypothesis sticks its neck out. "People are busy at lunch" cannot fail, so it teaches you nothing. "Office workers skip delivery at lunch because a 40 minute wait does not fit a 60 minute break; we are wrong if most lunch abandoners quote price, not time" can fail, so it can teach you something.</p>
+    <p>You never write just one. Write several competing explanations for the same gap. Maybe delivery is too slow for a lunch break. Maybe lunch spend comes out of a different mental budget than dinner spend, and fees sting more at $12 than at $40. Maybe offices sit in delivery dead zones where few restaurants list. Each one points to a different product, so picking the wrong one quietly wastes months. Then find the riskiest assumption inside each: the belief that, if false, kills the whole idea. That is what you test first, and your bias should run toward invalidation. Design every question so a negative answer is possible and useful. You are trying to kill your hypotheses fast, not collect reassurance.</p>
+    <p>The most common mistake is validating with hypothetical questions. "Would you order lunch if it arrived faster?" invites polite lies. Ask about past behavior instead: "Walk me through what you ate for lunch yesterday and how you got it." People are honest about what they did and optimistic about what they would do.</p>
+    <p>Why does this matter to you as a PM? Because everything downstream, the interviews, the personas, the value proposition, inherits its honesty from this step. Start with a wish and you will build a research program that confirms it. Start with three falsifiable hypotheses and the lunch gap starts answering back.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a research hypothesis?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain in simple English what makes a research hypothesis falsifiable, using the format "We believe [X] because [Y]; we will know we are wrong when [Z]". Show me one weak, unfalsifiable hypothesis and one strong one about why a delivery marketplace sells less at lunch than at dinner, and explain exactly what makes the weak one weak.</div></dd>
+      <dt>Get</dt><dd>A working definition of falsifiability, the three-part format, and a felt sense of the difference between a claim that can fail and a claim that cannot.</dd>
+      <dt>Build</dt><dd>Take the one fact you have: weekday lunch orders from 11:30am to 1:30pm are 30 percent below dinner. Write it at the top of a fresh doc as your observation, then write your first gut explanation underneath in the three-part format, kill condition included.</dd>
+      <dt>Capture</dt><dd>In your own words, write the rule you will hold every future hypothesis to. A stem if you want one: "A hypothesis earns the name only when ..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Generate three competing hypotheses</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Weekday lunch orders on Uber Eats from 11:30am to 1:30pm are 30% lower than dinner orders. Help me brainstorm at least six different causal explanations across time pressure, price sensitivity, supply and selection, habit, and context of eating. For each, say which specific group of people it is about.</div></dd>
+      <dt>Get</dt><dd>A wide list of candidate causes, each tied to a specific group, wider than your first gut answer. You want genuinely competing explanations, not one idea in six outfits.</dd>
+      <dt>Build</dt><dd>Pick the three strongest and rewrite each in the full format: "We believe [X] because [Y]; we will know we are wrong when [Z]". Make every X name a specific group (for example, office workers with fixed lunch breaks) and every Z name an observable signal with a rough threshold. These three hypotheses are the seed artifact for the whole sequence. Every later guide builds on them.</dd>
+      <dt>Capture</dt><dd>Write the three finished hypotheses into your doc under the observation, numbered H1, H2, H3, and add one line on why they compete rather than overlap.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Find the riskiest assumption in each</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my three hypotheses for the Uber Eats lunch gap: [paste H1, H2, H3]. For each one, list the hidden assumptions it depends on, then name the single riskiest assumption: the one that kills the hypothesis if it turns out false. Rank the three hypotheses by how expensive it would be to act on them and be wrong.</div></dd>
+      <dt>Get</dt><dd>Each hypothesis unpacked into its load-bearing assumptions, with the riskiest one named, and a ranking that tells you where to point your first test.</dd>
+      <dt>Build</dt><dd>Under each of H1, H2, and H3 in your doc, write one line: "Riskiest assumption: ..." Then mark which single assumption across all three you would test first, and why that one.</dd>
+      <dt>Capture</dt><dd>Write your ordering rule in one sentence. A stem: "I test first the assumption that ..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Write questions built to kill, not confirm</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For each of my three lunch gap hypotheses and their riskiest assumptions [paste], write 2 or 3 interview questions that ask only about past behavior, never about hypothetical futures, and never reveal what I hope to hear. Include for each hypothesis one question whose honest answer would invalidate it outright. Then list 3 data questions I could answer from order logs before interviewing anyone.</div></dd>
+      <dt>Get</dt><dd>A short question set where every question attacks a named assumption, split into interview questions about past behavior and data questions that are free evidence.</dd>
+      <dt>Build</dt><dd>Trim to at most 8 interview questions and 3 data questions, then finish with kill criteria: two or three "Invalidate H1 if ..." lines with concrete thresholds, written now, before any evidence arrives. This question set is what you carry into Customer Interviews, the next guide.</dd>
+      <dt>Capture</dt><dd>Write one sentence on why you set kill criteria before collecting evidence, in your own words. A stem: "I decide what failure looks like before ..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the lunch gap observation, three competing falsifiable hypotheses with kill conditions, the riskiest assumption under each, and a question set biased toward invalidation.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named research-hypothesis. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it: give Claude a fresh observation, "weekend breakfast orders are 40% below weekend dinner orders", and prompt "use my research-hypothesis skill to turn this into three competing hypotheses with kill conditions".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A hypothesis with no "we will know we are wrong when" line. That is a belief wearing a lab coat.</li>
+      <li>"Users" as the who. If you could not name ten real people in the segment, it is not a segment.</li>
+      <li>Three hypotheses that are really one idea reworded. Competing means they point to different products.</li>
+      <li>Questions about the future ("would you ...") instead of the past ("walk me through the last time ...").</li>
+      <li>Kill criteria written after the evidence is in. That is moving the goalposts with extra steps.</li>
+    </ul>
+  </div>
+</section>

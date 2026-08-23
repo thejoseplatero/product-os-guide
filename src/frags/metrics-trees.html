@@ -1,0 +1,71 @@
+<section class="guide" id="metrics-trees" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Metrics Trees</h2>
+  <p class="tldr">TLDR: Pick one north star metric, break it into input metrics teams can actually move, and pair every metric with a counter-metric. Reach for it when defining success for a product, auditing a dashboard, choosing key results, or when a team is staring at a number it cannot move.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Here is the idea in one sentence: a metric you cannot break down is a metric you cannot move. You can only watch it. Three sources. Amplitude's North Star framework gives us the top of the tree. John Doerr's <em>Measure What Matters</em> gives us the link to goals. And Andy Grove gives us the habit of pairing indicators so nobody games a number.</p>
+    <p>Start with the north star. It is the single metric that best captures the value customers receive, and revenue follows it with a lag. There are four tests. It measures customer value delivered, not what the company extracts. So, meals eaten on time, not fees collected. Second, moving it is a leading indicator of the business result. Third, every team can see how their work touches it. Fourth, it is a rate or ratio over a stated period, never a cumulative total. Registered users only ever goes up, so it tells you nothing.</p>
+    <p>Then build the tree. Break the north star into three to five input metrics. These are the levers teams actually pull: breadth, more users doing the core action; depth, doing more of it; frequency, doing it more often; efficiency, doing it faster or with less friction. Each input breaks down again until you reach a metric one team owns end to end. The tree is the org chart of accountability. The north star belongs to product leadership, inputs belong to teams, sub-inputs belong to squads. A team given a metric three levels above its control is chartered on hope.</p>
+    <p>Take our case. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The guiding policy you wrote in Strategy Kernel says you win lunch on a promise people can plan around, so the north star follows from that: weekday lunch orders per active customer in the 11:30 to 1:30 window. Breadth: customers who placed at least one weekday lunch order this week. Depth: items per lunch order. Frequency: lunch orders per customer per week. Efficiency: minutes from opening the app at 11:40 to the order being placed. Now the lunch checkout squad owns "minutes to order placed at noon," and they can actually move it. Give that squad "revenue" instead and they can only stare at it.</p>
+    <p>Now the Grove part. Every metric optimized alone will be gamed, by users, by teams, or by dashboards. So pair each target with the counter-metric that catches the failure mode. Lunch delivery speed paired with promise-kept rate, because a team can hit a speed average by quietly widening the promise. Activation paired with week-four retention. Engagement paired with whether it is the good kind, because session length is a cost to the user, not a value. No key result ships without its counter-metric named.</p>
+    <p>One more discipline: leading versus lagging. Lagging metrics like revenue, churn, and NPS tell you the score after the game. Leading metrics like activation rate and time to value are playable during the game. Dashboards should be mostly leading. Reviews can be mostly lagging. A team reviewing lagging metrics every week is performing accountability, not exercising it. The most common mistake is a north star that is a revenue number. That is the board's metric, not the product's. It matters to you as a PM because the tree is how you turn "close the lunch gap" into work a team can start on Monday.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a metrics tree?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain the north star metric idea from Amplitude and the metrics tree in simple English. What are the four tests a north star must pass, and why is a cumulative total like "registered users" a bad one? Use this case: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>A plain definition of north star and input metrics, plus the four tests.</dd>
+      <dt>Build</dt><dd>Write three candidate north stars for the lunch gap, each one traceable back to the guiding policy you wrote in Strategy Kernel. Run each through the four tests and cross out the ones that fail, including any that measures what the company takes rather than what the customer gets. Keep the one that survives.</dd>
+      <dt>Capture</dt><dd>Write the four north star tests into your doc in your own words, plus the north star you picked for the lunch gap. A starting stem: "A north star measures what the customer..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Build the tree</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">My north star for the lunch gap is weekday lunch orders per active customer between 11:30am and 1:30pm. Help me break it into three to five input metrics using breadth, depth, frequency, and efficiency. Then break each input down until one team could own it end to end.</div></dd>
+      <dt>Get</dt><dd>A tree with three levels and a named owner at each node.</dd>
+      <dt>Build</dt><dd>Draw your lunch gap tree three levels deep. For the leaves, use the activities from the backbone of your Story Mapping map, since each one is something a real team touches. Give every leaf an owner. Then hunt for the failure: find any leaf whose owner cannot change it without asking someone else, and either move the metric or move the owner.</dd>
+      <dt>Capture</dt><dd>Write your four input types and your ownership rule into your doc. A starting stem: "A team may only own a metric when..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Pair every metric with a counter-metric</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For each metric in my lunch gap tree, name the way it could be gamed and the counter-metric (Andy Grove's pairing idea) that would catch it.</div></dd>
+      <dt>Get</dt><dd>Every node in the tree paired with one counter-metric.</dd>
+      <dt>Build</dt><dd>Go node by node through your lunch gap tree and, for each one, write the laziest honest way a team could hit that number without helping anyone. Start with the obvious one: a team hits its noon delivery speed target by quietly widening the arrival promise it shows. Write the counter-metric that catches each cheat. Any node you cannot cheat is probably not a real metric, so look again.</dd>
+      <dt>Capture</dt><dd>Write your counter-metric rule into your doc, plus the pairing you chose for lunch delivery speed. A starting stem: "No key result ships until I have named..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Sort leading from lagging</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Mark each metric in my lunch gap tree as leading or lagging. Then tell me which ones belong on the weekly dashboard and which belong in the quarterly review.</div></dd>
+      <dt>Get</dt><dd>A dashboard list that is mostly leading and a review list that is mostly lagging.</dd>
+      <dt>Build</dt><dd>Mark every node on your tree leading or lagging. Then write the weekly lunch dashboard you would actually put on a wall, and keep it to what a team can play during the week. Ask Claude to generate a bloated 30-metric lunch dashboard, then delete from it until only your tree is left and count what you removed.</dd>
+      <dt>Capture</dt><dd>Write your dashboard rule into your doc in one or two sentences. A starting stem: "My weekly dashboard is mostly..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds your north star tests, your tree structure with owners, your counter-metric rule, and your leading versus lagging sorting rule.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named metrics-trees. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a 30-metric lunch dashboard with no structure, and ask Claude: "use my metrics-trees skill to turn this into a tree for the lunch gap with owners and counter-metrics".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A north star that is a revenue number (that is the board's metric, not the product's).</li>
+      <li>A dashboard with 30 metrics and no tree: a pile, not a system.</li>
+      <li>Key results that are tasks with a percent sign ("100 percent of lunch partner agreements signed").</li>
+      <li>A metric owned by a team that controls none of its inputs.</li>
+      <li>No counter-metric anywhere, so every number is safely gameable.</li>
+    </ul>
+  </div>
+</section>

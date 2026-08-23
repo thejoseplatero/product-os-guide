@@ -1,0 +1,62 @@
+<section class="guide" id="accessibility-audit" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Accessibility Audit</h2>
+  <p class="tldr">TLDR: A practical sweep of a design against WCAG 2.2, ordered by how much harm each failure does: keyboard, contrast, color, targets, semantics, motion, cognition. Reach for it in critique, before handoff, when reviewing a design system component, or the moment someone says accessibility can be "phase 2."</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Accessibility has a reputation as a compliance chore. That reputation is wrong. The grounding is WCAG 2.2, the web accessibility standard, with level AA as the floor. The second source is Microsoft's Inclusive Design work, which gives the idea that makes this click: disability is a mismatch between a person and a design, and it is situational. One arm, an injured arm, or an arm holding a phone to your ear while you walk back to your desk at 11:50: same need. Accessibility findings are usability findings with higher stakes, and fixing them almost always helps everyone.</p>
+    <p>The method is a sweep in a fixed order, by harm. First, keyboard. Every interactive element must be reachable and usable by keyboard, in an order that follows the visual logic, with focus visible at all times and never hidden behind a sticky header. If the designer cannot Tab through the flow in their head, you found your first blocker. Second, contrast: 4.5 to 1 for body text, 3 to 1 for large text and UI components. Light grey on white is not a brand choice. It is an exclusion.</p>
+    <p>Third, never color alone. Every state needs a second channel: an icon, text, weight, or pattern. The test: imagine the screen in grayscale. Does the information survive? Fourth, targets and gestures: 24 by 24 pixel minimum, every swipe has a tap alternative, nothing depends on hover because touch exists. Fifth, semantics: real headings, labels tied to inputs, buttons that are buttons and not clickable divs, alt text that says what the image does. Sixth, motion and time: respect reduced motion, nothing flashes more than three times a second, no timeout without warning. Seventh, cognitive load: plain labels, controls in the same place on every page, errors that say what to do, no retyping what was just entered.</p>
+    <p>Take Uber Eats at lunch. Overall growth is strong, but weekday orders between 11:30am and 1:30pm run 30% below dinner. Call that the lunch gap. Now sweep the lunch experience. The 12:00 delivery promise is shown by turning the slot green when it is still available and grey when it is gone. Color alone, a major finding. The "Add for the table" plus button on the group order screen is 18 pixels wide, and half the office is tapping it on a phone at a standing desk. The office address field on the pre-order flow uses placeholder text as its only label. The delivery time picker is a swipe-only wheel with no tap alternative, so a person with a tremor cannot land on 12:00. And a keyboard user on a work laptop never reached checkout because the sticky lunch cart bar hides the focus ring on the address field. That one is the blocker, and it lands on exactly the users you need in the 11:30 to 1:30 window.</p>
+    <p>The most common mistake is treating accessibility as a final-sprint checklist. The skill is blunt about this: audit the design system once at the component level and inherit the fix everywhere. If you are auditing every screen separately, the system is leaking. Also, "it passes automated checks" means little: tools catch about 30 percent.</p>
+    <p>Why does a PM care? Because you set the definition of done, and "most users have a mouse" is the accessibility version of "users will figure it out." A blocker for keyboard users is a blocker, full stop. Severity uses the same scale as heuristic evaluation: blocker, major, minor, polish. You will be the person who decides whether it ships.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is an accessibility audit?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain WCAG 2.2 level AA in simple English for a product manager, and explain Microsoft's idea that disability is a mismatch between a person and a design. Give three situational examples from someone ordering lunch on their phone between meetings.</div></dd>
+      <dt>Get</dt><dd>A plain definition of WCAG AA as the floor, and the permanent, temporary, situational framing with examples you could say out loud to an engineer.</dd>
+      <dt>Build</dt><dd>Take the two personas you built in Personas and Archetypes and put each one in the 11:30 to 1:30 window. For each persona, list five situations in that window where they cannot use a mouse, cannot see fine color differences, or cannot hold the phone with two hands. Walking back from a meeting, one hand on a coffee, a shared screen behind them, a bright window at noon.</dd>
+      <dt>Capture</dt><dd>Write two or three sentences in your doc saying what an accessibility audit checks and what it checks against, plus the mismatch idea in your own words. Start with "An accessibility audit checks ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Run the sweep in harm order</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Walk me through the seven-step accessibility sweep in this order: keyboard, contrast, not color alone, targets and gestures, semantics, motion and time, cognitive. For each step give me the one question to ask and the WCAG 2.2 criterion it maps to.</div></dd>
+      <dt>Get</dt><dd>A seven-row checklist, one question per row, with the numbers that matter: 4.5:1, 3:1, 24 by 24 pixels, three flashes per second.</dd>
+      <dt>Build</dt><dd>Ask Claude to describe the lunch pre-order checkout screen from the states matrix you built in States and Edges, one state at a time, including every control and its color. Tab through it in your head and narrate the focus order aloud. Then check how the 12:00 delivery promise is shown and find its second channel. If there is only color, you have a finding.</dd>
+      <dt>Capture</dt><dd>Write the seven steps in order into your doc, plus the three numbers you never look up again: body text contrast, minimum target size, and the flash limit. Start with "The sweep goes in this order ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Rate severity and fix at the component</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my accessibility findings for an Uber Eats lunch pre-order and group order flow: [paste]. Rate each one blocker, major, minor, or polish. Then tell me which findings should be fixed once in a shared component instead of screen by screen.</div></dd>
+      <dt>Get</dt><dd>A ranked list with the keyboard blocker on top, and a note on which fixes belong in one shared component so they inherit everywhere.</dd>
+      <dt>Build</dt><dd>Group your step 2 findings by the UI piece they live on: the time slot picker, the address field, the group order add button, the lunch cart bar. Count how many of the lunch screens each single fix would repair at once. Then rate every finding blocker, major, minor, or polish, and say out loud which one would stop the persona you named in step 1 from ordering at all.</dd>
+      <dt>Capture</dt><dd>Write your severity scale into your doc, one line each, plus the rule about where you fix accessibility. Start with "A blocker for keyboard users is ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the mismatch definition, the seven-step sweep in harm order with its numbers, the severity scale, and the rule to fix at the component.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named accessibility-audit. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude to write out the lunch browse screen at 11:45 and the group order screen for an office as text wireframes with hex colors and pixel sizes noted, then say: "use my accessibility-audit skill to sweep these two lunch gap screens and rank the findings".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Accessibility as a final-sprint checklist instead of a property of each component.</li>
+      <li>Contrast checked only on body text, never on icons, borders, focus rings, or charts.</li>
+      <li>"It passes automated checks" when automated tools catch about 30 percent.</li>
+      <li>Alt text that describes pixels ("blue circle with arrow") instead of function ("submit search").</li>
+      <li>"Most users have a mouse" used to downgrade a keyboard blocker.</li>
+    </ul>
+  </div>
+</section>

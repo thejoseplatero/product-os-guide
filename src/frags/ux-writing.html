@@ -1,0 +1,62 @@
+<section class="guide" id="ux-writing" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>UX Writing</h2>
+  <p class="tldr">TLDR: Writing the words a user reads in the product: labels, buttons, errors, empty states, confirmations, onboarding. Reach for it when drafting or reviewing any in-product copy, or the moment the interface says "An error occurred."</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This skill is grounded in Torrey Podmajersky's book <em>Strategic Writing for UX</em>. Her starting point is worth writing down: words are the interface's cheapest, most-shipped, least-reviewed component. Every string does a job. It helps the user, and it carries the brand's voice, in that order.</p>
+    <p>Six rules do most of the work. One, buttons say what happens. "Order for 12:00," "Remove 2 items," "Send to the group." Never "OK / Cancel" on a destructive confirm. "Delete / Keep" makes the choice clear without reading the paragraph above, which nobody read. Two, write from the user's side of the screen. They manage <em>notifications</em>, not <em>webhook config</em>. Three, front-load. The first two words carry the meaning because users scan the left edge. "Payment failed: card expired," not "There was a problem processing your payment because the card on file appears to have expired." Four, errors say what happened, why, and what to do. No apologizing paragraphs, no blame, no error code as the only content, and preserve the user's work. Five, one idea per string. If a tooltip needs three sentences, the design needs a change. Six, consistency is comprehension. One name per concept everywhere. If it is "cart" in the nav, "basket" on the button, and "order" in the email, the user has three things to reconcile. Keep a terms list and enforce it in critique.</p>
+    <p>Then voice. Onboarding can be warm. Errors are calm and plain. A cute 404 page is fine. A cute "your lunch will be late" is contempt. Destructive confirmations are sober. Success states can celebrate briefly. A voice that does not change with the stakes is not a voice, it is a font.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. Now read the words in that window. The pre-order button says "Continue." Continue to what? Change it to "Order for 12:00, $18.40." The 12:00 promise is written as "ETA 12:00 (est.)" which is three ways of hedging in six characters, and hedging is exactly what a person with a 12:30 meeting cannot use. The group order screen says "Participants: 3/5 submitted," which is a database report, not a sentence a coworker says. "Waiting on Sam and Priya" is the same fact and does the job. When the driver is running late the app says "Delivery exception 4102." What happened, why, what to do: "Running late. Now arriving 12:15. Cancel for a full refund." And the empty lunch cart says "Your cart is empty." That describes the emptiness. "Pick something that arrives by 12:00" describes the way out and names the thing the user actually wants.</p>
+    <p>The method for checking all of this is the read-aloud test. Read the flow's strings out loud in sequence as a conversation. Screen says X, user does Y, screen says Z. Anywhere you wince, cut. Anywhere a normal person would answer "but what does that mean?", rewrite. The interface is a dialogue where you scripted both sides in advance. Make your side coherent.</p>
+    <p>The most common mistake is "An error occurred," which is the string equivalent of a shrug. Why does a PM care? Because copy ships without review more than any other part of the product, and the error state is where you earn or lose trust at the highest exchange rate. On a lunch order, that exchange rate is brutal: a person who gets a vague message at 12:10 does not come back at 11:45 tomorrow. You will write half these strings yourself in tickets. Write them well.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is UX writing?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain UX writing in simple English using Torrey Podmajersky's idea that every string helps the user first and carries the voice second. Give me the six core rules with one lunch ordering example each.</div></dd>
+      <dt>Get</dt><dd>The six rules in your own words: buttons say what happens, user's side of the screen, front-load, errors say what/why/what to do, one idea per string, one name per concept.</dd>
+      <dt>Build</dt><dd>Take the pre-order flow from the MVP scope you wrote in Scoping the MVP and write out every button label in it, start to finish. Then rewrite any label that does not say what happens next, and make the delivery time part of the label wherever the user is committing to it. Read the rewritten set in order and check that a person could follow the flow from the buttons alone.</dd>
+      <dt>Capture</dt><dd>Write two sentences into your doc: the two jobs every string does and their order, and what a button must say. Start with "Every string helps the user first and ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Rewrite the errors and empty states</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Rewrite these lunch ordering strings so each says what happened, why, and what to do, front-loaded and in plain words: "An error occurred", "Delivery exception 4102", "Invalid input", "Your cart is empty", "No results", "Participants: 3/5 submitted". Keep the user's input where it applies.</div></dd>
+      <dt>Get</dt><dd>Six rewritten strings, each under 15 words, each with a clear next action for the user.</dd>
+      <dt>Build</dt><dd>Open the states matrix you built in States and Edges and pull out every error and empty state on the lunch screens. Write the worst one, the 12:00 promise breaking at 12:05, three different ways: blaming the user, apologizing at length, and what happened plus why plus what to do. Read all three out loud in the voice of someone who has a meeting in twenty-five minutes, and pick. Then do the same for the empty lunch cart, and make sure your version names the noon deadline rather than the emptiness.</dd>
+      <dt>Capture</dt><dd>Write into your doc the three things an error message must say and the one thing it must never destroy. Start with "An error message must say ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Run the read-aloud test and build the terms list</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are all the strings in the lunch pre-order flow in sequence: [paste]. Read them as a conversation between the screen and the user at 11:45. Flag every place the user would ask "what does that mean?" and every place two words are used for the same concept. Output a terms list with one name per concept.</div></dd>
+      <dt>Get</dt><dd>A flagged script of the flow and a short terms list to enforce in critique.</dd>
+      <dt>Build</dt><dd>Perform the whole lunch flow out loud, from the 11:45 browse to the 12:00 arrival, speaking the screen's line and then the user's reaction each time. Note every wince. Then build your terms list from what you heard, one name per concept, and settle the ones the lunch work keeps splitting: is it a delivery time, an ETA, an arrival, or a promise? Is it a group order, a shared order, or a team order? Pick one word for each and write it down. Then check the stories you wrote in Story Writing and change any string in them that breaks the list.</dd>
+      <dt>Capture</dt><dd>Write into your doc what the read-aloud test is, what voice changes with, and the two or three terms your list now locks. Start with "The read-aloud test is ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the six rules, the voice-by-stakes rule, the read-aloud test, and your lunch terms list.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named ux-writing. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude to write twenty raw strings for the group order screen an office shares at 11:45, then say: "use my ux-writing skill to review these strings and rewrite the ones that fail".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>"An error occurred," the string equivalent of a shrug.</li>
+      <li>Title-case inconsistency and synonym drift across screens.</li>
+      <li>Placeholder text doing a label's job: it disappears on focus and fails contrast.</li>
+      <li>Jargon inherited from the database schema ("entity", "instance", "participants").</li>
+      <li>Empty-state copy that describes the emptiness instead of the way out.</li>
+    </ul>
+  </div>
+</section>

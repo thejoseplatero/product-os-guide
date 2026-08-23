@@ -1,0 +1,63 @@
+<section class="guide" id="design-metrics" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Design Metrics</h2>
+  <p class="tldr">TLDR: Measuring design with Google's HEART framework and the Goals, Signals, Metrics method, then hanging those numbers on the product's metric tree. Reach for it when a design team cannot show impact, when choosing metrics for a redesign, or when "the design is better" needs a number.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This skill comes from Google's HEART framework, published by Kerry Rodden, Hilary Hutchinson, and Xin Fu, together with the Goals, Signals, Metrics method that makes it usable in practice. Design has a chronic credibility problem: it measures inputs, like screens shipped and components built, while the organization measures outcomes. HEART is the translation layer between the two.</p>
+    <p>HEART is five rows. Happiness: attitude, measured as satisfaction or perceived ease at the moment of use. Annual NPS is weather, not feedback. Engagement: voluntary depth and frequency of use. Only meaningful where more use means more value. A support portal that optimizes engagement is optimizing failure. Adoption: new users or accounts taking up the feature. Retention: do they come back. This is the metric most redesigns quietly damage. Task success: effectiveness, efficiency, and error rate. Completion percent, time on task, error recovery. This is the most design-attributable row in the whole framework.</p>
+    <p>The rule is to pick two or three rows that match the design's intent. A redesign meant to reduce support load is Task success plus Happiness, not Engagement. Choosing all five is choosing none.</p>
+    <p>Then the discipline that stops metric-grabbing: Goals, Signals, Metrics. State the goal in experience terms. Choose the signals that would show it. Then define the metric precisely. Run it in reverse to audit a dashboard: any metric you cannot trace back to a goal is dashboard lint.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The team is redesigning the lunch browse experience at 11:45, because an office worker has about four minutes to decide and the current browse asks them to scroll through the same dinner-shaped list. The intent is that a hungry person with a 12:30 meeting picks food fast and trusts it will arrive by 12:00. So the rows are Task success and Happiness. Goal: an office worker opening the app at 11:45 places an order in under two minutes with confidence in the arrival time. Signals: fewer restaurant pages opened before ordering, fewer sessions in the window that end without an order, fewer changes to the delivery slot after it is chosen. Metrics: median time from app open to order placed between 11:30 and 1:30; percent of lunch-window sessions that end in an order; a one-question "did you get what you needed in time?" right after the 12:00 delivery. Before the redesign, 31 percent of lunch-window sessions ended in an order. After, 44. That second number means nothing alone. Against the baseline it is a career.</p>
+    <p>The most important rule: connect to the tree or float forever. Every design metric should hang off the product's metric tree. Lunch browse task success feeds lunch-window order conversion, which feeds weekday orders in the 11:30 to 1:30 window, which feeds the north star. A design team whose metrics live in a separate universe will lose every prioritization argument to a team whose metrics are the tree.</p>
+    <p>The most common mistake is shipping a redesign with no baseline captured. The before is now unmeasurable and the debate is unwinnable. The second is choosing Engagement because it is the one that always goes up. Watch that one here: more time browsing at lunch is a failure, not a win. Why a PM cares: you are the person who decides what goes on the dashboard, and you will be asked "did the redesign work?" The only honest answer is a before-and-after on the same task, tied to a metric the business already cares about.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is HEART?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Google's HEART framework by Rodden, Hutchinson, and Fu in simple English. Define Happiness, Engagement, Adoption, Retention, and Task success with one Uber Eats lunch example each, and explain why you pick only 2 or 3 rows.</div></dd>
+      <dt>Get</dt><dd>The five rows in your own words, with a lunch example per row, and the rule that all five equals none.</dd>
+      <dt>Build</dt><dd>Take three pieces of the lunch experience: the 11:45 browse, the pre-order flow with its 12:00 promise, and the group order screen for an office. For each one, write its intent in a sentence, then pick the two HEART rows that match that intent and write one line defending the choice. Then say out loud why Engagement is the wrong row for all three.</dd>
+      <dt>Capture</dt><dd>Write the five rows into your doc, how many you pick and what you match them to, and which row design can most honestly claim. Start with "HEART stands for ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Run Goals, Signals, Metrics</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For an Uber Eats lunch browse redesign meant to help an office worker order in under two minutes at 11:45, write a Goals, Signals, Metrics table for Task success and Happiness. The goal must be in experience terms, signals must be observable behaviors, and each metric must be precisely defined with a baseline plan.</div></dd>
+      <dt>Get</dt><dd>A two-row table with goal, two or three signals each, and a metric definition that someone could build a query from.</dd>
+      <dt>Build</dt><dd>Write the Goals, Signals, Metrics table yourself for the lunch browse, using the personas you built in Personas and Archetypes to phrase the goal in a real person's terms. Then take the metric tree you built in Metrics Trees and read every metric on it out loud, asking which goal it traces back to. Cross out the ones that do not trace. Count them.</dd>
+      <dt>Capture</dt><dd>Write the three definitions into your doc in your own words: goal, signal, and what an untraceable metric is. Start with "A goal is written in ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Hang it on the tree and capture the baseline</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my metric tree: [paste it]. Show me where lunch browse task success hangs on this tree, all the way up to the north star. Then write the baseline capture plan so I can measure before and after the redesign on the same task protocol.</div></dd>
+      <dt>Get</dt><dd>A line from the design metric up to the north star, and a one-paragraph baseline plan with a date before the redesign ships.</dd>
+      <dt>Build</dt><dd>Draw the metric tree you built in Metrics Trees on one page. Pin your lunch browse metric onto the branch it belongs to and write out the chain of words from that metric to the north star, saying each link out loud: this feeds this, which feeds this. If any link makes you hesitate, that link is the argument you will lose in a review. Then write the baseline plan with a real date that sits before any redesign ships, and the exact task protocol you will repeat afterward.</dd>
+      <dt>Capture</dt><dd>Write the chain from your design metric to the north star into your doc, plus when you capture the baseline. Start with "My design metric feeds ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the five HEART rows, the pick-two-or-three rule, the Goals, Signals, Metrics method, and the connect-to-the-tree rule with baselines.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named design-metrics. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take a one-paragraph brief for redesigning the group order screen for an office to close the lunch gap, plus your metric tree, and ask Claude: "use my design-metrics skill to choose the metrics and write the baseline plan".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Design "measured" by output counts: screens, components, tickets closed.</li>
+      <li>Engagement chosen as the metric because it is the one that always goes up.</li>
+      <li>A redesign shipped with no baseline captured, so the debate is unwinnable.</li>
+      <li>Happiness measured annually, company-wide, then attributed to last month's redesign.</li>
+      <li>Metrics chosen after the results are in.</li>
+    </ul>
+  </div>
+</section>

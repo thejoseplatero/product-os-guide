@@ -1,0 +1,63 @@
+<section class="guide" id="design-canvases" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Design Canvases</h2>
+  <p class="tldr">TLDR: One-page tools that turn confidence into testable hypotheses before anything gets built: the Lean UX Canvas, the Empathy Map, the Opportunity Canvas, and the Test Card. Reach for them when kicking off a design initiative, converting a feature request into hypotheses, aligning a team before pixels, or when work is starting from a solution instead of a problem.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Four tools, four authors. Jeff Gothelf's Lean UX Canvas, version 2, from <em>Lean UX</em>. Dave Gray's Empathy Map from XPLANE. Jeff Patton's Opportunity Canvas. And Strategyzer's Test Card. Business canvases model the business. These model the work about to be designed. Their shared job: turn confidence into hypotheses before the hypotheses turn into shipped code.</p>
+    <p>The engine is the Lean UX Canvas. Eight boxes, filled in order. One, the business problem, in outcome terms, without the solution baked in: "weekday lunch orders run 30% below dinner," not "we need a pre-order button." Two, business outcomes: the metric that moves. Three, users, specifically. Proto-personas are fine, labeled as guesses. Four, user outcomes and benefits: what the user is trying to achieve and feel. Five, solutions. Now ideas are allowed, plural, sketched cheaply. Six, hypotheses: "We believe [business outcome] will be achieved if [user] attains [user outcome] with [solution]." Missing any part and it is a hope. Seven, the most important thing to learn first: the riskiest assumption inside the strongest hypothesis. Eight, the least work to learn it: a test, this week, sized in days. The canvas is not done until something is scheduled. The ethic: boxes one through four before box five. A team that starts at box five is decorating a decision.</p>
+    <p>Run it on the case. Uber Eats grows overall, but weekday orders between 11:30am and 1:30pm are 30% below dinner. Call that the lunch gap. Business problem, the lunch gap itself, stated as a number and a window, not as a missing feature. Business outcome, weekday orders in that window. Users, desk-bound office workers with a fixed break and a meeting on either side of it. User outcome, food on the desk by 12:00 without spending the 11:45 to 12:00 stretch worrying about it. Solution idea, a pre-order flow that locks a 12:00 delivery slot in the morning. Hypothesis: we believe weekday 11:30 to 1:30 orders will rise if office workers get a guaranteed 12:00 arrival by ordering before 10am. Riskiest assumption: that they will decide what to eat hours before they are hungry. Least work to learn it: ask twenty office workers what they ate last Tuesday and when they decided. One day, no code.</p>
+    <p>The Empathy Map sits before personas. Six zones around a specific user in a specific situation: says, thinks, does, feels, pains, gains. Says must be verbatims. Where does contradicts says, behavior wins. Run it cold and mark every sticky that is a guess. The guess density is the finding. An empathy map built from no user contact is a séance.</p>
+    <p>The Opportunity Canvas is Patton's middle altitude: bigger than a story, smaller than a business model. Nine boxes around one feature, including the solution today, the workaround, which is the real competitor. For the lunch gap the workaround is the sandwich place downstairs, and it is a very good competitor: it is fast, it is certain, and it needs no app. Its spine: user value <em>and</em> business value must both be nameable. Use it to triage which of five candidate lunch features deserves a PRD at all.</p>
+    <p>The Test Card is the hypothesis's receipt. Four lines: we believe that, to verify we will, and measure, we are right if. That threshold is set in advance. Pair it with a Learning Card afterward and log both.</p>
+    <p>The most common mistake is the canvas workshop that produces beautiful walls and zero scheduled tests. Why a PM cares: you will receive feature requests as solutions every week. These are the one-page tools for walking them back to a problem.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What are design canvases?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain in simple English the Lean UX Canvas by Jeff Gothelf, the Empathy Map by Dave Gray, the Opportunity Canvas by Jeff Patton, and the Strategyzer Test Card. For each, tell me the one situation where I would reach for it while working on weekday lunch orders that run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>Four tools, one author each, one sentence each on when to use it, and the shared job: turn confidence into hypotheses before code.</dd>
+      <dt>Build</dt><dd>Write down four real moments in the lunch gap work and match each to one canvas. The kickoff where all you have is the 30% number. The moment you feel sure you already know office workers, which is when the Empathy Map earns its keep. The moment you have five lunch ideas and one slot, sitting next to the RICE scores you produced in Prioritization. And the moment a test is about to run.</dd>
+      <dt>Capture</dt><dd>Write three sentences into your doc: the shared job of every canvas, and which canvas you reach for at kickoff and before a test. Start with "The shared job of every canvas is ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Fill the Lean UX Canvas in order</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Fill in a Lean UX Canvas for Uber Eats, where weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Go box by box, 1 through 8, in order. Do not write any solution before box 5. Write the hypotheses in the format "We believe [business outcome] will be achieved if [user] attains [user outcome] with [solution]." Box 8 must be a test sized in days.</div></dd>
+      <dt>Get</dt><dd>All eight boxes filled, at least two full three-part hypotheses, one riskiest assumption, and a test that could start this week.</dd>
+      <dt>Build</dt><dd>Fill the canvas yourself on the lunch gap, on paper, with box five physically covered until boxes one to four are done. Use the two personas you built in Personas and Archetypes for box three and the job statement from JTBD Framing for box four. Then uncover box five and write three solutions, one of which must not be a screen. Compare how different your solutions look now against the pre-order idea you were probably already carrying.</dd>
+      <dt>Capture</dt><dd>Write the ordering rule, the three parts of a hypothesis, and the finish condition into your doc. Start with "Boxes one through four come before box five because ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Write the Test Card and the Empathy Map</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Take this riskiest assumption from my Lean UX Canvas, that office workers will decide what to eat hours before they are hungry, and write a Strategyzer Test Card with all four lines and a numeric threshold set in advance. Then build a cold Empathy Map for a desk-bound office worker at 11:45 and mark every sticky as verbatim or guess.</div></dd>
+      <dt>Get</dt><dd>A Test Card with a number on the "we are right if" line, plus an Empathy Map with the guess count as the headline finding.</dd>
+      <dt>Build</dt><dd>Build the Empathy Map cold first, from your own head, and mark every sticky verbatim or guess. Then ask Claude to play a desk-bound office worker with a 12:30 meeting, and interview it for ten minutes about last Tuesday's lunch using the script you wrote in Customer Interviews. This is simulated, not evidence, so treat every answer as a hypothesis to check later. Update the map and count how many guesses moved. Then write your own Test Card for the riskiest assumption, with a number on the last line.</dd>
+      <dt>Capture</dt><dd>Write the four Test Card lines into your doc, when the threshold gets set, and what wins when does contradicts says on an Empathy Map. Start with "A Test Card's four lines are ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the four canvases with their authors, the eight Lean UX boxes in order, the hypothesis format, the Test Card lines, the Empathy Map zones, and the rule for choosing among them.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named design-canvases. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take a one-line feature request, "add a standing weekly office lunch order to Uber Eats," and ask Claude: "use my design-canvases skill to walk this back to the lunch gap problem, fill the Lean UX Canvas, and write the first Test Card".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Canvas workshop that produces beautiful walls and zero scheduled tests.</li>
+      <li>Hypotheses written after the mockups.</li>
+      <li>Empathy map stickies in the team's vocabulary instead of users' verbatims.</li>
+      <li>Opportunity Canvas with the business-value boxes blank but the work proceeding anyway.</li>
+      <li>"We are right if it goes well": a Test Card without a number.</li>
+    </ul>
+  </div>
+</section>

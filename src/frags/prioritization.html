@@ -1,0 +1,81 @@
+<section class="guide" id="prioritization" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Prioritization</h2>
+  <p class="tldr">TLDR: Four ways to rank a list of candidates (RICE, MoSCoW, Kano, cost of delay) plus a final check on your own motivation. Reach for it when everything is marked P0, when you need to defend a call, or when you need to decide what not to do.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Every list of candidates tells lies. Not on purpose. The lies come from gut feel, from the loudest voice in the room, and from the fact that nobody ever deletes anything. Prioritization is the set of tools that catches those lies. This skill uses four of them: RICE from Intercom, MoSCoW from the DSDM method, the Kano model from Noriaki Kano, and cost of delay from Don Reinertsen. The key point is this: no framework decides for you. Each one catches a different lie. You pick the one that targets the lie you suspect.</p>
+    <p>RICE is for when gut feel is running the roadmap and you have many candidates to compare. You score each item. Reach is how many people it affects per quarter, and it must be a real number. Impact is a scale per person: 0.25, 0.5, 1, 2, or 3. Confidence is 100, 80, or 50 percent, and if you are below 50 percent, stop scoring and go do discovery. Then divide by Effort in person-months. The score is not the decision. It is the start of the argument. The useful moment is when the score contradicts the favorite idea in the room, and the room has to explain why.</p>
+    <p>MoSCoW is for a different situation: a fixed deadline and a room full of stakeholders who each think their thing is essential. It comes from DSDM, the agile delivery method, and it sorts everything into four buckets. <strong>Must</strong> means the release is not worth shipping without it, and the honest test is legal, safety, or "the thing does not work at all." <strong>Should</strong> means it hurts to leave out but there is a workaround for now. <strong>Could</strong> means it is nice, and it is the first thing to go when the date gets close. <strong>Won't</strong> means not this time, said out loud and written down, with the reason. The main failure mode is obvious and near universal: everything becomes a Must. DSDM's own guidance is that Musts should be well under half the effort in the release, because a release that is all Must has no give in it, and a plan with no give breaks on the first surprise. The test that keeps people honest is asking, item by item, "if we shipped on the date without this, what actually happens?" If the answer is "people would be annoyed," that is a Should. Prefer MoSCoW over RICE when the date is fixed and the job is agreeing with other people on scope. Prefer RICE when the date is open and the job is comparing many candidates against each other. And know this: the Won't list is the most valuable one on the page. It is the only part anybody will thank you for later, because it is the only part that ends an argument permanently.</p>
+    <p>Kano is for when the team cannot tell table stakes from wow. You put each candidate in one of three buckets. Basic features make people angry when missing but nobody notices when present. Performance features are "more is better," and you compete here on purpose. Delighters are unexpected and earn love far beyond their cost. Two traps: delighters decay into basics over time, and teams over-invest in performance features because they are easiest to justify on a slide. You already ran this classification in the Kano Model guide, so here you carry it forward rather than build it again.</p>
+    <p>Cost of delay is for when everything is "high priority." For each item, ask: what does one month of not having this cost us, in revenue, risk, or learning? Divide by duration to sequence. This is the only framework that handles urgency and importance together, and it exposes fake P0s instantly. A P0 with zero cost of delay is somebody's pet.</p>
+    <p>Picture our case. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The candidates that came out of discovery are a guaranteed arrival window on a short lunch list, a one-tap repeat of last week's lunch order, and an 11:15 nudge that pre-builds the cart. Under RICE, the repeat order wins on reach and effort. Under Kano, the arrival window is a delighter and the repeat order is closer to basic. Under cost of delay, every week the arrival window is missing is another week of lunch orders lost to the sandwich shop. Under MoSCoW against a fixed launch date, the arrival window is a Must because the release means nothing without a promise, the repeat order is a Should, the nudge is a Could, and a full lunch subscription is a Won't with the reason written next to it. Four tools, one defensible answer.</p>
+    <p>The last pass is the hyper-focus trap check. Label which top item is interesting but unimportant and which is boring but load-bearing. Your brain will pick the interesting one on its own, so the ranking has to name the trade. And ship the list with a kill list: what you are explicitly not doing and why. A priority list without a kill list is a mood board. The most common mistake is setting confidence to 100 percent on items with no discovery behind them. That is not confidence, that is hope with a number.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is prioritization?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain RICE (Intercom), MoSCoW (from DSDM), the Kano model (Noriaki Kano), and cost of delay (Don Reinertsen) in simple English. For each one, tell me what kind of bad prioritization decision it is designed to catch, and when I should prefer MoSCoW over RICE.</div></dd>
+      <dt>Get</dt><dd>A one-line summary of each framework and the "lie" each one catches.</dd>
+      <dt>Build</dt><dd>Write down the candidate solutions you produced for the lunch gap: the three under your top opportunity in Continuous Discovery, plus anything that survived the risk table in Four Risks. Next to each one, name which framework would most likely change the room's mind about it, and why.</dd>
+      <dt>Capture</dt><dd>Write into your doc, one line each, when you reach for RICE, MoSCoW, Kano, and cost of delay. A starting stem: "I use MoSCoW instead of RICE when..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Score with RICE</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my lunch gap candidates: a guaranteed arrival window on a short lunch list, a one-tap repeat of last week's lunch order, and an 11:15 nudge that pre-builds the cart. Help me score each one with RICE. Reach must be a real number per quarter. If my confidence is below 50 percent, tell me to do discovery instead of scoring.</div></dd>
+      <dt>Get</dt><dd>A scored table with <pre>Reach × Impact × Confidence ÷ Effort</pre> and at least one item where the score contradicts your own favorite.</dd>
+      <dt>Build</dt><dd>Score your lunch gap candidates with RICE. Ground Reach in the case observation and the segment you narrowed to on your Lean Canvas, not in a round number you like. Estimate Effort before you let yourself say which candidate you want most. Then find the item where the score disagrees with your gut and write the honest reason the gut might still be right, or admit it is not.</dd>
+      <dt>Capture</dt><dd>Write your RICE habits into your doc: what you do when the score fights the room, and when you are allowed to write 100 percent confidence. A starting stem: "Confidence below 50 percent means..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Sort with MoSCoW against a fixed date</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain MoSCoW from DSDM properly: what Must, Should, Could, and Won't each mean, and the test for each one. Why does everything become a Must, and what does DSDM say about how much of a release the Musts should be? Then sort my lunch gap candidates against a fixed launch date and tell me why the Won't list is the most valuable part.</div></dd>
+      <dt>Get</dt><dd>Four buckets with a real test for each, the everything-is-a-Must failure mode, and the rule that Musts must leave slack in the release.</dd>
+      <dt>Build</dt><dd>Give yourself a fixed date: one lunch release, eight weeks out. Sort every lunch gap candidate you have into Must, Should, Could, and Won't. For each item you called a Must, answer out loud: "if we ship on the date without this, what actually happens?" If the answer is that people would be annoyed, move it to Should. Then add up rough effort and check whether your Musts are under half the release. If they are not, keep demoting until they are. Finally write the Won't list properly, with a one-line reason next to each item, including at least one thing you personally wanted. If you find yourself defending every Must, ask Claude to play a stakeholder who wants the opposite item and argue it with you.</dd>
+      <dt>Capture</dt><dd>Write your MoSCoW rules into your doc: the test for a Must, what you do when everything is a Must, and why the Won't list matters most. A starting stem: "An item is only a Must when, without it..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Carry the Kano classification forward and price the delay</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is the Kano classification I already made for my lunch gap candidates: [paste your Basic, Performance, and Delighter tags]. Check it, then for each item estimate the cost of one month of delay in revenue, risk, or learning, and divide by duration to sequence them.</div></dd>
+      <dt>Get</dt><dd>Each item tagged with a Kano type and a cost of delay, plus a list of any "Must" that has zero cost of delay.</dd>
+      <dt>Build</dt><dd>Bring forward the Basic, Performance, and Delighter tags you assigned in the Kano Model guide and put them next to your MoSCoW buckets. Look for the mismatch: a Delighter you marked Must, or a Basic you left in Could. Then price one month of delay for each item using the lunch gap number itself, so a month of a missing lunch fix costs a month of that 30% shortfall. Circle any Must with no cost of delay behind it. That one is someone's pet, possibly yours.</dd>
+      <dt>Capture</dt><dd>Write your cost of delay rule and your Kano trap notes into your doc. A starting stem: "A real Must has a cost of delay of..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 5</span><h4>Run the hyper-focus check and write the kill list</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Look at my ranked lunch gap list. Tell me which top item is interesting but unimportant and which is boring but load-bearing. Then help me merge my Won't list and my killed candidates into one kill list: what we are explicitly not doing this quarter and why.</div></dd>
+      <dt>Get</dt><dd>A final ranked list with the trade named out loud and a kill list attached.</dd>
+      <dt>Build</dt><dd>Write your final lunch gap ranking. Mark one item "interesting but unimportant" and one "boring but load-bearing," by name. Then fold your MoSCoW Won't list into the kill list with reasons. Come back to the whole thing the next day and read it cold, asking one question only: what is not on this list, and why.</dd>
+      <dt>Capture</dt><dd>Write your kill list rule into your doc, plus the boring load-bearing item on your lunch gap list. A starting stem: "A ranked list is not finished until it also says..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds your rule for picking a framework, your RICE scoring habits, your MoSCoW buckets with the Must test and the Won't list, your Kano and cost of delay checks, and your kill list rule.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named prioritization. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a messy 12-item list of lunch gap ideas where every item is marked P0 and the launch date is fixed, and ask Claude: "use my prioritization skill to sort this with MoSCoW, score the top ones with RICE, and tell me what to kill".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Confidence set to 100 percent on items with zero discovery behind them.</li>
+      <li>Effort estimated by whoever wants the feature.</li>
+      <li>A MoSCoW list where the Musts are most of the release and the Won't list is empty.</li>
+      <li>A list where nothing has been deleted in a quarter, only demoted.</li>
+      <li>A "quick wins" lane that is really the executive-requests lane wearing a hat.</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="guide" id="heuristic-eval" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Heuristic Evaluation</h2>
+  <p class="tldr">TLDR: A structured walk through a flow using Nielsen's ten heuristics and Norman's two gulfs to find where users will stumble. Reach for it in critique, design QA, before handoff, or when you want to judge a competitor's UX without running a study.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>A heuristic evaluation is the cheapest usability method there is. You do not need users in the room. You need a flow, a checklist, and the discipline to look at the flow the way a distracted first-timer would, not the way the designer who built it does. The method comes from Jakob Nielsen, who published ten usability heuristics in the 1990s, and from Don Norman, who described the seven stages of action in <em>The Design of Everyday Things</em>. The posture underneath both is the same: an error is a design failure, not a user failure. Every place a user could stumble is the artifact's fault until proven otherwise.</p>
+    <p>Here is how you run it. Walk the real flow step by step. Not the happy-path demo, the actual flow. At each step ask Norman's two questions. First, the gulf of execution: can the user figure out what to <em>do</em> here? Are the options visible and labeled in the user's own words? Second, the gulf of evaluation: after they act, can they tell what <em>happened</em>? Is feedback immediate? Did the state visibly change?</p>
+    <p>Then sweep the ten heuristics and report only the ones that fire. Visibility of system status. Match with the real world. User control. Consistency. Error prevention. Recognition over recall. Flexibility for experts. Minimalism. Error recovery in plain language. And help, findable when needed. You look for violations, not essays.</p>
+    <p>Take Uber Eats at lunch. Weekday lunch orders between 11:30am and 1:30pm run 30% below dinner, and the pre-order flow you scoped is supposed to close that lunch gap. An office worker taps "Place order" at 11:55 and the button goes grey for four seconds with no spinner and no message. That is a gulf of evaluation failure and a visibility of system status violation. The failure scenario in one sentence: a hungry office worker taps Place order, sees nothing happen, taps again, and gets charged twice five minutes before a meeting. That is a blocker. Compare that to the lunch spot list using the word "merchant" on one screen and "restaurant" on another. That is a consistency issue, and it is minor. Both are findings. They are not the same weight.</p>
+    <p>That brings us to the most common mistake: the inventory. Teams produce forty undifferentiated findings and hand it over as a list. Nobody can act on that. The skill says rate every finding as blocker, major, minor, or polish. Blocker means users will fail the task. Major means many will struggle. Minor is friction. Polish is nice to have. A report that names three blockers is worth more than one that lists forty items with no ranking.</p>
+    <p>Why does this matter to a PM? Because you will review designs every week, and you need a vocabulary that is not "I don't love it." Per finding you state the heuristic violated, the specific element, the failure scenario in one concrete sentence, the severity, and one suggested fix. Then you close with the three you would fix first and why. That is a review an engineer can act on and a designer can argue with. It turns taste into evidence.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a heuristic evaluation?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Nielsen's 10 usability heuristics and Don Norman's gulf of execution and gulf of evaluation in simple English, with one example of each from a mobile app.</div></dd>
+      <dt>Get</dt><dd>A one-line definition of each heuristic in your own words, plus a clear sense of the two gulfs: "can I tell what to do" and "can I tell what happened."</dd>
+      <dt>Build</dt><dd>Take the checkout step of the lunch pre-order flow you scoped in Scoping the MVP. For each of the two gulfs, write one question an office worker ordering at 11:55 would ask while standing on that screen.</dd>
+      <dt>Capture</dt><dd>Write two or three sentences in your doc: what a heuristic evaluation is, when you run one, and whose fault an error is. Start with "A heuristic evaluation is ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Walk the flow as a first-timer</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">I am evaluating the Uber Eats lunch pre-order flow I scoped to close the lunch gap: find a lunch spot, pick the 12:00 delivery slot, build the order, checkout, track the order. At each step, ask the gulf of execution and the gulf of evaluation questions and list where a distracted office worker ordering at 11:45 could get stuck.</div></dd>
+      <dt>Get</dt><dd>A step-by-step list of the flow with at least one possible stumble per step, written as a concrete scenario, not an opinion.</dd>
+      <dt>Build</dt><dd>Ask Claude to describe each screen of the pre-order flow using the states matrix you built in States and Edges, one screen at a time. Walk through them cold and note every moment you pause or ask "what now?" Then do it again the next day, cold, and see which pauses repeat.</dd>
+      <dt>Capture</dt><dd>Write the two questions you ask at every step of any flow into your doc, in your own words. Start with "At every step I ask ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Rate severity, not inventory</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my findings from the Uber Eats lunch pre-order flow: [paste]. For each one, name the heuristic violated, write the failure scenario in one sentence, rate it blocker, major, minor, or polish, and suggest one fix. Then tell me the 3 to fix first and why.</div></dd>
+      <dt>Get</dt><dd>A ranked findings table where the top three are obvious and each finding has heuristic, element, scenario, severity, and fix.</dd>
+      <dt>Build</dt><dd>Take your full list of stumbles from step 2 and sort each one into a severity bucket. For any item you cannot decide between blocker and minor, write the failure scenario in one sentence as an office worker with a 12:30 meeting, and let the sentence decide.</dd>
+      <dt>Capture</dt><dd>Write your severity scale into your doc: one line each for blocker, major, minor, and polish, plus one line on what your report always closes with. Start with "Blocker means ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has a definition of the method, the two gulf questions, the ten heuristics in your own words, the four severity levels, and the per-finding output format.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named heuristic-eval. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude to sketch the order tracking screen of your lunch pre-order flow as a text wireframe, then say: "use my heuristic-eval skill to review this tracking screen for an office worker waiting on the 12:00 promise and give me the three findings to fix first".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Forty findings with no severity rating, so nobody knows where the harm is.</li>
+      <li>Walking the happy-path demo instead of the flow a distracted first-timer meets.</li>
+      <li>Findings written as opinions ("feels clunky") instead of a concrete failure scenario.</li>
+      <li>Blaming the user ("they should have read the label") instead of the artifact.</li>
+      <li>No suggested fix, so the report is a complaint instead of a review.</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+<section class="guide" id="design-system-ops" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Design System Ops</h2>
+  <p class="tldr">TLDR: Running a design system as a product: deciding what earns a component, designing component APIs, choosing a team model, and measuring adoption. Reach for it when building or governing a system, deciding whether something becomes a component, or when the system exists but teams route around it.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>The grounding for this skill is Nathan Curtis, who wrote the standard work on design system team models and component lifecycle, and Brad Frost, whose atomic design gives us a vocabulary of atoms, molecules, and organisms. The central claim: a design system is a product whose customers are product teams. And it fails the way products fail: built without discovery, shipped without adoption, maintained without a roadmap.</p>
+    <p>First question: what earns componentization? Not everything used twice. The bar is three parts. Used, or credibly about to be used, by three or more teams. A stable job, meaning the pattern's purpose will not churn monthly. And inconsistency costs something: user confusion, accessibility risk, or rebuild waste. Below that bar, publish it as a pattern, a documented recipe with no code contract. Promoting one team's habit to a system component freezes their local decision into everyone's constraint.</p>
+    <p>Second, component API design. A component's props are its contract, and the contract encodes policy. Expose intent, like <code>variant="destructive"</code>, not styling escape hatches like <code>color="#D33"</code>, or the system becomes a longer way to write CSS. Every component ships with all five states designed, accessibility audited once at the component, and guidance that includes <em>when not to use it</em>.</p>
+    <p>Third, the team model, from Curtis. Solitary: one team owns it, others consume. Fast, then a bottleneck, then a resentment. Centralized: a dedicated system team, sustainable if funded like a product team with a roadmap and research on its users. Federated: contributors from product teams with central stewardship. Best adoption, but it needs real governance or it becomes a junk drawer with a logo. Most orgs should run centralized with federated contribution. Most actually run solitary by accident. Contribution needs a paved road from "my team needs a variant" to "it's in the system," with SLAs. When contributing is slower than forking, teams fork, rationally. Every detached instance is a vote about your process, not their discipline.</p>
+    <p>Fourth, adoption is the metric. Percent of new screens on system components. Detach rate per component: high detach means the component's API is wrong, not the teams. Version lag across consumers. Mandates create malicious compliance. And deprecation is part of ops: announced, with a migration path and a removal date.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. The work to close it produces a delivery time promise: a chip that says "arrives 12:00" and shows whether that slot is still holdable. That same promise appears on the 11:45 browse list, inside the pre-order flow, on the group order screen an office shares, and again on the order tracking screen. Four places, a stable job, and inconsistency here costs trust at exactly the moment trust is the product. That earns a component. The confetti animation on the group order screen when the fifth coworker adds an item lives on one screen and does one job. It becomes a pattern, not a component. And when the group order work detaches the promise chip forty times to squeeze in "waiting on 2 people," that is not a discipline problem. The chip's API is missing a prop.</p>
+    <p>The most common mistake is counting components as the success metric. A vanity total. Why a PM cares: someone will ask you to fund or defund the system team. The answer comes from adoption and detach rate, not from how many components exist.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a design system as a product?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain in simple English what it means to run a design system as a product whose customers are product teams, using Nathan Curtis on team models and Brad Frost on atomic design. Explain the three-part bar for when something becomes a component.</div></dd>
+      <dt>Get</dt><dd>The product framing, the atoms and molecules vocabulary, and the three-part bar: three or more teams, stable job, inconsistency costs something.</dd>
+      <dt>Build</dt><dd>Read the states matrix you built in States and Edges for the lunch experience and list every distinct UI piece it names across the 11:45 browse, the pre-order flow, the 12:00 delivery promise, the group order screen, and tracking. Aim for ten pieces. Then sort each into component, pattern, or neither, using the bar. Count how many of the five lunch screens each piece appears on, and let that count do the deciding rather than your taste.</dd>
+      <dt>Capture</dt><dd>Write into your doc who a design system's customers are and the three conditions something must meet to earn a component. Start with "A design system is a product whose customers are ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Design the component contract</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Design the props for a delivery time promise component used on a lunch browse list, a pre-order flow, a shared group order screen, and an order tracking screen. Expose intent, not styling. List the five states, the accessibility requirements built in, and write a "when not to use it" section.</div></dd>
+      <dt>Get</dt><dd>A prop list with intent-named options, a five-state checklist, and a short when-not-to-use paragraph.</dd>
+      <dt>Build</dt><dd>Write the prop list yourself for the 12:00 delivery promise, then check it against the states matrix you built in States and Edges: every state in that matrix must be expressible with a prop you named, and a state you cannot express is a missing prop. Come back to the list the next day and read it cold. Circle any prop that is a styling escape hatch and rename it as an intent. Then write the "when not to use it" paragraph, and make it name at least one real lunch screen where the promise chip would be dishonest.</dd>
+      <dt>Capture</dt><dd>Write the contract rule into your doc: what props expose, what they never expose, and what ships with every component. Start with "Props expose ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Pick the team model and measure adoption</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Compare solitary, centralized, and federated design system team models from Nathan Curtis. Recommend one for a company where three teams are all touching the lunch experience: browse, ordering, and group orders. Then define the adoption metrics: percent of new screens on system components, detach rate per component, and version lag. Write a contribution path with an SLA and a deprecation rule.</div></dd>
+      <dt>Get</dt><dd>A chosen model with the reason, three adoption metrics with a target each, and a one-paragraph contribution and deprecation process.</dd>
+      <dt>Build</dt><dd>Pick your model and write the reason in one sentence. Then pressure-test it: ask Claude to play the lead of the group order team, someone who has detached the promise chip forty times to add "waiting on 2 people," and argue that this is your process failing, not their discipline. This is a simulated colleague, so use it to find the holes in your argument, not to declare yourself right. Argue both sides on paper. Then propose the missing prop and write the contribution SLA that would have made contributing faster than forking.</dd>
+      <dt>Capture</dt><dd>Write your team model and the reason into your doc, what a high detach rate tells you, and what deprecation always includes. Start with "Our team model is ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the product framing, the componentization bar, the intent-not-styling contract rule, the three team models, and the adoption metrics.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named design-system-ops. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take your list of twelve UI pieces from the lunch gap work with how many lunch screens use each and ask Claude: "use my design-system-ops skill to decide which become components and design the 12:00 delivery promise contract first".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Component count as the success metric, a vanity total.</li>
+      <li>No "when not to use" section anywhere in the docs.</li>
+      <li>The system team learning about detached instances from a screenshot in a review.</li>
+      <li>Tokens named after values (<code>blue-500</code>) doing the job of tokens named after roles (<code>action-primary</code>).</li>
+      <li>A contribution process that has never once accepted a contribution.</li>
+    </ul>
+  </div>
+</section>

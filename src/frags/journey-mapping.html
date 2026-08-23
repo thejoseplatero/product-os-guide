@@ -1,0 +1,63 @@
+<section class="guide" id="journey-mapping" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Journey Mapping</h2>
+  <p class="tldr">TLDR: Mapping one person's end-to-end experience to find where it hurts, then using a service blueprint to find why it hurts backstage. Reach for it when problems span screens, channels, or teams, when onboarding or retention sags for unclear reasons, or before redesigning any multi-step flow.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Three sources ground this skill. G. Lynn Shostack invented service blueprinting in the 1980s. Kerry Bodine and the Forrester lineage shaped modern journey mapping practice. And Daniel Kahneman's peak-end rule tells us how to read the emotional line. Hold onto this sentence: a journey map is a diagnostic instrument, not a poster. If it does not change a decision, it is wall art.</p>
+    <p>Scope it like a diagnostician. One persona, one goal, end to end, including the stages outside your product. The journey starts at the struggling moment, not at your login screen. "Priya, from the 11:40 stomach growl to having eaten at her desk" beats "the user experience of our app." The seams between channels, app to SMS to phone call to app again, are where journeys die, and no single team owns a seam by default. That is why the map has to.</p>
+    <p>Build the layers from evidence. Rows against a timeline of stages: doing, the observed actions; thinking and feeling, verbatims from research, not invented emotions; touchpoints per channel; and the emotional line. A map without research inputs is persona fan fiction. Read the line with peak-end in mind: the worst moment and the final moment dominate how people remember the whole thing. A mediocre middle matters less than one terrible peak or a limp ending. That reorders your fix list against intuition. Then mark the moments of truth: the two or three points where the relationship is decided. First value delivered, first failure handled, the loyalty ask.</p>
+    <p>When the cause is backstage, blueprint. The journey map shows where it hurts. The service blueprint shows why. Below the customer's actions you add frontstage, what they see; backstage, the staff and system actions they do not see; support processes; and the line of visibility. Most journey pain traces to something below that line.</p>
+    <p>Now our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. Map one weekday lunch person. Priya opens the app at 11:47 with a meeting at 12:30. The estimate says 25 to 50 minutes, which is the whole question and no answer. She orders anyway at 11:52. The status sits on "Preparing" while the restaurant works a queue of twelve office orders at once. Food lands at 12:41, after the meeting started. Her verbatim: "I gambled my whole break on a range." The peak is the 12:30 mark passing with the status unchanged. The ending is eating cold noodles at 1:10. Above the line, the estimate screen looks fine. Below the line, lunch restaurants batch orders and the platform hands out the same wide estimate at noon that it uses at 8pm. Redesigning the estimate screen would be repainting a door that is nailed shut. The fix lives backstage: a lunch-hour capacity model and a narrower promise the kitchen has actually agreed to.</p>
+    <p>Output discipline: each mapped pain gets evidence, a stage, a severity, a suspected backstage cause, and an owner. Feed the top items into the roadmap. A map dated last year describes a product that no longer exists.</p>
+    <p>The most common mistake is building the map in a workshop from what the team assumes users feel. Why a PM cares: a gap like this rarely lives on one screen. The map is how you find the seam nobody owns, and then own it.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a journey map?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain journey mapping and service blueprinting in simple English, citing G. Lynn Shostack and Kerry Bodine. Explain Kahneman's peak-end rule and why it changes which pain to fix first. Use this case as the example: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner, and a lunch order arrives after the customer's break ends.</div></dd>
+      <dt>Get</dt><dd>A definition of the map as a diagnostic tool, the difference between map (where) and blueprint (why), and peak-end in one sentence.</dd>
+      <dt>Build</dt><dd>Write the scope sentence for the lunch gap using one of the two personas you built in Personas and Archetypes: their name, the struggling moment the journey starts at, and the moment it ends. Take the struggling moment from the job statement you wrote in JTBD Framing. Check it starts before the app opens. If your sentence begins with a screen, rewrite it.</dd>
+      <dt>Capture</dt><dd>Write into your doc what a journey map is for, where a journey starts, and what peak-end means for your fix order. A starting stem: "A journey map earns its place when it..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Build the layers from evidence</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my notes from weekday lunch customers on Uber Eats whose food arrived after their break ended: [paste]. Build a journey map for one persona: stages across the top, rows for doing, thinking and feeling with verbatims only, touchpoints per channel, and the emotional line. Mark the peak, the ending, and 2 or 3 moments of truth.</div></dd>
+      <dt>Get</dt><dd>A map where every feeling has a quote behind it, with the peak and ending named and the moments of truth marked.</dd>
+      <dt>Build</dt><dd>Draw the lunch gap map for your chosen persona, from the 11:30 hunger to the last bite. Fill the thinking and feeling row using only quotes from your Customer Interviews notes. Where you have no quote for a stage, leave the cell blank rather than inventing a face. Then close the blanks: ask Claude to play that persona and walk it through last Tuesday's lunch minute by minute, and use what it says as your quote, noting in the map that this line came from a simulated interview. Mark the peak and the ending, then check whether your gut fix was actually aimed at either one.</dd>
+      <dt>Capture</dt><dd>Write your evidence rule into your doc, plus the moments of truth you found on the lunch gap map and the seam nobody owns. A starting stem: "Every feeling on my map has..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Blueprint the backstage and assign owners</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For the worst pain on this lunch gap journey map (the order shows a 25 to 50 minute range at noon and lands after the break ends), build a service blueprint: customer actions, frontstage, backstage, support processes, and the line of visibility. Name the suspected backstage cause, a severity, and an owner. Write it as a roadmap opportunity.</div></dd>
+      <dt>Get</dt><dd>A five-layer blueprint for one pain, with the cause below the line of visibility and a one-line opportunity for the roadmap.</dd>
+      <dt>Build</dt><dd>Take the peak pain from your lunch gap map and blueprint it in five layers. For each pain on the map, decide whether the cause sits above or below the line of visibility, and write the suspected backstage cause even when you are guessing, marked as a guess. Then check the blueprint against the opportunity solution tree you built in Continuous Discovery: does any pain here belong on that tree as an opportunity you missed?</dd>
+      <dt>Capture</dt><dd>Write the difference between what the map tells you and what the blueprint tells you, plus the five things every mapped pain must carry before it leaves the map. A starting stem: "A pain is ready to leave the map when it has..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the scope rule, the evidence-only layers, peak-end and moments of truth, the blueprint layers, and the output format with owners.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named journey-mapping. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take six short transcripts from weekday lunch customers whose noon order arrived late and ask Claude: "use my journey-mapping skill to map the lunch gap journey and blueprint the worst pain".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Journey map built in a workshop from what the team assumes users feel.</li>
+      <li>Map that starts at the app open, when the decisive stages came before.</li>
+      <li>Emotions row with no verbatim behind any face.</li>
+      <li>Beautiful map, no owner per pain, nothing entered the roadmap.</li>
+      <li>Blueprint skipped because "we know why," while the backstage cause survives three frontstage redesigns.</li>
+    </ul>
+  </div>
+</section>

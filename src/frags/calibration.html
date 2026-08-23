@@ -1,0 +1,72 @@
+<section class="guide" id="calibration" data-module="core">
+  <p class="eyebrow">Core</p>
+  <h2>Calibration</h2>
+  <p class="tldr">TLDR: record every prediction your product work makes (risk ratings, bet hypotheses, go/no-go calls, appetite estimates), score it on schedule, and build a bias profile so future judgments self-correct. Reach for it whenever a workflow produces a rating, forecast, or verdict, and whenever one comes due for scoring.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This skill comes from Philip Tetlock's book <em>Superforecasting</em>. His finding: forecasting skill is trainable, but only with a feedback loop that almost nobody closes. You have to record the prediction precisely, score it on schedule, and study your misses by type. Product teams predict constantly: every risk rating, every bet, every "six weeks". We score almost none of them. So the same optimism bias ships the same surprises forever.</p>
+    <p>Rule one: <strong>predictions get recorded at birth</strong>. The moment a workflow produces a judgment, it writes one scoreable line to <code>calibration.md</code>. Hindsight launders everything. A scoreable line has four parts: the date, the source artifact, the claim stated so it can be proven wrong with a probability or rating, and the date it gets scored. Vague claims get sharpened or rejected at write time. "Lunch pre-orders should do well" is not scoreable. "At least 40 percent of weekday lunch-window sessions end in an order within 14 days of launch" is. Writing the sharp version improves the judgment by itself.</p>
+    <p>Rule two: <strong>scoring is scheduled, not remembered</strong>. Every prediction carries its score date, and <code>/brief-me</code> lists the due ones alongside your due work, whether or not you feel like grading yourself. Scoring is one line: right, wrong, or partial, plus a one-sentence cause.</p>
+    <p>Rule three: <strong>the bias profile is the payoff</strong>. Quarterly, or when you run <code>/calibrate report</code>, you compute from the ledger, by prediction type: the hit rate per type, the direction of the miss (optimistic or pessimistic, and by how much), and the expensive class, meaning which kind of miss cost the most. The profile goes at the top of <code>calibration.md</code>, and every judgment-producing skill reads it first. If the profile says your feasibility-LOW ratings fail 40 percent of the time, the next time four-risks is about to rate something feasibility LOW it says so and rates it MEDIUM unless there is specific evidence.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. In March the team runs four-risks on the 12:00 pre-order slot and rates feasibility LOW, meaning "this will not slip the schedule by more than two weeks." That line goes in the ledger with a June score date. In June, <code>/brief-me</code> flags it. The slot slipped five weeks because kitchens would not commit to holding a hard noon time on a weekday. Score: wrong, optimistic, cause: assumed kitchen capacity we never checked. Three more like it over the year, and the profile says "feasibility ratings on anything that needs a restaurant to change its own operations run optimistic." The next lunch spec that leans on kitchen behaviour gets a warning before anyone writes a date.</p>
+    <p>The most common mistake is recording predictions after the outcome is known. That is a diary, not a ledger. The second is only scoring the wins, which turns the ledger into a trophy case. Misses are the training data.</p>
+    <p>Why it matters: skills are copyable. Anyone can rebuild a framework library in a weekend. A year of scored predictions about how your specific org is wrong cannot be bought, copied, or cold-started. The skill calls this a cornered resource, in Hamilton Helmer's sense.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is calibration?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Philip Tetlock's Superforecasting feedback loop in plain English: record, score, study misses by type. Then list five kinds of predictions a product team makes without calling them predictions.</div></dd>
+      <dt>Get</dt><dd>The loop in one sentence, and the realization that risk ratings, bets, estimates, go/no-go calls, and success metrics are all forecasts.</dd>
+      <dt>Build</dt><dd>Open the four-risks output you produced for the lunch gap and the RICE ranking you built in Prioritization. Read them line by line and mark every hidden prediction: every rating, every reach number, every effort estimate. Aim to find ten. Then take the OKRs you set for the lunch gap and find the three predictions inside the top key result. Notice that none of them were written as predictions, and all of them will turn out to be right or wrong.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc defining what counts as a prediction, wide enough to catch a risk rating and an estimate. Start with "A prediction is anything that says ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write a scoreable line</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Turn this vague claim into a scoreable prediction with four parts: date, source artifact, a falsifiable claim with a probability or rating, and a score date. The claim: "the 12:00 pre-order slot will close the lunch gap".</div></dd>
+      <dt>Get</dt><dd>The four-part format, and the habit of rejecting "should do well" at write time.</dd>
+      <dt>Build</dt><dd>Take the ten hidden predictions you found in step 1 and rewrite each one as a ledger line with all four parts. Every claim needs a number and a date it can be checked against, drawn from the metric tree you built in Metrics Trees so you are not inventing a metric nobody measures. Any claim you cannot sharpen into a number gets struck out, and the fact that you struck it out is itself worth noticing: that judgment was never going to be checkable, and it was steering the work anyway.</dd>
+      <dt>Capture</dt><dd>Write the four-part line format into your doc as one literal example line you can copy: date, source artifact, claim with a number, score date. Start with "A scoreable line reads ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Score on schedule</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are five predictions whose score dates have arrived and what actually happened. Score each in one line: right, wrong, or partial, plus a one-sentence cause.</div></dd>
+      <dt>Get</dt><dd>Short scoring lines, no essays, and the sense that the score date is a calendar event not a memory.</dd>
+      <dt>Build</dt><dd>You cannot wait three months to practise this, so run the clock forward on paper. Ask Claude to play the future and tell you what actually happened to five of your lunch gap predictions by their score dates, including at least two outcomes you would not have chosen. Say plainly that this is a simulation, so the practice is in the scoring, not in the outcomes. Score each one in a single line: right, wrong, or partial, plus one sentence of cause. Then notice which ones you wrote so vaguely that you cannot score them even with the answer in front of you.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc about what you write on a score date. Start with "On the score date I write ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Build the bias profile</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">From this ledger of scored predictions, compute by prediction type: hit rate, direction of miss and how big, and which type of miss cost the most. Write a short profile summary a skill could read before rating a risk.</div></dd>
+      <dt>Get</dt><dd>A profile header with hit rate per type, an optimism or pessimism direction, and the one standing correction.</dd>
+      <dt>Build</dt><dd>Group your five scored lines by type: feasibility ratings, reach estimates, adoption forecasts. Compute the hit rate for each type and name the direction of the miss. Then write the one-line standing correction that four-risks should read the next time it is about to rate anything that depends on a kitchen changing its own operations. Make the correction specific enough that it changes a rating, not general enough that it is just "be careful."</dd>
+      <dt>Capture</dt><dd>Write two sentences into your doc: which of your rating types runs optimistic and by how much, and the standing correction that follows. Start with "Our feasibility ratings run ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the four-part line format, the scoring rule, and a first bias profile for the lunch gap work.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named calibration. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take your four-risks output for the 12:00 pre-order slot with its three ratings in it, and ask Claude: "use my calibration skill to record the predictions in this and set their score dates".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Predictions recorded after the outcome is known. That is a diary, not a ledger.</li>
+      <li>Only scoring the wins. The ledger becomes a trophy case, and misses are the training data.</li>
+      <li>Ratings with no probability language anywhere. "Risky" means how risky, and you will be scored on it.</li>
+      <li>A bias profile computed once and never read again by the skills. A mirror in a drawer.</li>
+      <li>Punishing wrongness. The ledger's enemy is not error, it is the unrecorded error.</li>
+    </ul>
+  </div>
+</section>

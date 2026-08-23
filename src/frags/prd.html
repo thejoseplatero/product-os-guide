@@ -1,0 +1,81 @@
+<section class="guide" id="prd" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Writing the PRD</h2>
+  <p class="tldr">TLDR: The document where everything you discovered converges into something a designer and an engineer can both start from. Reach for it after the thinking is done, never as the place to do the thinking.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>A product requirements document has a bad reputation, and most of the time it earns it. The bad version is a wish list written on a Monday by someone who has not talked to a customer, handed to a team as if it were a decision. Marty Cagan's framing in <em>Inspired</em> fixes the order. The PRD is where discovery output converges. It is not where product thinking starts. Before it sits the opportunity assessment: what problem, for whom, how big, what alternatives exist, why you, why now, how you will measure it, and a go or no go call. If you cannot answer those, you do not need a better document. You need more discovery.</p>
+    <p>The lean shape has nine parts. <strong>Problem and evidence.</strong> <strong>Goals and non-goals.</strong> <strong>Target user.</strong> <strong>User flows.</strong> <strong>Requirements with priority.</strong> <strong>KPIs and guardrails.</strong> <strong>The four risks.</strong> <strong>Open questions.</strong> <strong>Launch criteria.</strong> That is the whole thing. Every section is short, and every section is answerable, because by now you have already answered it somewhere else.</p>
+    <p>Two of those nine get skipped more than the other seven put together. The first is non-goals. Writing what you are not doing, and why, is the only section that prevents scope from growing quietly for three months. It is also the only section that reads as a decision instead of a hope. The second is launch criteria: the conditions that must be true before this goes live, written before you build, when you are still honest. Written after, they become whatever is already true on launch day.</p>
+    <p>The risk section deserves its own care. Cagan names four risks: value, will they choose to use it; usability, can they figure it out; feasibility, can you build it with the time and tech you have; and viability, does it work for the business, meaning legal, support load, unit economics, brand. State each as a sentence that could be proven wrong, rate it high, medium or low, and give one line of evidence or admit you have none. Then design the cheapest test for the highest risk only. A risk section that says "risk: timeline" is a plan risk, not a product risk.</p>
+    <p>For the lunch gap, every section has an upstream owner. The problem is the 30 percent gap plus your interview evidence. The target user is a persona. The flows come from your journey map and story map. The requirements are the prioritized cut. The KPIs come off the metric tree. Which brings the real point of this guide. The PRD is a convergence point. If a section has nothing upstream behind it, that is not a writing problem you can solve with better sentences. It is a gap in the discovery, and the fix is to go back and do that work.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a PRD, and what comes before it?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain in simple English what a product requirements document is and what it is not, using Marty Cagan's view that the PRD is where discovery output converges rather than where product thinking starts. Then explain the opportunity assessment that comes before it and the questions it answers: what problem, for whom, how big, what alternatives exist today, why us, why now, how we measure success, and the go or no go call. Use a delivery marketplace's weekday lunch problem as the example.</div></dd>
+      <dt>Get</dt><dd>A clear split between the opportunity assessment, which decides whether the work is worth doing, and the PRD, which describes the work once that call is made. Plus the nine sections of the lean PRD shape.</dd>
+      <dt>Build</dt><dd>Write the one page opportunity assessment for the lunch gap first, using the research hypothesis you wrote in Research Hypothesis, the interview evidence from Customer Interviews, and the target customer from the Product-Market Fit Canvas. Answer all eight questions. Where an answer is "we do not know", write that instead of decorating it.</dd>
+      <dt>Capture</dt><dd>Write one sentence that starts "A PRD is ready to write when ...". Note in your doc any assessment question you could not answer, because that is discovery you still owe.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Problem, target user, goals and non-goals</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my evidence for the weekday lunch gap: the hypothesis, the interview notes, the job statement, and my two personas. [paste] Draft the first three sections of a lean PRD. Problem and evidence in one paragraph, written as a struggling moment with the evidence quoted rather than paraphrased. Target user, naming one primary persona. Then goals and non-goals, where every non-goal says what we are not doing and why. Do not invent evidence I did not give you.</div></dd>
+      <dt>Get</dt><dd>A problem paragraph anchored in real quotes, one named primary user, and a goals list that is short because the non-goals list is long.</dd>
+      <dt>Build</dt><dd>Take the job statement from JTBD Framing and put it directly under the problem paragraph, in the "when, I want to, so I can" form. Then write at least four non-goals for the lunch gap, drawing them from what you cut in Prioritization and Scoping the MVP. Beside each non-goal, name the artifact that told you to cut it.</dd>
+      <dt>Capture</dt><dd>Write your non-goal rule in one sentence. A stem: "A non-goal earns its place when ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Flows and requirements with priority</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my MVP scope and my prioritized feature cut for the lunch gap, plus the Kano category for each feature. [paste] Write the user flows section as numbered steps through the lunch moment, and then the requirements section. Give every requirement a priority using must, should, could, and will not. For each requirement, name the flow step it belongs to. Call out any requirement that has no flow step and any flow step with no requirement.</div></dd>
+      <dt>Get</dt><dd>Flows a designer can start from, requirements an engineer can start from, and a priority on every line so nobody has to guess what happens when time runs out.</dd>
+      <dt>Build</dt><dd>Cross check each requirement against the Kano classification you built in The Kano Model. A must-be feature marked "could" is a mistake, and a delighter marked "must" usually means the scope grew. Fix both, and write down the ones you changed. Then add the empty, loading, and error states to each flow, because a flow that only shows the happy path is half a flow.</dd>
+      <dt>Capture</dt><dd>Write one sentence that starts "A requirement without a priority is ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>KPIs, guardrails, and the four risks</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my metric tree and my quarterly OKRs for the lunch gap. [paste] Write the KPI section of the PRD: the one primary metric this work moves, its current baseline, and the number that means it worked. Then write guardrail metrics that must not get worse. After that, write the four risks section using Marty Cagan's value, usability, feasibility, and viability. State each risk as a sentence that could be proven wrong, rate it high, medium, or low with one line of evidence or an honest "no evidence", and name the riskiest one.</div></dd>
+      <dt>Get</dt><dd>One primary metric with a baseline and a target, two or three guardrails, and four falsifiable risk sentences with a single riskiest one named.</dd>
+      <dt>Build</dt><dd>Design the cheapest test for the highest risk only, not for all four. If value came out riskiest, that test is a fake door or a concierge run at lunchtime, not a prettier prototype. Then check that your primary KPI is actually on the tree you built in Metrics Trees. If it is not, either the tree is wrong or the KPI is invented.</dd>
+      <dt>Capture</dt><dd>Write the four risk sentences and your chosen test into your doc, plus one sentence that starts "The riskiest assumption in this PRD is ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 5</span><h4>Open questions, launch criteria, and the gap check</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is my full draft PRD for the lunch gap. [paste] Write the open questions section, each question with a named owner and a date, and only real questions rather than polite ones. Then write launch criteria: the conditions that must be true before this ships, covering quality, the guardrail metrics, support readiness, and the point at which we would decide not to launch. Finally, go section by section and tell me which sections rest on evidence I gave you and which ones you had to fill from your own assumptions.</div></dd>
+      <dt>Get</dt><dd>Open questions that someone owns, launch criteria written before the build rather than after, and an honest map of which sections have real backing.</dd>
+      <dt>Build</dt><dd>Do the gap check yourself, by hand. Walk the PRD section by section and write beside each one the artifact it came from: the hypothesis, the interview evidence, the job statement, the personas, the value proposition, the Product-Market Fit Canvas, the Kano classification, the prioritized cut, the MVP scope, the metric tree, the OKRs. Any section with no artifact beside it is a hole in your discovery, not a hole in your writing, so name the guide you need to go back to instead of writing better sentences over it.</dd>
+      <dt>Capture</dt><dd>Write the finished PRD into your doc with the artifact list beside each section. Add one sentence that starts "When a PRD section has nothing behind it, that means ...". This PRD feeds Story Writing and States and Edges next.</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds an opportunity assessment, a nine section PRD for the lunch gap, four falsifiable risks with a chosen test, launch criteria written before the build, and the artifact map that shows what each section rests on.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named prd. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it: paste your second persona and one feature you cut from the MVP into a fresh chat and prompt "use my prd skill to draft a PRD for this smaller bet, and tell me which sections I have no evidence for".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A PRD written before any discovery, where the problem section is a paraphrase of the solution.</li>
+      <li>No non-goals section, so scope grows quietly and nobody can point at the day it changed.</li>
+      <li>Launch criteria written after the build, which means they describe whatever is already true.</li>
+      <li>A risk section that says "risk: timeline". That is a plan risk, not a product risk.</li>
+      <li>Value risk called validated because a stakeholder is excited or a competitor already shipped it.</li>
+      <li>Feasibility judged by the product manager instead of an engineer, and viability left until legal sees it two weeks before launch.</li>
+      <li>A KPI that appears nowhere on the metric tree, invented to make the document feel measured.</li>
+    </ul>
+  </div>
+</section>

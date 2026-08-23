@@ -1,0 +1,62 @@
+<section class="guide" id="crit-facilitation" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Crit Facilitation</h2>
+  <p class="tldr">TLDR: Running design critique sessions that make the work better while it is still cheap to change: framing, feedback discipline, and decision capture. Reach for it when setting up or fixing a crit ritual, prepping to present work, or when crits have turned into either bloodsport or applause.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Three sources ground this skill. Ed Catmull's Braintrust rules from <em>Creativity, Inc.</em>, the book about how Pixar reviews its films. Lara Hogan's feedback equation. And the Feldman critique structure, the describe, analyze, interpret, judge sequence from art education. A crit exists to make the <em>work</em> better while it is still cheap to change. Not to approve it, not to display it, and not to perform seniority. The two failure modes are the same failure: feedback aimed at people, which is bloodsport, or at nobody, which is applause.</p>
+    <p>Start with the Braintrust rules, enforced. One: the work gets notes, the person does not need defending. Say it out loud every session until it is culture. Two: no authority in the room. The Braintrust cannot mandate. The designer owns what to do with every note. The moment notes become orders, presenters start bringing safe work, and the crit is dead a quarter before anyone notices. Three: problems, not prescriptions. "I lost track of whether my order would arrive by 12:00" is a note. "Make the delivery time sticky" is a solution wearing a note's clothes. Solutions are welcome as illustrations of the problem, never as the requirement.</p>
+    <p>Structure beats vibes. The presenter frames first, two minutes, written in advance: the problem, the stage, and what feedback is needed. Stage matters because feedback calibrated to the wrong stage is noise. Visual polish notes on a concept sketch waste the room. Then silent looking time before anyone speaks, because first-reaction theater rewards the fastest talker, not the best eye. Then clarifying questions, then critique. Half of most crit arguments are two people describing different understandings of the design. The facilitator is traffic, not judge: pulls in the quiet, parks the rabbit holes. Close with capture: what the designer heard, what they will explore, what is parked, logged so the same debate does not rerun next week.</p>
+    <p>Giving the note uses Hogan's equation. Observation, plus impact, plus a question or request. Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap, and say the room is looking at the pre-order screen meant to close it. A note: "The 12:00 delivery promise sits below the fold on a standard phone," observation. "I'd expect an office worker with a 12:30 meeting to scroll past it and not trust the timing at all," impact. "What led to putting the tip selector above it?" question. That last part is load-bearing. It presumes intent. Half the time there <em>was</em> a reason, like a legal requirement on tip disclosure. A constraint you did not know beats an opinion you did.</p>
+    <p>Compare the bad version: "I don't love the pre-order screen, the time thing feels buried, just move it up." A feeling, no impact, and an order. The designer now either obeys or resists. Neither makes the work better.</p>
+    <p>The most common mistake is the most senior voice speaking first. The anchor is set, dissent is priced out. Why a PM cares: you are often that senior voice, and you will run these rooms. Your job is traffic, not verdict. Bring your prescription as a question.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a design crit?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain design critique in simple English using Ed Catmull's Braintrust rules from Creativity, Inc. Explain the three rules: the work gets notes, no authority in the room, problems not prescriptions. Show me a bloodsport note and an applause note about an Uber Eats lunch pre-order screen, and why both fail.</div></dd>
+      <dt>Get</dt><dd>The purpose of a crit in one sentence, the three Braintrust rules in your own words, and a clear picture of the two failure modes.</dd>
+      <dt>Build</dt><dd>Ask Claude to sketch the lunch pre-order screen as a text wireframe, built from the MVP scope you wrote in Scoping the MVP. Write five notes about it. Then sort every note into problem, prescription, or opinion, and rewrite the prescriptions and opinions as problems.</dd>
+      <dt>Capture</dt><dd>Write two sentences into your doc: what a crit exists to do, and what a note names instead of what it prescribes. Start with "A crit exists to ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Give the note with Hogan's equation</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Teach me Lara Hogan's feedback equation: observation plus impact plus question or request. Rewrite these five notes about an Uber Eats group order screen for an office into the equation: [paste your five notes]. The question at the end must presume the designer had a reason.</div></dd>
+      <dt>Get</dt><dd>Five rewritten notes, each with a concrete observation, a stated impact on users, and a question that invites the reason.</dd>
+      <dt>Build</dt><dd>Take the group order screen for an office. Present it out loud to yourself as if you were the designer who built it, using the job statement you wrote in JTBD Framing to explain what it is for. Then switch seats and give three notes using the equation only. State the impact in terms of one of the personas you built in Personas and Archetypes, at 11:45, with four coworkers waiting. No "I like" or "I don't like" allowed.</dd>
+      <dt>Capture</dt><dd>Write the three parts of a note into your doc and say what the question at the end presumes. Start with "A note is ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Run the structure and capture decisions</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write a 30-minute crit agenda: presenter framing with problem, stage, and feedback needed; silent looking; clarifying questions; critique; capture. Give me a presenter framing template and a capture template with heard, will explore, and parked. Then write a facilitator cheat sheet for pulling in quiet people and parking rabbit holes.</div></dd>
+      <dt>Get</dt><dd>A timed agenda, a two-minute framing template, a capture template, and a short list of facilitator phrases.</dd>
+      <dt>Build</dt><dd>Run a real 30-minute crit on the lunch browse experience at 11:45, and facilitate it yourself. You need a room, so ask Claude to play four people: the designer who built it, an engineer, a support lead, and a quiet junior designer who only speaks when invited. Say plainly that these are simulated so you do not mistake their agreement for evidence. Give Claude the journey map you built in Journey Mapping as shared context, then run the phases and time each one. Pull in the quiet one. Park the first rabbit hole. Fill in the capture template at the end.</dd>
+      <dt>Capture</dt><dd>Write the crit sequence into your doc in your own words: what the presenter frames first, when people may speak, and what you capture at the close. Start with "The presenter frames ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the three Braintrust rules, Hogan's equation with examples, the crit agenda, the framing template, and the capture template.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named crit-facilitation. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude to write a transcript of a messy crit about the lunch pre-order screen, full of "I don't love it" and "just move the 12:00 promise up," then say: "use my crit-facilitation skill to rewrite every note into the equation and fill in the capture template".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Crits where the most senior voice always speaks first, so the anchor is set and dissent is priced out.</li>
+      <li>"I like it / I don't like it" surviving as feedback past week one.</li>
+      <li>The same design debated three weeks running because nothing was captured.</li>
+      <li>Presenters revealing work only when it is finished, because the crit became a gate.</li>
+      <li>Every note implemented, or every note ignored. Either way the crit is ceremony.</li>
+    </ul>
+  </div>
+</section>

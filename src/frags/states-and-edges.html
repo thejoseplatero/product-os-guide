@@ -1,0 +1,62 @@
+<section class="guide" id="states-and-edges" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>States and Edges</h2>
+  <p class="tldr">TLDR: Every screen is really five screens: empty, loading, partial, error, and ideal, plus the transitions between them. Reach for it when specing or reviewing any screen, preparing handoff, or whenever only the ideal state has been designed, which is always until you check.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This skill comes from Scott Hurff's book <em>Designing Products People Love</em>, where he describes what he calls the UI Stack. The idea changes how you read every mockup: every screen is five screens. The pretty one in the deck is the ideal state. Users spend most of their early relationship with your product in the other four, and those four are where trust is won or lost.</p>
+    <p>Let me name them. One, the empty state, which is first contact. It has three flavors: first use, where the empty state <em>is</em> the onboarding and should invite the first action; user-cleared, where an empty inbox is a win and should feel like one; and no results, where the screen should repeat what was searched and offer a correction. An empty state that only says "No items" is a dead end dressed up as minimalism. Two, loading. Perceived speed is design's job. Skeletons that match the real layout beat spinners. Optimistic UI beats both when the action is safe to assume. Decide what is interactive during the load, because a frozen screen is an error state with better PR. Three, partial: some data, not enough to be useful. This is the state that makes new accounts look broken. Design the bridge from one item to the fifty-item mockup. Four, error, per class: user-fixable errors say what to do and keep the input. System-down errors apologize and say what is safe to retry. Permission-denied errors say who can help. Five, ideal. Already in the deck. It was never the risk.</p>
+    <p>Then the transitions. How does empty become partial? How does loading become error? Unhandled transitions are where the flashes, the jumps, and the lost form input live.</p>
+    <p>Our case makes this concrete. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap, and the fix on the table is a lunch list that shows one guaranteed arrival time instead of a range. Now look at that screen honestly. An office worker opens it at 12:05 and no restaurant nearby can promise delivery by 12:40. That is the no-results empty state, and it decides whether she ever trusts the promise again. Does the screen say "No results," or does it say "Nothing can reach you before 12:40 right now, here is what can get there by 12:55" and show it? While the noon capacity check runs, is the list frozen or can she keep browsing? Her first week, she has one past lunch order, so the reorder shelf built for a regular looks broken. And when her card is declined at 12:10 with a meeting at 12:30, does the app wipe the cart and the desk address? Wiping a form is a hostile act. At noon it is also a lost order.</p>
+    <p>The method for catching all this is the matrix habit. Screens down the rows, five states across the columns. Every cell either has a design, is marked N/A with a reason, or is a finding. This matrix is exactly what the PRD's spec section checks against at handoff. The matrix closes the seam between the PRD and the mocks.</p>
+    <p>The most common mistake is reviewing the happy path only and saying "we'll design errors during build." Build designs them as browser defaults. As a PM, you own the requirement. If your spec says "handle errors" and the design has one generic error screen, you did not spec it. Ask for the matrix before the handoff, not after the bug reports.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is the UI Stack?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Scott Hurff's UI Stack from Designing Products People Love in simple English. Describe the five states of a screen and the three flavors of empty state, with one example of each from a weekday lunch flow where Uber Eats shows a guaranteed arrival time.</div></dd>
+      <dt>Get</dt><dd>The five states named in order, the three empty-state flavors, and a feel for why the ideal state is the least risky one.</dd>
+      <dt>Build</dt><dd>Take the guaranteed arrival time story you wrote in Story Writing and pick the one screen it lives on. Write in words what that screen shows on first use for someone who has never ordered lunch, what it shows for someone whose lunch history was cleared, and what it shows at 12:05 when nothing nearby can arrive by 12:40. Compare all three against the ideal mockup you had in your head and notice which one you had actually imagined.</dd>
+      <dt>Capture</dt><dd>Write the five states into your doc in order, plus what the first-use empty state really is. A starting stem: "The empty state on first use is really the..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Design the loading, partial, and error states</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For the lunch checkout screen in Uber Eats, where a guaranteed arrival time is shown before payment, describe the loading state (skeleton, optimistic, or progress, and what stays interactive), the partial state for a customer with one past lunch order, and three error states: user-fixable, system-down, and permission-denied. For each error, say what the copy must do and what input must be preserved.</div></dd>
+      <dt>Get</dt><dd>A short written spec per state, with the rule that user-fixable errors keep the user's input and say what to do next.</dd>
+      <dt>Build</dt><dd>Write the spec for each of those states on the lunch checkout screen, one short paragraph each. Then act out the declined card at 12:10: ask Claude to play the persona you built in Personas and Archetypes, with a meeting at 12:30, and read it your error copy exactly as written. Ask what it would do next. If it says it would give up and walk downstairs, your copy failed. Check your acceptance criteria from Story Writing and confirm every state you just specified has a criterion behind it.</dd>
+      <dt>Capture</dt><dd>Write the three error classes into your doc with the rule for each, plus your rule about preserving input. A starting stem: "A user-fixable error must keep..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Build the matrix</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Build a states matrix for the weekday lunch flow: rows are the lunch list, restaurant page, cart, checkout with the arrival promise, and order tracking. Columns are empty, loading, partial, error, ideal. Fill each cell with "designed", "N/A because ...", or "finding: ..." and list the transitions that need handling.</div></dd>
+      <dt>Get</dt><dd>A five by five table where every cell is accounted for, plus a list of transitions like loading-to-error and empty-to-partial.</dd>
+      <dt>Build</dt><dd>Use the walking skeleton slice from your Story Mapping map as the rows, since those are the screens you are actually shipping first. Fill in all five columns for each row and count how many cells are findings rather than designs. The honest count is the win, not the low one. Then write the transitions that matter at noon, starting with what the tracking screen does the moment a promised arrival time is about to be missed.</dd>
+      <dt>Capture</dt><dd>Write your matrix rule into your doc: what every cell must contain and when you check it. A starting stem: "Every cell is either designed, N/A with a reason, or..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the five states, the three empty-state flavors, the three error classes with their rules, and the matrix habit.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named states-and-edges. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take the lunch order tracking mockup that shows the guaranteed arrival time and ask Claude: "use my states-and-edges skill to build the matrix for this screen and list every missing state".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Flow reviewed happy-path-only in critique, with "we'll design errors during build."</li>
+      <li>Empty states added by engineering, in engineering's voice.</li>
+      <li>One generic error screen for all error classes.</li>
+      <li>Loading designed as an afterthought spinner on a four-second operation.</li>
+      <li>Demo data in every mock: fifty perfect items, every name the same length.</li>
+    </ul>
+  </div>
+</section>

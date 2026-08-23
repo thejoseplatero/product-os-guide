@@ -1,0 +1,71 @@
+<section class="guide" id="premortem" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Pre-mortem</h2>
+  <p class="tldr">TLDR: A pre-mortem assumes the project already failed, asks everyone to write why, then sorts the causes and assigns owners to the real threats. Reach for it before a launch, a big bet, a hire, a migration, or any decision that is expensive to reverse.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This comes from Gary Klein's research on prospective hindsight, and it is practiced today by Shreyas Doshi. Klein found that imagining an outcome as already certain improves how well people identify its causes, by about 30%. The trick is grammatical. Not "what could go wrong?" That question invites optimism and politeness. Instead: "It is six months later and this failed. What happened?" That question invites the truth everyone was sitting on.</p>
+    <p>The method has five steps. One, <strong>set the scene</strong>. "It is [a date after launch]. [Project] failed, clearly and publicly. Write the story of what happened." Everyone writes silently and independently first. The whole value is harvesting private doubts before the room converges on one opinion.</p>
+    <p>Two, <strong>collect the causes</strong> and sort them into three buckets, which is Doshi's taxonomy. <strong>Tigers</strong>: real threats that will hurt you if you do not address them. <strong>Paper tigers</strong>: things that look scary but are actually fine, and you consciously set them aside. <strong>Elephants</strong>: the thing in the room nobody is saying. The pre-mortem exists to give elephants a speaking slot.</p>
+    <p>Three, <strong>score the tigers</strong> by likelihood times damage, and take the top three to five. Four, <strong>assign de-risking actions</strong>. Each tiger gets an owner and a dated action that either prevents it or detects it early: a canary metric, a checkpoint, a kill criterion. An unowned tiger is a decision to accept the damage. Five, <strong>log it</strong>. Causes and mitigations go into memory, so that if a post-mortem ever happens it can be compared against the pre-mortem. That comparison is how a team's risk instincts get better over time.</p>
+    <p>Take our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. We are about to launch a lunch guarantee in three office districts: order between 11 and 1, see a committed arrival window before you pay, and get it free if it lands late. Set the scene: "It is February. The lunch guarantee launched in November and is being quietly switched off. What happened?" Silent writing produces: "Kitchens could not hold the noon slot on a busy day, so a third of the guarantees paid out." "Couriers got stuck in tower lobbies and the clock kept running." "Nobody believed a desk worker would trust a promise after one late lunch, but the sponsor had already announced the number." Sort them. The first two are tigers. A rival announcing a similar promise is a paper tiger. The last one is an elephant, and it only appeared because people wrote privately. Owners: the ops lead tests noon slots with ten kitchens by a date; the delivery lead times ten tower deliveries door to desk by a date; the PM runs five interviews with people who were once burned by a late lunch, before launch, as a kill criterion.</p>
+    <p>Why does this work when "any risks?" does not? Asking for risks at a kickoff turns doubters into traitors. The pre-mortem makes doubting the assignment, and the most junior person's elephant carries the same weight as the sponsor's tiger. It is psychological safety by procedure.</p>
+    <p>The most common mistake is running it after the commitment is irreversible. That is a post-mortem with extra steps. This matters to a PM because you are the person who will be asked "did we see this coming?" and the pre-mortem is your written proof that you did, and what you did about it.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a pre-mortem?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain the pre-mortem from Gary Klein's prospective hindsight research, as Shreyas Doshi practices it. Why does "it already failed, what happened?" work better than "what could go wrong?" Why must people write silently first? Use this case: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>The grammatical trick, the 30% finding, and the silent-writing rule.</dd>
+      <dt>Build</dt><dd>Ask yourself "what could go wrong with closing the lunch gap?" and count the answers you get in two minutes. Then set a timer again and write to "it is six months later, the lunch gap work failed, what happened?" Compare the two lists for count and for honesty. Check the second list against the hypothesis you wrote in Research and Hypothesis and see how many of your failures are that hypothesis being wrong.</dd>
+      <dt>Capture</dt><dd>Write the question you ask and the question you refuse to ask into your doc, plus the silent-writing rule. A starting stem: "I never ask what could go wrong. I ask..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Sort into tigers, paper tigers, elephants</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are eight failure causes for a weekday lunch guarantee launch (list them). Sort each into Doshi's buckets: tiger, paper tiger, elephant. Explain what makes an elephant different from a tiger and why pre-mortems exist to find elephants.</div></dd>
+      <dt>Get</dt><dd>Three clear bucket definitions and the habit of looking for the thing nobody is saying.</dd>
+      <dt>Build</dt><dd>You do not have a room full of teammates, so ask Claude to play three of them writing silently and separately: an ops lead, a sceptical engineer, and someone from support who reads the complaints. Give each one the personas you built in Personas and Archetypes so their fears are about real people. Collect all the causes and sort them into three columns. If the elephant column is empty, keep pushing until you find one.</dd>
+      <dt>Capture</dt><dd>Write your three bucket definitions into your doc, one line each, in your own words. A starting stem: "An elephant is different from a tiger because..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Score tigers and assign owners</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Score these tigers for the lunch guarantee launch by likelihood times damage and pick the top three. For each, write a de-risking action with a named owner and a date that either prevents it or detects it early, such as a canary metric, a checkpoint, or a kill criterion.</div></dd>
+      <dt>Get</dt><dd>A ranked short list of tigers, each with an owner, a date, and an action that prevents or detects.</dd>
+      <dt>Build</dt><dd>Fill a table for your own tigers: tiger, likelihood, damage, owner, date, action. Cross-check it against the four risks you named in Four Risks and mark which risk each tiger belongs to. For any row where you cannot name an owner, rewrite it as "we accept this damage" and read it back to see if you still agree.</dd>
+      <dt>Capture</dt><dd>Write your scoring rule and your ownership rule into your doc. A starting stem: "An unowned tiger is a decision to..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Log it and compare later</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Show me a simple log format for pre-mortem findings: causes, bucket, mitigations, owners, kill criteria. Explain how comparing a later post-mortem against this log improves a team's risk instincts. Why must the pre-mortem happen before the decision is irreversible?</div></dd>
+      <dt>Get</dt><dd>A log format and the rule that the pre-mortem is only useful before commitment.</dd>
+      <dt>Build</dt><dd>Write your kill criterion for the lunch gap launch in one sentence with a number and a date, drawn from the strongest quote in your Customer Interviews notes about what makes someone give up on lunch delivery for good. Then put your whole pre-mortem into the log format and date it.</dd>
+      <dt>Capture</dt><dd>Write what you log and when a pre-mortem stops being useful into your doc. A starting stem: "A pre-mortem run after the commitment is..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the scene-setting prompt, the silent-writing rule, the three buckets, the scoring and ownership table, and the log-and-compare habit.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named premortem. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a one-paragraph plan to launch the lunch guarantee in three office districts in six weeks and ask Claude: "use my premortem skill to run a pre-mortem on this plan."</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A pre-mortem run after the commitment is irreversible. That is a post-mortem with extra steps.</li>
+      <li>All tigers, no elephants. The room is still being polite.</li>
+      <li>Failure causes that all blame externals: market, competitors, luck. Real pre-mortems indict the team's own plan.</li>
+      <li>No named owners on mitigations.</li>
+    </ul>
+  </div>
+</section>

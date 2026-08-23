@@ -1,0 +1,70 @@
+<section class="guide" id="working-backwards" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Working Backwards</h2>
+  <p class="tldr">TLDR: Write the press release and the FAQ before you build anything, so you find out whether the product is compelling while it still costs only a rewrite. Reach for it when kicking off a significant initiative, forcing clarity on a fuzzy vision, or replacing a 40-slide kickoff deck.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This is Amazon's PR/FAQ process, described by Colin Bryar and Bill Carr in <em>Working Backwards</em>. Start from the customer's moment of launch and reason backwards. If the press release is not compelling, the product will not be either, and you just saved two quarters finding out.</p>
+    <p>The press release is one page, in customer language only. Six parts. A <strong>heading</strong>: the product name and the customer it serves. A <strong>subheading</strong>: one sentence with the benefit, not the mechanism. A <strong>problem paragraph</strong>: the customer's pain, written so the customer would say "yes, that is me." Write this one first and hardest. A <strong>solution paragraph</strong>: what they can now do, in plain words. If it needs jargon to sound good, it is not good yet. A <strong>customer quote</strong>: invented but plausible. If every quote sounds like marketing, the value is not concrete enough. And <strong>how to start</strong>: the first run in two sentences. Rules: no superlatives, no internal language, no feature lists.</p>
+    <p>The FAQ is where the honesty lives, in two halves. <strong>Customer FAQs</strong> are the skeptical buyer's questions: price, migration, what happens to my data, why not the alternative. <strong>Internal FAQs</strong> are the hard questions leadership will ask: unit economics, why now, why us, biggest technical risk, what we are not doing, what kills this. An internal FAQ with no uncomfortable question in it means the team is hiding the body. Every one of the four risks should appear as a question with a real answer or an honest "we do not know yet, here is the test."</p>
+    <p>Take our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. Heading: "Noon: lunch that beats your break." Subheading: "See one arrival time you can trust before you pay, or the lunch is on us." Problem paragraph: "At 11:40 every weekday, Priya has 40 minutes and no plan. The app says her food lands somewhere between 12:35 and 1:05. Her break ends at 12:50. She closes the app and stands in the sandwich line for 18 minutes instead, holding her phone." Solution: "Priya opens the app at 11:40 and sees one time, 12:18, from a kitchen that can hold that slot. She pays. It arrives at 12:16." Quote: "I stopped ordering lunch because I could not risk it. Now I know when it lands," said Priya, who works in a tower downtown. Internal FAQ: "What does a missed window cost us per order, and how many can we afford?" "What share of kitchens can actually hold a noon slot on a busy day?" If you cannot answer those, you learned something before writing code.</p>
+    <p>How it is used: written by the owner, read silently in the room, not presented, because reading cannot be carried by charisma. Then attacked. Each round of "would a customer care about this sentence?" is discovery at the cost of a rewrite. The version that survives becomes the north-star document, and every scope cut is tested against "does the press release still hold?"</p>
+    <p>The most common mistake is a press release written after the roadmap commitment. That is backwards working backwards. This matters to a PM because it is the cheapest way to find out your idea is boring, and it forces every stakeholder to agree on what "done" looks like before anyone argues about how.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is working backwards?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Amazon's working backwards process from Bryar and Carr's book. Why write the press release before building? What are the six parts of the press release and the two halves of the FAQ? Why is it read silently instead of presented? Use this case: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>The reason for starting at launch day, the six parts of the PR, the two halves of the FAQ, and the silent-read rule.</dd>
+      <dt>Build</dt><dd>Write two headlines for the same lunch gap idea, one about the mechanism and one about the outcome. Hold both next to the job statement you wrote in JTBD Framing and pick the one a customer would care about. Write one line saying why the other one failed.</dd>
+      <dt>Capture</dt><dd>Write when you write the press release, its six parts, and how it gets read into your doc. A starting stem: "The press release comes before..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write the problem paragraph first</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write the problem paragraph of a press release for closing the weekday lunch gap. Use a named role, a specific day, and concrete pain. The customer should read it and say "yes, that is me." No product mention yet.</div></dd>
+      <dt>Get</dt><dd>A problem paragraph in customer language that a real person would recognize.</dd>
+      <dt>Build</dt><dd>Write your own problem paragraph using the strongest quote from your Customer Interviews notes and one of the personas you built in Personas and Archetypes, set at a real time on a real weekday. You will not have a lunch customer sitting next to you, so ask Claude to read it back in character as that persona and say "that is me" or "that is not me," and name the one detail that decided it. Rewrite around that detail.</dd>
+      <dt>Capture</dt><dd>Write which paragraph you write first and how you know it works into your doc. A starting stem: "The problem paragraph works when the customer would say..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Write the full press release</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write a one-page press release for closing the weekday lunch gap: heading, subheading with the benefit, problem paragraph, solution paragraph in plain words, one plausible customer quote from a named role, and how to start in two sentences. No superlatives, no internal language, no feature lists.</div></dd>
+      <dt>Get</dt><dd>A complete one-page press release that passes the no-superlatives, no-jargon, no-feature-list rules.</dd>
+      <dt>Build</dt><dd>Write the whole page yourself, building the solution paragraph from the value proposition statement you wrote in Value Proposition so it promises an outcome and not a feature. Put it away for a day, then read it cold and hunt for superlatives, internal words like "platform" or "leverage," and feature lists. Rewrite every one you find.</dd>
+      <dt>Capture</dt><dd>Write the three things your press release never contains into your doc, and whose day it describes. A starting stem: "The press release describes the customer's day, not..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Write the FAQ with the hard questions</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write the FAQ for the lunch gap press release. Customer FAQs: price, what happens when it arrives late, whether the time is a promise or an estimate, why not the sandwich shop downstairs. Internal FAQs: what a missed window costs per order, why now, why us, biggest technical risk, what we are not doing, what kills this. Where we do not know, say so and name the test.</div></dd>
+      <dt>Get</dt><dd>A two-part FAQ with at least one uncomfortable internal question and at least one honest "we do not know yet."</dd>
+      <dt>Build</dt><dd>Turn each of the four risks you named in Four Risks into one internal FAQ question and answer it. Then add the one question you would least want a leader to ask, and check your answer is either real or an honest "here is the test," not a confident dodge. Cross-check the money questions against the Lean Canvas you filled in Business Canvases.</dd>
+      <dt>Capture</dt><dd>Write the two halves of the FAQ into your doc and what an all-confident FAQ means. A starting stem: "An FAQ with no uncomfortable question means..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the six-part press release with its rules, the problem-paragraph-first habit, the two-half FAQ with the uncomfortable-question test, and the silent-read, attack, and revise process.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named working-backwards. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take the three-line idea "pre-order tomorrow's lunch at 9am so it lands at 12:15" as an answer to the lunch gap, and ask Claude: "use my working-backwards skill to write the press release and FAQ for this."</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A press release written after the roadmap commitment. Backwards working backwards.</li>
+      <li>A customer quote no human would say aloud.</li>
+      <li>An FAQ where every answer is confident.</li>
+      <li>The mechanism starring in the headline instead of the outcome.</li>
+    </ul>
+  </div>
+</section>

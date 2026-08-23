@@ -1,0 +1,77 @@
+<section class="guide" id="story-writing" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Story Writing</h2>
+  <p class="tldr">TLDR: Epics, user stories, and acceptance criteria that hold up: the three C's, INVEST, SPIDR splitting, and real Gherkin. Reach for it when breaking a PRD or story-map slice into buildable work, reviewing backlog quality, or when stories have become task tickets with "As a user" stapled on.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>The sources: Mike Cohn's <em>User Stories Applied</em>, Bill Wake's INVEST, Ron Jeffries' three C's (Card, Conversation, Confirmation), and job stories from Klement and Intercom. The story is not the ticket text. It is a placeholder for a conversation plus a confirmation of done. Forget the three C's and you get a pile of tiny contracts nobody discussed.</p>
+    <p>Keep the hierarchy honest. An epic is a story too big for a sprint or two, tied to one outcome. It answers four things: the problem, the outcome metric, what is out, and "done when," a metric threshold held for a period or an explicit kill decision. A story is a thin vertical slice of user-visible value: as a specific role, I want a capability, so that an outcome. The "so that" carries the weight. A task is an implementation step inside a story, no user framing needed. The cardinal sin is dressing a task as a story. "As a user, I want the lunch capacity model deployed" is a lie with a persona.</p>
+    <p>Take our case. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. Epic: "Weekday lunch customers can order without gambling their break," done when weekday lunch orders per active customer reach 1.0 for four straight weeks, or killed at quarter end. Story: "As an office worker with a 45 minute break, I want to see one arrival time instead of a range before I pay, so that I know whether I can eat before my meeting." Task: build the noon capacity estimate endpoint. When personas mislead, use a job story: when it is 11:45 and I have a meeting at 12:30, I want to know if food will land in time, so I can decide between the app and the sandwich shop downstairs.</p>
+    <p>INVEST is the review checklist. Independent, schedulable in any order. Negotiable, details left for the conversation. Valuable to the user, vertical not horizontal. Estimable, or it needs a spike, not more words. Small, days not weeks. Testable; a story you cannot demo is a philosophy.</p>
+    <p>When a story is too big, split with SPIDR: Spike, Path, Interface, Data, Rules. Never split by layer. A front-end story and a back-end story demo nothing. Watch the Rules trap: a story bundling a capacity rule, a restaurant eligibility rule, and a fallback rule is three stories wearing one badge. Ship the simplest promise alone first.</p>
+    <p>Acceptance criteria are the confirmation. Three to seven, each observable and binary. Use Gherkin when precision pays, as separate lines: Given, And, When, Then. Never folded into one sentence, which hides a second condition inside one bloated Given. Cover the unhappy paths: empty, error, and permission states. And a criterion that hedges is not a criterion. "(decided later)" is a placeholder pretending to be a check. Decide now or cut it into a spike.</p>
+    <p>The most common mistake is "As a user" on every story. Nobody is "a user." Name the role. And audit your own rewrite: after fixing a story, run the whole INVEST and smells checklist again on the new text. Author mode grades kindly. For a PM, stories are where the strategy finally touches a sprint, so this is where it either survives or quietly dies.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a user story?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain user stories as Mike Cohn and Ron Jeffries describe them, in simple English. What are the three C's, what is the difference between an epic, a story, and a task, and why is "as a user, I want the lunch capacity model deployed" a lie with a persona?</div></dd>
+      <dt>Get</dt><dd>The three C's and a clean definition of epic, story, and task with the "done when" rule for epics.</dd>
+      <dt>Build</dt><dd>Write the epic for the walking skeleton slice you drew in Story Mapping. Give it all four parts: the problem in one line from your lunch gap diagnosis, the outcome metric taken from your OKRs key results, what is explicitly out taken from your Prioritization kill list, and a "done when" that names a threshold and a date it gets killed. Then write the first three stories under it and check each one against the epic, story, or task test. Rewrite any that is a task wearing a role.</dd>
+      <dt>Capture</dt><dd>Write into your doc what a story really is and what an epic must state before work starts. A starting stem: "An epic is not ready until it says done when..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Review with INVEST</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Review these lunch gap stories against Bill Wake's INVEST checklist. For each letter that fails, say why in one line and suggest the fix. Flag any story whose role is just "user."</div></dd>
+      <dt>Get</dt><dd>Each story scored against all six letters with fixes.</dd>
+      <dt>Build</dt><dd>Take the stories you wrote in step 1 and grade every one against all six INVEST letters, out loud, being harsh about Small and Testable. Replace any role that says "user" with the specific persona you built in Personas and Archetypes. Then come back to the same stories the next day, grade them cold, and find at least one failing letter you were kind about yesterday.</dd>
+      <dt>Capture</dt><dd>Write the six INVEST letters into your doc with your own one-line test for each, plus your rule about roles. A starting stem: "A story I cannot demo is..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Split with SPIDR</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">This lunch gap story is too big: "As an office worker I want the app to show a guaranteed arrival time, only for restaurants that can hit it at noon, and fall back to a range when none qualify." Split it using SPIDR (Spike, Path, Interface, Data, Rules). Never split by layer. Each piece must still be demoable.</div></dd>
+      <dt>Get</dt><dd>Three or more smaller stories, each demoable, with the simplest promise shipped alone first.</dd>
+      <dt>Build</dt><dd>Look through your own lunch gap stories for the one that is secretly three rules stapled together: the promise, the eligibility check, and the fallback. Split it with SPIDR on paper. Check each piece by asking what you would actually put on a screen to demo it. Any piece you cannot demo was split by layer, so put it back and split again along the user's path instead.</dd>
+      <dt>Capture</dt><dd>Write SPIDR into your doc in your own words, plus your rule about layers and which rule ships first. A starting stem: "I never split a story by..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Write acceptance criteria in real Gherkin</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write three to seven acceptance criteria for the guaranteed lunch arrival time story. Use real Gherkin with separate Given, And, When, Then lines. Cover the empty state (no restaurants qualify at this hour), the error state (the estimate service is down), and permissions. Reject any criterion that contains "decided later" or "TBD."</div></dd>
+      <dt>Get</dt><dd>A set of binary, observable criteria including unhappy paths, in this shape:<pre>Scenario: No lunch restaurant can hit the window
+  Given an office worker opens the app at 12:05
+  And no nearby restaurant can promise delivery by 12:40
+  When the lunch list loads
+  Then the list shows the honest range instead of a promise
+  And a line explains why no promise is offered right now</pre></dd>
+      <dt>Build</dt><dd>Write the criteria for your own arrival time story, three to seven of them, each one observable and binary. Force yourself to cover the noon-specific unhappy paths from the states you will need later: nothing qualifies, the estimate is unavailable, the promise gets missed after the order is placed. Then hunt your own text for hedges like "reasonable," "appropriate," or a parenthetical that defers the decision. Fix each one now or cut it into a spike.</dd>
+      <dt>Capture</dt><dd>Write your acceptance criteria rules into your doc: how many, what shape, and what you do after any rewrite. A starting stem: "A criterion that hedges is not..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds your epic, story, and task rules, your INVEST review, your SPIDR splitting rule, your Gherkin format, and your re-audit habit.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named story-writing. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a lunch gap epic with eight stories that all start "As a user" and have criteria like "it works," and ask Claude: "use my story-writing skill to review and rewrite these, then audit your own rewrite".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>"As a user" on every story (no one is "a user": name the role or use a job story).</li>
+      <li>Acceptance criteria that restate the story title ("it works") or defer their own decision in a parenthetical.</li>
+      <li>An epic with no stated "done when": a metric threshold or an explicit kill point, not just a metric name.</li>
+      <li>Horizontal stories (the API story, the UI story) that demo nothing.</li>
+      <li>A "small" story that is really a promise plus eligibility plus fallback stapled together.</li>
+    </ul>
+  </div>
+</section>

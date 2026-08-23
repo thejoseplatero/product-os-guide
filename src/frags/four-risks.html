@@ -1,0 +1,70 @@
+<section class="guide" id="four-risks" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Four Risks</h2>
+  <p class="tldr">TLDR: Every product idea carries four risks: value, usability, feasibility, and viability. Reach for this when evaluating an idea, planning discovery, reviewing a PRD's risk section, or when a team is about to build something untested.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This comes from Marty Cagan, in <em>Inspired</em> and <em>Empowered</em>. His observation is that most product failure is not building the thing wrong. It is building the wrong thing, confidently. Every idea carries four risks, and discovery's job is to knock down the biggest one <strong>before</strong> engineering scales it.</p>
+    <p>The four. <strong>Value risk</strong>: will they buy it, or choose to use it? This is the riskiest and the most skipped. Proxy signals of real interest, like clicks on a fake door, deposits, or signed letters of intent, beat stated intent every time. <strong>Usability risk</strong>: can they figure out how to use it? You can test this with a prototype and five users before anyone writes production code. <strong>Feasibility risk</strong>: can we build it with the time, skills, and tech we have? Engineers answer this, but only if you ask them during discovery, not after you hand them a spec. <strong>Viability risk</strong>: does it work for the business? Legal, compliance, sales channel, support load, brand, unit economics. This is the risk the PM is uniquely accountable for, and the one that kills products after they launch.</p>
+    <p>The method. For the idea in front of you, write each risk as a sentence that could be proven false. Rate it high, medium, or low, with one line of evidence, or admit "no evidence." Then design the cheapest test for the highest risk only. Do not test all four at once. Knock down the biggest, re-rank, repeat. A week of discovery on the right risk saves a quarter of building.</p>
+    <p>Prototypes are the currency: a feasibility spike, a user prototype in Figma, a live-data prototype, a concierge test. Match the prototype to the risk. A beautiful Figma flow tells you nothing about value.</p>
+    <p>Take our case. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The idea on the table is a guaranteed lunch arrival window: a short list of restaurants that promise food inside a 15 minute band you can plan a meeting around. Value risk: "Office workers with a break under 45 minutes will accept a shorter restaurant list in exchange for a window they can trust." Evidence: interview quotes only, so high. Usability: "People understand a window promise at checkout and know what happens if it is missed." Probably medium, easy to test with a prototype. Feasibility: ask engineering whether the noon kitchen queue can even be predicted, likely medium. Viability: "The restaurants and couriers we would need at noon can hit that band without us paying away the margin." That is the scary one, and it is math and partner agreements, not opinion. So the cheapest first test is a fake door: show the window promise on a handful of lunch listings for a week and count who taps through. Not a single kitchen agreement signed yet.</p>
+    <p>One more check from Cagan. If the idea arrived as a solution to build rather than a problem to solve, say so. You can still assess the four risks, but the team is operating as a feature factory and the value risk is probably unexamined. The most common mistake is a risk section that says "risks: timeline." That is a plan risk, not a product risk. This matters to a PM because your credibility comes from being the person who asked "what kills this?" before it was expensive to find out.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What are the four risks?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Marty Cagan's four product risks: value, usability, feasibility, viability. One plain sentence each, who is responsible for answering each one, and which one teams skip most. Use this case for examples: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>Four risks, one line each, and the knowledge that value is most skipped and viability is the PM's own.</dd>
+      <dt>Build</dt><dd>Take the top red box from the Lean Canvas you filled in Business Canvases. Say which of the four risks that red box actually is. Then write one sentence about why the lunch gap is a viability question as much as a customer one, using the coarse revenue math you already did on that canvas.</dd>
+      <dt>Capture</dt><dd>Write the four risks into your doc in your own words, plus which one you own and which one gets skipped. A starting stem: "The risk I am uniquely accountable for is..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Rate each risk with evidence</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For the idea "a guaranteed 15 minute arrival window on a short list of lunch restaurants in Uber Eats," write each of the four risks as a sentence that could be proven false. Rate each high, medium, or low with one line of evidence, or say "no evidence." Then rank them.</div></dd>
+      <dt>Get</dt><dd>Four falsifiable sentences, four ratings, and a ranked list with the biggest risk on top.</dd>
+      <dt>Build</dt><dd>Take the three solutions you listed under your top lunch gap opportunity in Continuous Discovery. Fill a four-row table for each one: risk, falsifiable sentence, rating, evidence. Your only allowed evidence is the case observation, your Customer Interviews quotes, and your Lean Canvas math. Write "no evidence" wherever that is the truth, and count how many cells say it.</dd>
+      <dt>Capture</dt><dd>Write your rating rule into your doc: how a risk sentence must be written and what you do when there is nothing behind it. A starting stem: "A risk is written so that it could be..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Design the cheapest test for the biggest risk</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">The biggest risk for the guaranteed lunch window is value. Give me the cheapest test that produces real evidence this week. Explain the four prototype types (feasibility spike, user prototype, live-data prototype, concierge) and which one matches which risk.</div></dd>
+      <dt>Get</dt><dd>One cheap test for the top risk, and a mapping of prototype type to risk type.</dd>
+      <dt>Build</dt><dd>Design one test for the top-ranked risk on your lunch gap table. Write down what result would make you drop the idea, before you run anything. Then audit your own test: is it really testing a different risk, like using a Figma flow to argue value? If so, redesign it. For the usability side, ask Claude to play the persona you built in Personas and Archetypes, walk it through the checkout copy you wrote, and note where it hesitates.</dd>
+      <dt>Capture</dt><dd>Write your testing rule into your doc: which risk you test first and how the prototype must match it. A starting stem: "A Figma flow can only tell me about..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Run the empowered-team check</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">What does Cagan mean by a feature factory versus an empowered team? If an idea arrives as "build a lunch deals carousel" instead of "weekday lunch orders are 30% below dinner and people will not gamble a 45 minute break on a wide estimate," what should the PM say and still do?</div></dd>
+      <dt>Get</dt><dd>The habit of noticing when an idea arrived as a solution, and saying so while still running the risk assessment.</dd>
+      <dt>Build</dt><dd>Take the request "add a lunch deals carousel to the home screen" and rewrite it as the problem it might be solving, using the job statement you wrote in JTBD Framing. Then name which of the four risks is almost certainly unexamined in the original request, and write the one sentence you would say back to the person who asked for it.</dd>
+      <dt>Capture</dt><dd>Write your feature factory check into your doc in one or two sentences. A starting stem: "When an idea arrives as a solution, I say so and I assume..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the four risks with owners, the falsifiable-sentence format with ratings, the test-the-biggest-first rule with prototype matching, and the feature factory check.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named four-risks. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a one-paragraph brief for "a weekday lunch pass with a guaranteed arrival window" and ask Claude: "use my four-risks skill to assess this idea against the lunch gap and tell me what to test first."</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A risk section that says "risks: timeline." That is a plan risk, not a product risk.</li>
+      <li>Value risk "validated" by stakeholder enthusiasm or because a competitor has it.</li>
+      <li>Feasibility assessed by the PM instead of an engineer.</li>
+      <li>Viability unexamined until legal sees it two weeks before launch.</li>
+    </ul>
+  </div>
+</section>

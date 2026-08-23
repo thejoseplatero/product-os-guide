@@ -1,0 +1,71 @@
+<section class="guide" id="memory-protocol" data-module="core">
+  <p class="eyebrow">Core</p>
+  <h2>Memory Protocol</h2>
+  <p class="tldr">TLDR: the rules for how every Product OS workflow reads and writes the flat markdown files in <code>.product-os/memory/</code>. Reach for it before you ask the user anything a previous session already answered.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Most AI tools have amnesia. You explain your company, get a decent answer, close the window, and tomorrow you explain your company again. The memory protocol is the part of Product OS that ends that. It is a house rule written into the system itself: all durable state lives in <code>.product-os/memory/</code> as plain markdown files a human can open and edit. If you cannot grep it, the system failed.</p>
+    <p>The protocol has six rules. Rule one is the big one: <strong>read before asking</strong>. Every workflow loads <code>profile.md</code> and <code>product-context.md</code> first, always. If the answer to a question could be in memory, you check memory. The skill calls asking what memory already answers the one unforgivable failure. Rule two: <strong>load narrowly</strong>. Pull only the extra files the task needs. Never dump the whole directory into context. Rule three: <strong>missing is not blank slate</strong>. If a file you need is empty, say which one and route the user to <code>/onboarding</code> for core files or to the owning module's setup. Never quietly produce generic output where personal output was promised.</p>
+    <p>Rule four is <strong>write discipline</strong>. Each file has one owner. Core writes profile, product context, stakeholders, and working style. PM writes roadmap, bets, and metrics. Design writes the design system, the principles, and the critique log. The only shared file is <code>lessons.md</code>, which anyone may append to but nobody rewrites. One dated line per decision or finding. Rule five: <strong>live beats stored</strong>. If a connector like Linear, Jira, Notion, Figma, or Slack can answer with live data, prefer it, and if it disagrees with memory, say so. Stale memory is a finding, not a nuisance. Rule six: <strong>update on the way out</strong>. A workflow that changed reality appends to lessons and updates the owning file before it finishes.</p>
+    <p>Picture the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. A PM runs <code>/write-prd</code> for a pre-order flow that locks a 12:00 delivery slot. The workflow opens <code>product-context.md</code> and learns the lunch gap is the standing bet this quarter, that the window under attack is 11:30 to 1:30, and that there is an open question about whether kitchens can hold a noon slot on a Tuesday. It does not ask her what the product is or what the lunch gap means. When the PRD is done, it writes one line to <code>lessons.md</code>: "2026-08-23, write-prd: 12:00 pre-order slot spec drafted, linked to the lunch gap bet, kitchen capacity still open." Next week, <code>/brief-me</code> reads that line and puts kitchen capacity in front of her before she spends another day on screens.</p>
+    <p>The most common mistake is treating memory as something only onboarding writes. Onboarding gives you a snapshot. If no workflow ever updates it, the snapshot is stale in a week and every brief gets a little more generic until the system looks like decoration.</p>
+    <p>Why does a PM care? Because the value of this system compounds only if the context compounds. The skills do not get smarter with use. The memory does. Protect it and every other skill in this guide gets sharper for free.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is the memory protocol?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain the Product OS memory protocol in plain English. List the six rules and say what goes wrong when each one is broken.</div></dd>
+      <dt>Get</dt><dd>The six rules in your own words, and the idea that memory is flat markdown a person can edit.</dd>
+      <dt>Build</dt><dd>Write the <code>product-context.md</code> for the lunch gap yourself, as a real file. Put in the case observation, the 11:30 to 1:30 window, the 30% number, and the job statement you wrote in JTBD Framing. Then take a question a PRD workflow would otherwise ask you, like "who is this for" or "what counts as success," and check whether your file already answers it. Every question it does not answer is a line missing from the file. Add those lines.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc naming the two files you read before asking the user anything. Start with "Before asking the user anything, I read ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Map who owns which file</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Make a table of the Product OS memory files: file name, what it holds, which module owns it, and who may write to it.</div></dd>
+      <dt>Get</dt><dd>A clear ownership table. Core, PM, and Design each own their files. Only <code>lessons.md</code> is shared, and it is append-only.</dd>
+      <dt>Build</dt><dd>Say the lunch work just changed direction: the 12:00 guarantee is dropped in favour of a 15-minute arrival window, because kitchens cannot hold a hard slot. Walk your own artifacts and list every file that has to change: the metric tree you built in Metrics Trees, the OKRs you set, the stories you wrote in Story Writing, the states matrix from States and Edges. For each one, name the module allowed to write that change and the one line you would append to <code>lessons.md</code>. Then check whether any change needs a module that does not own the file, because that is where the protocol gets broken in real life.</dd>
+      <dt>Capture</dt><dd>Write two sentences into your doc: which module writes which files, and which file everyone may append to. Start with "Only the module that owns a file writes it, which means ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Handle the missing file</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">I am running a workflow that needs stakeholders.md and the file is empty. Show me the right response under the memory protocol, and the wrong one.</div></dd>
+      <dt>Get</dt><dd>The right response names the missing file and routes to <code>/onboarding</code>. The wrong one silently produces generic output.</dd>
+      <dt>Build</dt><dd>Write the two-sentence message the system should show when you ask it for an update on lunch gap progress and <code>stakeholders.md</code> is empty. Then write the bad version, the one that invents a plausible head of operations and writes a confident email to nobody. Put them next to each other and notice how much better the bad one reads. That is the whole danger.</dd>
+      <dt>Capture</dt><dd>Write one or two sentences into your doc: what you do when a needed file is missing, and the thing you never do. Start with "If a file I need is missing, I ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Write on the way out</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Show me three good one-line lessons.md entries and three bad ones. Each good one must have a date, the workflow that wrote it, and a single decision or finding.</div></dd>
+      <dt>Get</dt><dd>A feel for the one-dated-line format and why essays do not belong in the ledger.</dd>
+      <dt>Build</dt><dd>Take the PRD you wrote in the PRD guide for the lunch pre-order flow and write the exact <code>lessons.md</code> line it should leave behind: date, workflow, one decision or finding, nothing else. Then name the other file it must update and write that change too. Then do it again for a second artifact you already have, the RICE ranking from Prioritization, and see whether your line format survives a different kind of output without stretching.</dd>
+      <dt>Capture</dt><dd>Write one sentence into your doc about what a workflow does before it ends. Start with "When a workflow changes reality, it appends ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the six rules, an ownership table, the missing-file response, and your own lessons.md line format.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named memory-protocol. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Set up a folder with your filled <code>product-context.md</code> for the lunch gap and an empty <code>stakeholders.md</code>, and ask Claude: "use my memory-protocol skill to prepare a status update on the lunch gap for the head of operations".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>The system asks the user something that <code>profile.md</code> or <code>product-context.md</code> already answers.</li>
+      <li>The whole memory directory gets loaded into context for a small task.</li>
+      <li>A needed file is empty and the output quietly turns generic instead of naming the gap.</li>
+      <li>A module writes to a file it does not own, or someone rewrites history in <code>lessons.md</code>.</li>
+      <li>Memory only changes when <code>/onboarding</code> runs, so it is stale within a week.</li>
+    </ul>
+  </div>
+</section>

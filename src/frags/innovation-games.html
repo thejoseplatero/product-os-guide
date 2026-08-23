@@ -1,0 +1,70 @@
+<section class="guide" id="innovation-games" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Innovation Games</h2>
+  <p class="tldr">TLDR: Structured games from Luke Hohmann that make customers reveal priorities through choices instead of opinions: 20/20 Vision, Buy a Feature, Prune the Product Tree, and Speed Boat. Reach for them when a survey would get polite answers and you need honest tradeoffs.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Ask someone which features they want and they say "all of them." Surveys collect wishes. Luke Hohmann's book <em>Innovation Games</em> fixes this with a simple move: turn the question into a game with rules, because rules force choices, and choices tell the truth that opinions hide. You already have Kano categories for your lunch gap candidates. The games add a second, independent read: what people pick when picking costs them something.</p>
+    <p>The lead game here is <strong>20/20 Vision</strong>, named after an eye exam. At the eye doctor you never judge a lens on its own. You compare two: better like this, or like this? The game works the same way. Feature cards go up one at a time, and the player places each new card above or below the ones already ranked, one comparison at a time. Nobody has to score anything. They only ever answer "is this more important than that?" By the last card you have a full ranking, and the arguments that happened along the way are worth more than the ranking itself.</p>
+    <p><strong>Buy a Feature</strong> adds money. Each feature gets a price, roughly its build cost. Players get a fixed budget that is deliberately too small to buy everything. Now they must trade. The best version prices one feature higher than any single budget, so players have to pool money and negotiate, and you get to hear what a buyer says to convince another buyer. That speech is the value proposition in the customer's own words.</p>
+    <p>Two more games fit different moments. <strong>Prune the Product Tree</strong> draws the product as a tree: trunk, branches, leaves as features. Players place new leaves where they think growth should go, and the point is shape, not addition. A tree with every leaf on one branch is telling you the rest of the product is dying. Use it for roadmap balance. <strong>Speed Boat</strong> draws the product as a boat and asks players to attach anchors: the things holding it back. Use it when you suspect the biggest wins are removals and fixes, not new features. Anchors on the boat are complaints made safe to say.</p>
+    <p>When does each fit? 20/20 Vision when you need a ranked list without scores. Buy a Feature when you need tradeoffs and the words behind them. Prune the Tree when the question is where to grow. Speed Boat when the question is what to stop or fix. The common mistake is running a game with one player. The information lives in the disagreement between players, so you need at least a few, and for the lunch gap you can have Claude play them.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What are innovation games?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Luke Hohmann's Innovation Games in simple English. Cover 20/20 Vision, Buy a Feature, Prune the Product Tree, and Speed Boat. For each game, tell me the rules in three lines and the situation it fits best.</div></dd>
+      <dt>Get</dt><dd>A one-paragraph rule card per game and a one-line "use when" for each.</dd>
+      <dt>Build</dt><dd>Take the lunch gap candidates from your Kano results and decide which two games fit them right now. You need a ranking and you need tradeoffs, so 20/20 Vision and Buy a Feature. Write one line on why the other two games can wait.</dd>
+      <dt>Capture</dt><dd>Write the four games into your doc with your own "use when" line for each, starting each line with the game's name.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Run 20/20 Vision with three buyers</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">We are playing 20/20 Vision on my lunch gap features: 15-minute pickup guarantee, group order for offices, pre-order at 10am for 12:00 delivery, lunch subscription. Play three buyers: the two personas I built in Personas and Archetypes [paste them] plus an office admin who orders lunch for a twelve-person team. I will reveal one feature card at a time. Each buyer places it above or below the cards already ranked and says why, in character. Buyers can disagree.</div></dd>
+      <dt>Get</dt><dd>Three rankings, one per buyer, built one comparison at a time, with the reasons said out loud. These are simulated buyers, so label the output as a rehearsal, not research.</dd>
+      <dt>Build</dt><dd>Reveal the cards in a deliberately unhelpful order, strongest candidate first, and watch whether later cards displace it. Note every point where two buyers rank the same card in opposite halves. The office admin will likely put group order on top while a solo persona puts it last. That split is the finding.</dd>
+      <dt>Capture</dt><dd>Record the three rankings side by side in your doc and write one sentence that starts "The buyers disagreed most about ... because ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Run Buy a Feature on the same list</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Now we play Buy a Feature with the same three buyers. Price the four lunch gap features by rough build cost, and price the most expensive one higher than any single buyer's budget so they must pool money. Give each buyer 100 dollars. Run the negotiation in character: each buyer says what they buy, what they skip, and what they say to persuade the others to chip in.</div></dd>
+      <dt>Get</dt><dd>A record of what got funded, what nobody paid for, and the exact persuasion speeches. The speech a buyer makes to pool money for a feature is that feature's value proposition in customer words.</dd>
+      <dt>Build</dt><dd>Compare the funded list against the 20/20 rankings and against your Kano categories. A feature that ranked high but attracted no money is cheap talk. A Kano delighter that buyers pooled for is a strong signal. Write down every mismatch across the three reads.</dd>
+      <dt>Capture</dt><dd>Write the funded list and the best persuasion line into your doc, then one sentence that starts "When ranking and spending disagree, I trust ... because ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Fold the games into your cut</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are my three reads on the lunch gap features: the Kano grid, the 20/20 Vision rankings, and the Buy a Feature results [paste all three]. Merge them into one recommended cut: what to bet on first, what to hold, what to drop. Flag anywhere the three reads conflict instead of smoothing the conflict over.</div></dd>
+      <dt>Get</dt><dd>A single recommended cut with the conflicts named, ready to carry into Scoping and the MVP.</dd>
+      <dt>Build</dt><dd>Sanity-check the winner against the job statement you wrote in JTBD Framing. If the top feature does not serve the struggling moment at 11:45 on a weekday, the games measured enthusiasm, not the job. Adjust and say why.</dd>
+      <dt>Capture</dt><dd>Write the final cut into your doc as the input for the next guide, plus one sentence that starts "A game result overrides my own ranking when ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds a rule card for each game, your "use when" lines, and your rule for merging game results with a Kano grid.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named innovation-games. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude: "use my innovation-games skill to run Speed Boat on the lunch gap: play the three buyers again and find the anchors that keep them from ordering lunch today".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A game run with one player, when the information lives in the disagreement between players.</li>
+      <li>Prices in Buy a Feature set so everyone can afford everything, which removes the tradeoff and the truth with it.</li>
+      <li>Reading only the final ranking and throwing away the arguments, which were the point.</li>
+      <li>Simulated buyers quoted as customer evidence instead of labeled as rehearsal.</li>
+      <li>Picking the game that flatters the feature you already wanted to build.</li>
+    </ul>
+  </div>
+</section>

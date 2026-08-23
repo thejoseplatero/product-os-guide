@@ -1,0 +1,71 @@
+<section class="guide" id="experiment-design" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Experiment Design</h2>
+  <p class="tldr">TLDR: An experiment is a decision procedure, not a ritual: write the hypothesis first, check you have enough traffic to detect the effect, set guardrails, and fix the window before you start. Reach for it when planning an A/B test, reading results, or when someone says "let's just test it" on something that cannot be tested.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>The grounding for this skill is Ronny Kohavi's book <em>Trustworthy Online Controlled Experiments</em>. The one idea to keep: an experiment is a decision procedure. If no decision changes based on the result, the experiment is theater. Skip it and ship.</p>
+    <p>So the hypothesis comes first, written before anything else. The template is: we believe this change will cause this effect for this population because of this mechanism. We will know if this metric moves by this minimum size within this window. If it does not, we will do this specific thing: kill, iterate, or ship anyway and why. The "because" clause carries the weight. A hypothesis without a mechanism is a slot machine pull, and a win without a mechanism cannot be built on.</p>
+    <p>Here is one for our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. We believe showing a guaranteed arrival time on the restaurant list, not only at checkout, will raise order completion in the lunch window because uncertainty about whether food lands before the break ends is why people back out. We will know if lunch-window order completion rises by at least 3 points within two weeks. If it does not, we kill the change and go back to the people we interviewed instead.</p>
+    <p>Next, power, honestly. Before running, ask: what is the minimum detectable effect at our traffic? Small products routinely run tests that can only detect a 20 percent lift, then read a flat result as "no effect." Compute it first. If the effect worth acting on is smaller than what you can detect, do not run the test. Use a different instrument: interviews, before-and-after with a holdout, or a painted door.</p>
+    <p>Then guardrails and the ratio check. Every test carries guardrail metrics that must not degrade: latency, error rate, support contacts, and the counter-metric from your metrics tree. And always run the sample ratio mismatch check. A 50/50 split that arrives as 52/48 means assignment is broken and every number downstream is fiction.</p>
+    <p>Reading results has four rules. Do not peek early and stop on significance; fix the window in advance. Segment only after the topline result, and only to generate new hypotheses, because twenty segments guarantee one fake "significant" one. A significant result you cannot explain by mechanism gets replicated before it gets celebrated. And losses teach more than wins. A killed idea is discovery working, so log it.</p>
+    <p>Finally, know when not to A/B test. Too little traffic for the effect you care about. Changes with network effects or long feedback loops. Strategic bets where the option value is bigger than the local metric; no A/B test approves a platform migration. And anything you would ship regardless. In each case, say which instrument replaces the test. "We cannot test this" never means "we cannot know anything." The most common mistake is the success metric switched after the fact to whichever one moved. As a PM, this skill is what keeps you from shipping noise with a confidence interval around it.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is an experiment?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Ronny Kohavi's view of online controlled experiments in simple English. Why is an experiment a decision procedure, and what does it mean that an experiment with no decision attached is theater? Use this case: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>A plain definition and the test: what decision changes based on the result?</dd>
+      <dt>Build</dt><dd>Take the MVP scope you defined in Scoping and the MVP and the KPI tree you built in Metrics Trees. Write five tests you could run on the lunch gap. Next to each one, name the decision that changes when the result comes back. Cross out every test where you cannot name a decision.</dd>
+      <dt>Capture</dt><dd>Write your rule for when an experiment is worth running into your doc, in your own words. A starting stem if it helps: "I run an experiment only when..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write the hypothesis first</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Help me write a hypothesis for a lunch gap test using this template: We believe [change] will cause [effect] for [population] because [mechanism]. We will know if [metric] moves by [minimum size] within [window]. If it does not, we will [decision]. Push back if my "because" is missing or weak.</div></dd>
+      <dt>Get</dt><dd>One complete hypothesis with a mechanism and a pre-committed decision.</dd>
+      <dt>Build</dt><dd>Write the full hypothesis for one change from your MVP scope, using the job statement you wrote in JTBD Framing as the source of your "because." Put it away, read it cold the next day, and attack the mechanism. If the "because" is really a guess, say so in one line under it.</dd>
+      <dt>Capture</dt><dd>Write the hypothesis template into your doc in your own words, then write your lunch gap hypothesis underneath it. A starting stem: "A hypothesis is not ready until its because says..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Check power, guardrails, and the ratio</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">The weekday lunch window gets 8,000 first-time checkouts a week with a 40 percent completion rate. What is the minimum detectable effect for a two-week 50/50 test? List the guardrail metrics I should watch, and explain the sample ratio mismatch check.</div></dd>
+      <dt>Get</dt><dd>A minimum detectable effect number, three to five guardrails, and the ratio check written down.</dd>
+      <dt>Build</dt><dd>Decide whether the lift named in your hypothesis is detectable at that traffic. If it is not, pick the replacement instrument and write one line saying why. Then pull your counter-metric from the KPI tree you built in Metrics Trees and add it to your guardrail list.</dd>
+      <dt>Capture</dt><dd>Write your pre-run checklist into your doc: what you compute before running, the guardrails you always watch, and what a 52/48 split tells you. Two or three sentences in your own words.</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Read results and know when not to test</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Give me the rules for reading A/B test results honestly: peeking, segmenting, unexplained wins, and logging losses. Then list the cases where an A/B test is the wrong tool and what replaces it.</div></dd>
+      <dt>Get</dt><dd>A short reading checklist and a "do not A/B" list with replacement instruments.</dd>
+      <dt>Build</dt><dd>Go through the four risks you named in Four Risks for the lunch gap. For each risk, decide whether an A/B test can settle it or not. For every one that cannot, name the instrument that replaces it. Then write two sentences explaining why rewriting the courier dispatch logic for lunch is not an A/B test.</dd>
+      <dt>Capture</dt><dd>Write your own list of when you do not A/B test and what you use instead. A starting stem: "An A/B test is the wrong tool when..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds your hypothesis template, your power and guardrail checks, your rules for reading results, and your list of when not to test.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named experiment-design. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a half-finished test plan for a lunch deals banner aimed at the lunch gap, with no hypothesis and no traffic numbers, and ask Claude: "use my experiment-design skill to make this test decision-ready or tell me not to run it".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Hypothesis written after the results.</li>
+      <li>"Trending toward significance" (that is a coin mid-flip).</li>
+      <li>Success metric switched after the fact to the one that moved.</li>
+      <li>Ten variants, no mechanism, one winner: a lottery with a dashboard.</li>
+    </ul>
+  </div>
+</section>

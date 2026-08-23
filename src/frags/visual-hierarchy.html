@@ -1,0 +1,62 @@
+<section class="guide" id="visual-hierarchy" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Visual Hierarchy</h2>
+  <p class="tldr">TLDR: Directing attention with layout, type, spacing, and contrast so the user knows what to look at first and what to ignore. Reach for it when a screen feels cluttered or flat, when everything looks equally important, or when reviewing visual quality in critique.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Visual hierarchy is the design answering a question before the user asks it: "what should I look at first, and what can I ignore?" The grounding here is the Gestalt principles from Max Wertheimer, typographic scale practice from Robert Bringhurst as passed down through every good design system, and the working heuristics made popular by <em>Refactoring UI</em> by Adam Wathan and Steve Schoger. The one-line summary: a screen where everything is emphasized has no emphasis.</p>
+    <p>Four Gestalt principles carry most of the load. Proximity: things close together read as related. This is the most violated principle in practice. A label equidistant from two fields belongs to neither. Padding inside a card larger than the gap between cards dissolves the cards. Space is meaning, so spend it on purpose. Similarity: same style implies same behavior. If blue text is sometimes a link and sometimes just emphasis, both uses are broken. Common region: enclosure groups things. Which is why the fix for clutter is rarely more boxes. Try whitespace first. Borders are the grouping tool of last resort. Continuity and alignment: the eye travels along lines. Every misalignment is a speed bump. A strict grid is invisible until it breaks, and then it is the only thing you can see.</p>
+    <p>Type does the heavy lifting. Use a deliberate scale: one ratio, five to seven sizes, from the system's tokens. And size is only one lever. Weight, color contrast, and spacing rank content with less noise than size alone. Secondary text should be quieter, not smaller. Tiny grey text fails hierarchy and accessibility at once. Line length around 45 to 75 characters.</p>
+    <p>Two tests. The squint test: blur the mock. What survives is the hierarchy. Is it the right thing? The one-bold-move rule: one unmistakable primary action per screen. Two primary buttons is a decision the design refused to make and exported to the user. Emphasis is a budget, and it is zero-sum.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. Look at the lunch browse screen at 11:45 and squint. What pops? An "Add" button on every card, all in brand orange, plus "Start group order," plus "Schedule," all primary. Meanwhile the one thing a person with a 12:30 meeting needs, whether this food can be at their desk by 12:00, is set in the same 14-point grey as the cuisine tag and the rating. The screen is shouting the things that do not decide anything and whispering the thing that does. Fix: one primary action, the rest become quiet outlines; the arrival time moves to the top of each card and gets weight, not size; the list groups by "arrives by 12:00" and "arrives after 12:15" with spacing instead of eleven dividers. Nothing new was added. The budget was spent differently, and now the screen is about the clock, which is what lunch is about.</p>
+    <p>The most common mistake is primary buttons everywhere, the "everything is important" tell. Why a PM cares: you will be asked to "make the pre-order option more visible," and the honest answer is often that the screen already spent its boldness. Knowing that lets you ask for a real trade instead of a louder button.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is visual hierarchy?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain visual hierarchy in simple English. Cover the four Gestalt principles of proximity, similarity, common region, and alignment, with one lunch browse screen example each. Then explain the squint test.</div></dd>
+      <dt>Get</dt><dd>A definition of hierarchy as "what to look at first," four principles in your own words, and the squint test as a check.</dd>
+      <dt>Build</dt><dd>Ask Claude to write out the lunch browse screen at 11:45 as a text wireframe with every element's size, weight, and color named. Read it and write down the three things that would survive a squint. Then take the job statement you wrote in JTBD Framing and write down the three things a person with a 12:30 meeting actually needs to see. Put the two lists side by side. The mismatch is the whole finding.</dd>
+      <dt>Capture</dt><dd>Write three sentences into your doc: the question hierarchy answers, what proximity means, and what the squint test shows you. Start with "Hierarchy answers the question ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Use type and spacing, not just size</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain how to build a type scale with one ratio and 5 to 7 sizes, and how weight, color contrast, and spacing rank content without changing size. Show me how to rank the content on a lunch browse card: restaurant name, arrival time, price, rating, cuisine tag, distance.</div></dd>
+      <dt>Get</dt><dd>A small scale with named levels and a ranked list of the card's content with the lever used for each: size, weight, color, or spacing.</dd>
+      <dt>Build</dt><dd>Write your own scale, one ratio and five to seven sizes, then rank every element on the lunch browse card from first-read to ignorable and assign one lever to each. The arrival time has to win, and it has to win without being the biggest thing on the card. Then redraw the list with every divider line removed, grouping instead by "arrives by 12:00" and "arrives later" using only spacing. Compare it against your first version and say which one a person reads faster at 11:45.</dd>
+      <dt>Capture</dt><dd>Write your three type rules into your doc: how many sizes and from what, how secondary text gets quieter, and where borders sit in your toolkit. Start with "My type scale has ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Spend the emphasis budget</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here is a description of the group order screen for an office, with its buttons and text styles: [paste]. Apply the one-bold-move rule. Name the single primary action, demote everything else, and tell me what the squint test shows before and after.</div></dd>
+      <dt>Get</dt><dd>One named primary action, a list of demotions, and a before-and-after squint description.</dd>
+      <dt>Build</dt><dd>Walk the whole lunch flow using the states matrix you built in States and Edges: the 11:45 browse, the pre-order screen with its 12:00 promise, the group order screen for an office, and tracking. Count the primary actions on each one. For every screen with more than one, decide which keeps the color and write down the sentence that justifies it, phrased as what the user is trying to do on that screen and not as what the business wants. Then say what you demoted and what the squint test shows now.</dd>
+      <dt>Capture</dt><dd>Write into your doc how many primary actions a screen gets, what kind of thing emphasis is, and what two primary buttons really mean. Start with "Each screen has exactly ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the four Gestalt principles, the type scale rules, the squint test, and the one-bold-move rule.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named visual-hierarchy. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Ask Claude to describe the order tracking screen a person watches between 11:55 and 12:00, with its text sizes and button styles listed, then say: "use my visual-hierarchy skill to review this screen and fix the emphasis so the 12:00 promise wins".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Three font sizes doing the work of a scale, or eleven doing the work of five.</li>
+      <li>Primary buttons everywhere, the "everything is important" tell.</li>
+      <li>Grouping by borders because spacing was never systematized.</li>
+      <li>Center-aligning body text and long lists, which kills scanning.</li>
+      <li>Hierarchy achieved only by size: a poster, not an interface.</li>
+    </ul>
+  </div>
+</section>

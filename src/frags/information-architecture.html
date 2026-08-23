@@ -1,0 +1,63 @@
+<section class="guide" id="information-architecture" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Information Architecture</h2>
+  <p class="tldr">TLDR: Structuring navigation, labels, and content so users can find things: card sorting to learn their mental model, tree testing to check the structure. Reach for it when designing or reorganizing navigation, naming sections, deciding where a feature lives, or when users keep "not finding" things that exist.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Information architecture, or IA, comes from Rosenfeld and Morville's book <em>Information Architecture</em>, known as the polar bear book because of its cover, and from Donna Spencer's practical work on card sorting. Here is the definition I want you to keep: IA is the argument the product makes about how the user's world is organized. When users cannot find things, the taxonomy is wrong. Not the users, and usually not the visual design either.</p>
+    <p>The core diagnosis is one question: whose model is it? Most broken IA is the org chart or the database schema leaking into the navigation. Sections named for the teams that built them. Splits where the backend splits. The user's mental model groups by their task and their vocabulary. So every IA job starts here: is this structure organized by how we build it or by how they use it?</p>
+    <p>Now the methods, matched to the question. Open card sort: users group your content their way and name the groups. Use it to discover the mental model before you design a structure. The group names users invent are label gold. Closed card sort: your categories, their sorting. Use it to validate a proposed structure or place new items into it. Tree test: users find X in a text-only hierarchy with no visual design to help. A failure is unambiguous: the label or the location is wrong. Run it before UI exists and again after big changes. Under about 70 percent first-click success, the argument is not landing. And first-click testing on mocks, from Bob Bailey's research: get the first click right and task success roughly doubles.</p>
+    <p>Labels are the IA's interface. User vocabulary over internal. What users type into search <em>is</em> their label. One concept, one name. Scent over cleverness: a label must predict what is behind it. "Workspace Hub" predicts nothing.</p>
+    <p>Here is the case. Uber Eats grows overall, but weekday orders from 11:30am to 1:30pm run 30% below dinner. Call it the lunch gap. Look at what the app offers someone opening it at 11:45 with four minutes to decide. The bottom nav says Home, Marketplace, Activity, Wallet, More. There is no lunch anywhere in it. The one thing that would close the gap fastest, ordering ahead for a 12:00 arrival, is buried three taps down inside a restaurant page as "Schedule." An office worker looking for it does not think "schedule." They think "get it here by noon." An open card sort with ten office workers produces groups they call Order for Noon, Lunch Near Work, Split With The Team, and My Usual. Nobody says Marketplace, and nobody says Schedule. A tree test on a structure built from those names gets 79 percent first-click on "order lunch so it arrives at 12:00." The old structure gets 34. That is a finding you can ship.</p>
+    <p>Structure heuristics. Breadth beats depth at equal scent, because each extra level sheds users. But forty items at one level is a search problem pretending to be navigation. Things can live in two places when tasks arrive from two directions, and lunch is exactly that case: a person may arrive from the clock or from a craving. And search is IA too: the no-results page, synonyms, and top-query tuning are part of the architecture. If someone searches "lunch" and gets nothing, the taxonomy just told them the product has no opinion about the middle of their day.</p>
+    <p>The most common mistake is redesigning the visual nav to fix what a tree test would show is a taxonomy problem. New icons, same wrong labels. Why a PM cares: "where does this feature live" is a decision you will make monthly, and the honest answer comes from a card sort, not a naming meeting.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is information architecture?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain information architecture in simple English using Rosenfeld and Morville's polar bear book. Explain the idea that broken IA is usually the org chart or database leaking into navigation, with an example from an app where lunch ordering is buried under a label called "Schedule".</div></dd>
+      <dt>Get</dt><dd>A one-line definition of IA as the product's argument about the user's world, and the "whose model is it" question.</dd>
+      <dt>Build</dt><dd>Write out the Uber Eats bottom nav as it stands: Home, Marketplace, Activity, Wallet, More. For each label, decide whether it came from a user's vocabulary or from a team's name, and write the one-line reason. Then take the job statement you wrote in JTBD Framing for the lunch gap and ask where in that nav a person doing that job would look first. If your answer is "search," write that down. It is the finding.</dd>
+      <dt>Capture</dt><dd>Write three sentences into your doc: what IA is an argument about, what is wrong when users cannot find things, and the first question you ask. Start with "IA is the argument the product makes about ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Pick the method for the question</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain open card sort, closed card sort, tree test, and first-click test. For each, tell me which question it answers, when to run it, and what a failure looks like. Then plan an open card sort with 30 cards covering everything an office worker might want between 11:30am and 1:30pm.</div></dd>
+      <dt>Get</dt><dd>A four-row table of method, question, timing, and failure signal, plus a list of 30 cards for the lunch sort.</dd>
+      <dt>Build</dt><dd>Write your 30 cards from the journey map you built in Journey Mapping plus the MVP scope from Scoping the MVP, so every card is something a real person needs in the lunch window: order for noon, split the bill with four coworkers, reorder last Tuesday's, see if it still arrives by 12:00, find something near the office. Do your own sort first and name the groups. Then ask Claude to play a desk-bound office worker and sort the same 30 cards without seeing your groups, and say plainly that this is a stand-in for a real sort, not evidence. Compare the two sets of group names. The names you did not think of are the useful part.</dd>
+      <dt>Capture</dt><dd>Write into your doc what an open card sort discovers, what a tree test checks, and the first-click threshold below which the structure is failing. Start with "An open card sort discovers ...".</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Write the labels and the structure</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Here are the groups and names produced in a card sort about lunch ordering: [paste yours]. Propose a navigation structure with labels in user vocabulary, one name per concept, and strong scent. Flag any item that should live in two places and explain why. Then write 8 tree-test tasks about ordering lunch for a 12:00 arrival.</div></dd>
+      <dt>Get</dt><dd>A proposed tree no more than two levels deep for daily tasks, labels that predict their contents, and a tree-test plan.</dd>
+      <dt>Build</dt><dd>Write the tree yourself as plain indented text, no icons, no colors. Every label must predict what is behind it to someone standing at their desk at 11:45. Then write eight tasks, and make at least three of them the ones that matter to the lunch gap: get food here by 12:00, order for five people in the office, find yesterday's order again. Ask Claude to play the office worker persona you built in Personas and Archetypes and give you only its first click for each task, with no explanation, and say plainly that this stands in for a real tree test. Count the successes. Under 70 percent, fix the label, not the icon.</dd>
+      <dt>Capture</dt><dd>Write your three label and structure rules into your doc: what a label must do, when breadth beats depth, and what else counts as architecture. Start with "A label must predict ...".</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the "whose model" diagnosis, the four methods matched to questions, the label rules, and the structure heuristics.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named information-architecture. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take the current Uber Eats navigation and a list of twenty things people would search for between 11:30 and 1:30, and ask Claude: "use my information-architecture skill to diagnose why lunch is unfindable in this nav and propose a tree test".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Navigation that mirrors the org chart.</li>
+      <li>A "More" or "Other" section holding load-bearing features.</li>
+      <li>Labels invented in a naming meeting, never tested against a single user's vocabulary.</li>
+      <li>Six levels deep to reach a daily-use feature.</li>
+      <li>Redesigning the visual nav to fix what a tree test would show is a taxonomy problem.</li>
+    </ul>
+  </div>
+</section>

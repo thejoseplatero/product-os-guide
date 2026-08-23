@@ -1,0 +1,71 @@
+<section class="guide" id="story-mapping" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Story Mapping</h2>
+  <p class="tldr">TLDR: Lay the work out along the user's real journey, then slice releases as thin end-to-end cuts, starting with the walking skeleton. Reach for it when breaking a big initiative into releases, when a flat backlog has lost the plot, or when planning what an MVP actually includes.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This comes from Jeff Patton's book <em>User Story Mapping</em>. His picture: a flat list of work is a bag of parts with the picture on the box thrown away. Prioritized, but story-less. The map puts the picture back. It arranges work along the user's journey, so scope decisions become visible cuts through a story instead of fights over a ranked list.</p>
+    <p>Building the map has three moves. First, the backbone. Across the top, the user's activities in narrative order, told out loud: she notices she is hungry at 11:40, decides whether to risk delivery, picks something, orders, waits with one eye on the clock, eats, gets back to her desk. Activity level, user language, left to right in time. If you cannot narrate the backbone as a person's day, it is a feature list lying down. Second, steps. Under each activity, the tasks that accomplish it, then variations descending by necessity. Depth shows how well that activity is supported. Third, walk it with real people; the map builds shared understanding before it plans anything. Walking an engineer along the backbone reveals missing steps, like "wait, what happens when the kitchen falls behind at noon?" Those gaps are the cheapest bugs you ever fix.</p>
+    <p>Now the point of it all: slicing releases. Draw horizontal lines through the map. Each slice must span the entire backbone: a thin end-to-end journey, not a thick fragment. The user completes the whole story badly rather than half of it well. The first slice is the walking skeleton: the minimum path where a real user gets the real outcome once, with duct tape everywhere you cannot see. Later slices deepen activities by priority.</p>
+    <p>Take our case. Uber Eats grows overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The walking skeleton is one office district, a hand-picked list of six restaurants that agreed to a noon prep window, a single "arrives by 12:35" line instead of a range, and a text when the courier is two minutes out. No lunch search, no ratings filter, no subscription. But one office worker with a 45 minute break eats on time and gets back to her desk. Slice two widens the restaurant list and adds the one-tap repeat of last week's lunch. Name every slice by what the user can newly do, not by what the team builds.</p>
+    <p>Here is the anti-slice check. If a release covers three of seven activities completely and four not at all, you built a beautiful third of a product, which is a whole product to nobody. A "phase 1" of restaurant prep-time agreements and a courier zone tool, with no way for a person to see or trust a lunch promise, is exactly this. Patton's rule: you are slicing outcomes, not features.</p>
+    <p>Keep the map alive. When scope pressure comes, and it comes, cuts happen on the map where everyone sees which part of the journey got thinner, not silently in a ranked list. In this skill the wall is required, not an appendix. Every run produces the written map and an HTML sticky wall you can drag, edit, and walk. A map that exists only as prose has already lost, because you cannot point at a paragraph in a room. The wall is a starting position, never a finding, so the notes must move. For a PM, this is the skill that turns "what is the MVP?" from an opinion fight into a line you draw together.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a story map?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Jeff Patton's user story mapping in simple English. What is the backbone, what goes under it, what is a walking skeleton, and why is a flat ranked list "a bag of parts with the picture thrown away"?</div></dd>
+      <dt>Get</dt><dd>Definitions of backbone, steps, slices, and walking skeleton.</dd>
+      <dt>Build</dt><dd>Narrate the lunch gap out loud from the point of view of the persona you built in Personas and Archetypes, from the 11:40 hunger to being back at the desk. Write each activity on a sticky note as you say it. Then lay your Journey Mapping stages next to the backbone and check they tell the same story. Where the journey map has a stage your backbone skipped, add it.</dd>
+      <dt>Capture</dt><dd>Write into your doc what a backbone is, in whose words, and your test for when it is really a feature list. A starting stem: "If I cannot narrate the backbone as one person's day, then..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Build the backbone and steps</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Build a story map for a weekday lunch customer on Uber Eats, where lunch orders from 11:30am to 1:30pm run 30% below dinner. Backbone across the top as activities in narrative order. Under each activity, the steps, then variations descending by necessity. Add an owner to each activity. Then produce the HTML sticky wall with draggable notes and a walk mode.</div></dd>
+      <dt>Get</dt><dd>A written map and a movable wall, with any unowned activity shown as a gap.</dd>
+      <dt>Build</dt><dd>Fill in the steps under each lunch gap activity. Take the candidates that survived Prioritization and place each one under the activity it actually serves, rather than in a list. Then walk the backbone with someone technical. If nobody is available, ask Claude to play a skeptical engineer walking the noon flow and to interrupt every time it hits a case you have not covered, especially around kitchen capacity between 11:30 and 1:30. Add every interruption as a step.</dd>
+      <dt>Capture</dt><dd>Write into your doc what goes under each activity and what vertical depth tells you. A starting stem: "Depth under an activity means..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Slice the walking skeleton</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Draw release slices through my lunch gap story map. The first slice is the walking skeleton: the thinnest end-to-end path where one office worker with a 45 minute break eats on time once. Every slice must span the whole backbone. Name each slice by what the customer can newly accomplish. Mark the tempting wrong cut in red.</div></dd>
+      <dt>Get</dt><dd>Two to four slices named by outcome, plus one anti-slice shown as a warning.</dd>
+      <dt>Build</dt><dd>Draw your first line across the lunch gap map and name what the customer can newly do, in their words. Check it spans every activity on the backbone, including the waiting and the eating, not just the ordering. Then draw the tempting wrong cut on purpose: the one made only of restaurant prep-time agreements and courier zone work. Show which backbone activities it leaves empty and write one line about why nobody could use it.</dd>
+      <dt>Capture</dt><dd>Write your slicing rules into your doc: what every slice must span, what the walking skeleton is, and how slices get named. A starting stem: "A slice is only a slice when it spans..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Use the map at cut time</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">We lost two weeks on the lunch gap build. Using the story map, show me where the cut happens on the wall, which activity gets thinner, and what the weekday lunch customer can still accomplish afterwards. Then export the new arrangement as markdown.</div></dd>
+      <dt>Get</dt><dd>A visible cut on the map and an updated markdown export.</dd>
+      <dt>Build</dt><dd>Take two weeks off your own lunch gap plan and make the cut on the wall, physically moving notes out of the first slice. Then answer two questions in writing: which column just got thinner, and does the office worker still eat before her break ends. If the answer to the second one is no, you cut the wrong column. Put it back and cut somewhere else.</dd>
+      <dt>Capture</dt><dd>Write your cut-time habit into your doc in one or two sentences. A starting stem: "Scope cuts happen where everyone can..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds your backbone rule, your steps and depth rule, your slicing and walking skeleton rule, and your cut-on-the-map habit.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named story-mapping. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a flat 40-item list of lunch gap ideas sorted by votes, and ask Claude: "use my story-mapping skill to build the map, find the walking skeleton, and give me the wall".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Backbone written in the team's architecture ("API layer, admin panel, notifications service").</li>
+      <li>MVP defined as "phase 1 features" instead of a thin end-to-end slice.</li>
+      <li>Map built once for kickoff theater, never consulted at cut time.</li>
+      <li>Slices named "Release 1, Release 2" (name the outcome or the slice has none).</li>
+      <li>Map delivered as prose only, with the wall promised as a follow-up, or a wall whose notes cannot be moved.</li>
+    </ul>
+  </div>
+</section>

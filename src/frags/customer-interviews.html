@@ -1,0 +1,71 @@
+<section class="guide" id="customer-interviews" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Customer Interviews</h2>
+  <p class="tldr">TLDR: Customer interviews done right produce evidence instead of politeness: questions about the past, a commitment test at the end, and synthesis within a day. Reach for it when writing an interview script, debriefing a call, or checking whether "validation" was real.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Two sources here. Rob Fitzpatrick wrote <em>The Mom Test</em>, and Bob Moesta gave us the switch interview. Fitzpatrick's rule is the one to remember: even your mom cannot lie to you if you never mention your idea. People are polite about the future and honest about the past. So you ask about the past.</p>
+    <p>The Mom Test has three rules. One, talk about their life, not your idea. The moment the idea enters the room, the data leaves. Two, ask about specifics in the past, not opinions about the future. "Would you use X?" is worthless. "When did this last happen? Walk me through it" is gold. Three, talk less, listen more. You are mining for facts, workarounds, and money already spent. You are not pitching.</p>
+    <p>Some questions that work. "Tell me about the last time you had this problem." "What did you do about it?" The workaround is the real competitor and the real budget. "What have you already tried or paid for?" Spend is evidence, adjectives are not. "Who else struggles with this?" And the sharp one: "What happens if you just do not solve it?" If the answer is "nothing really," the pain does not clear the bar.</p>
+    <p>Let us run it on our case. Uber Eats is growing, but weekday lunch orders from 11:30am to 1:30pm sit 30% below dinner. Call it the lunch gap. Bad version: "Would you order lunch delivery more often if it were faster?" Everyone says yes. Good version: "Tell me about the last time you got lunch on a work day." Now you hear: "Tuesday, I had 35 minutes between meetings, I looked at the app, delivery said 40 to 55 minutes, so I grabbed a granola bar and kept working." That is a struggling moment, a workaround, and the cost of the workaround, all in one answer. Then: "What did you try?" "I pre-ordered once the night before. It showed up at 11:10, before I was hungry." Now you know timing, not appetite, is the fight.</p>
+    <p>Then comes the <strong>commitment test</strong>. Compliments are fool's gold. End every promising conversation with an ask that costs them something: their time (a follow-up session with their real order history), their reputation (an intro to a colleague who has the same problem), or their money (a deposit or a pilot fee). If they advance, that is real signal. "Sounds great, keep me posted" is a polite no. Log it as a no.</p>
+    <p>Moesta's switch interview is for real purchases. Find people who recently switched to or from a product and walk the timeline backwards: first thought, passive looking, active looking, the event that forced the decision.</p>
+    <p>Synthesis discipline: within 24 hours, write exact quotes, facts, and commitments, tagged to opportunities. Three interviews with the same unprompted complaint is a pattern worth a bet. One enthusiastic interview is an anecdote. The most common mistake is the word "would" anywhere in the script. This matters to a PM because you will be asked "did you validate it?" and the only honest answer is a list of things people did, not things they said they might do.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is the Mom Test?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Rob Fitzpatrick's Mom Test in plain English. What are the three rules, and why are people honest about the past but polite about the future? Show a bad question and a good question for finding out why someone does not order lunch delivery on work days.</div></dd>
+      <dt>Get</dt><dd>The three rules in one line each, and a gut feel for why "would you use" questions produce nothing.</dd>
+      <dt>Build</dt><dd>You have no real customers to call, so ask Claude to play a desk-bound office worker and say so in the prompt. Interview it for three minutes about its last few work-day lunches using only past-tense questions. Then reread your side of the transcript and count every time you typed "would."</dd>
+      <dt>Capture</dt><dd>Write the three rules into your doc in your own words, plus a one-line ban in your own words on future-tense questions. A starting stem: "I never ask about the future, only about..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write the question set</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write a ten-question interview script for a PM investigating why Uber Eats weekday lunch orders from 11:30am to 1:30pm are 30% below dinner. Every question must be about past behavior, workarounds, or money already spent. No question may contain the word "would." Mark which question reveals the real competitor.</div></dd>
+      <dt>Get</dt><dd>A short script with questions about the last time, what they did, what they paid, who else, and what happens if they do nothing.</dd>
+      <dt>Build</dt><dd>Write your own ten-question lunch gap script, starting only from the case observation and the hypothesis you wrote in Research Hypothesis. Come back to it the next day and read it cold. Hunt for any question that hints at a solution or asks about the future. Rewrite each one you catch.</dd>
+      <dt>Capture</dt><dd>Write your final script into your doc, and above it a rule for what counts as evidence. A starting stem: "Spend is evidence, adjectives are..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Run the commitment test</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">What is the commitment test at the end of a customer interview? Give three asks a PM investigating the Uber Eats lunch gap could make that cost the customer time, reputation, or money. Explain why "keep me posted" should be logged as a no.</div></dd>
+      <dt>Get</dt><dd>Three kinds of ask, and the rule that advancement is signal and compliments are not.</dd>
+      <dt>Build</dt><dd>Script the last two minutes of your lunch gap interview with one real ask in it. Then run it twice against Claude playing the office worker: once told to be genuinely interested, once told to be polite but uninterested. Check you can tell the two endings apart.</dd>
+      <dt>Capture</dt><dd>Write your commitment rule into your doc, one or two sentences. A starting stem: "I end every interview with an ask that costs the customer..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Synthesize within a day</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Show me a synthesis template for customer interviews: exact quotes, facts, commitments, tagged to opportunities. Use three sample interviews about weekday lunch ordering. Tell me the difference between a pattern and an anecdote.</div></dd>
+      <dt>Get</dt><dd>A simple note format with verbatim quotes only, and the three-interview rule for patterns.</dd>
+      <dt>Build</dt><dd>Ask Claude to play three different office workers, one at a time, and run your lunch gap script on each. Pull only exact quotes, facts, and commitments from each transcript into your synthesis template, then decide whether anything repeats often enough to count as a pattern.</dd>
+      <dt>Capture</dt><dd>Write the synthesis rule into your doc, plus the quotes and any pattern you found. These interview notes are the raw material for JTBD Framing and everything after it. A starting stem: "Within 24 hours I write down exact quotes, never paraphrase, and a pattern needs..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the three Mom Test rules, a past-tense question set, the commitment test with its three kinds of ask, and a synthesis format with the pattern rule, all worked on the lunch gap.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named customer-interviews. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Write a draft script full of "would you" questions about ordering lunch delivery and ask Claude: "use my customer-interviews skill to fix this script for the lunch gap and add a commitment test."</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>The word "would" anywhere in the script.</li>
+      <li>Pitching in minute two, then "interviewing" for the remaining twenty-eight.</li>
+      <li>Interview notes with adjectives but no exact quotes.</li>
+      <li>"Everyone we talked to loved it" and zero commitments collected.</li>
+    </ul>
+  </div>
+</section>

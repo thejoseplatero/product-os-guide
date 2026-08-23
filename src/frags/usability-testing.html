@@ -1,0 +1,63 @@
+<section class="guide" id="usability-testing" data-module="design">
+  <p class="eyebrow">Design</p>
+  <h2>Usability Testing</h2>
+  <p class="tldr">TLDR: Watching a handful of real people try to complete real tasks on your design, then fixing the top three problems and testing again. Reach for it before build, to settle a design argument with evidence, or when the team is debating what users will do instead of watching five of them.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>Two names anchor this skill. Steve Krug, whose book <em>Rocket Surgery Made Easy</em> argues for small, frequent tests with fixes made the same morning. And Jakob Nielsen, whose research found that five users find about 85 percent of the problems in a given design. The lesson from Nielsen is not "five is enough forever." It is: test five, fix, test five again. That beats twenty users on one version every time.</p>
+    <p>One boundary before we start. A usability test answers <em>can they use it</em>. It does not answer <em>do they want it</em>. For want, you run customer interviews. Mixing the two questions ruins both answers.</p>
+    <p>Tests are won or lost in task design. Tasks are scenarios with a goal, not instructions. "You have 40 minutes for lunch and you want hot food at your desk before 12:45. Do that." Not "Tap the guaranteed arrival filter." The moment your task names a UI element, you are testing reading comprehension. Use their reality where you can: their address, their real hunger, their real break time. Four to six tasks, riskiest flow first because attention fades. Include one task that tests whether they can <em>find</em> the feature before you test whether they can <em>use</em> it. Define success per task in advance: unaided, with struggle, failed. Otherwise grading becomes vibes.</p>
+    <p>Moderating is a discipline of silence. Ask them to think aloud. Answer questions with questions: "what would you expect that to do?" Never rescue before the failure has taught you something: "what would you do if I weren't here?" Never explain the design, because you will not ship yourself alongside it. Watch the hands and hesitations over the words. Behavior is the finding. The polite person who says "this is nice" while failing the task three times gave you a blocker, not a compliment.</p>
+    <p>Take our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. Five participants, all people who work a fixed weekday break. Task one: find food that will arrive before your break ends. Task two: change the delivery address after adding items, because you moved to a different floor. Task three: reorder the same thing you had on Monday. Three of five could not tell whether the arrival estimate was a promise or a guess, so they abandoned the order and walked downstairs. Two said "oh, that's fine" while scrolling past the estimate twice. That is your first fix. Not the small font on the receipt that one person mentioned.</p>
+    <p>Synthesis follows Krug's rule. Same day, each observer lists the three worst problems they saw. Dedupe. Fix the top three only before the next round. A forty-item findings report is where usability data goes to die. Small test, top-three fix, retest beats the big quarterly study by an order of magnitude. Log findings and fixes so the same problem found twice shows up as a pattern.</p>
+    <p>Unmoderated tools are for benchmarking known flows with completion rate and time on task. They cannot probe, so do not use them to explore a design you are still shaping. Why a PM cares: you will sit in arguments about what users will do. The cheapest way to end the argument is to watch five of them.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is a usability test?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain usability testing in simple English using Steve Krug's Rocket Surgery Made Easy and Jakob Nielsen's five-user finding. Explain the difference between testing "can they use it" and "do they want it." Use this case: Uber Eats weekday lunch orders from 11:30am to 1:30pm run 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>A clear definition, the five-then-iterate logic, and the boundary between usability tests and customer interviews.</dd>
+      <dt>Build</dt><dd>Read the MVP scope you defined in Scoping and the MVP. Write two questions it raises about the lunch gap: one a usability test can answer, and one only a customer interview can answer. Then write one line on what would go wrong if you tried to answer both in the same session.</dd>
+      <dt>Capture</dt><dd>Write the boundary into your doc in your own words, plus how many users you test with before fixing. A starting stem: "A usability test answers..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Write the tasks</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Write 5 usability test tasks for the weekday lunch flow of a food ordering app. Each task must be a scenario with a goal, never name a UI element, put the riskiest flow first, and include a findability task. For each, define unaided, struggled, and failed.</div></dd>
+      <dt>Get</dt><dd>Five scenario tasks with success criteria defined before anyone sits down.</dd>
+      <dt>Build</dt><dd>Write your own five tasks against the slices in the story map you built in Story Mapping, with the riskiest lunch gap flow first. Use the personas you built in Personas and Archetypes to set each scenario in a real break time. The next day, read the list cold and circle every word that names a button or a screen, then rewrite those tasks.</dd>
+      <dt>Capture</dt><dd>Write your task-writing rule into your doc and when you define success. A starting stem: "A task is a scenario with..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Moderate and synthesize</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Give me a moderator script for a think-aloud usability test: how to open, how to answer questions with questions, what to say when the participant gets stuck, and what to watch for. Then give me Krug's same-day synthesis method: each observer's top 3, dedupe, fix the top 3 only.</div></dd>
+      <dt>Get</dt><dd>A one-page moderator card and a synthesis routine that ends with exactly three fixes and a log entry.</dd>
+      <dt>Build</dt><dd>You will not have five real lunch customers on hand, so ask Claude to play one of the personas you built in Personas and Archetypes, thinking aloud, and walk it through your riskiest task against the screen states you wrote in States and Edges. Run it three times with a different persona each time. Write your top three observations, dedupe them, and pick the three fixes.</dd>
+      <dt>Capture</dt><dd>Write your moderator rule and your synthesis rule into your doc, two or three sentences. A starting stem: "When a participant asks me for help I say..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now has the usability-versus-want boundary, the task-writing rules, the moderator script, and Krug's top-three synthesis.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named usability-testing. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take your MVP scope for the lunch gap and ask Claude: "use my usability-testing skill to write the test plan and moderator script for this flow".</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>Testing the prototype's happy path only. Wire the wrong-turn paths, wrong turns are the data.</li>
+      <li>Leading tasks like "find the NEW lunch guarantee feature."</li>
+      <li>The designer moderating their own design while visibly wincing.</li>
+      <li>"Users loved it" as the readout of a test that measured completion.</li>
+      <li>One big test per quarter instead of small ones per iteration.</li>
+    </ul>
+  </div>
+</section>

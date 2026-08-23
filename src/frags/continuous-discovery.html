@@ -1,0 +1,71 @@
+<section class="guide" id="continuous-discovery" data-module="pm">
+  <p class="eyebrow">PM</p>
+  <h2>Continuous Discovery</h2>
+  <p class="tldr">TLDR: Continuous discovery is a weekly habit of talking to customers and organizing what you learn into an opportunity solution tree, so every solution is compared against other solutions and tied to an outcome. Reach for it when planning discovery, deciding what to build next, or when someone jumps from problem to solution in one step.</p>
+
+  <div class="readaloud">
+    <h3>The full idea</h3>
+    <p>This comes from Teresa Torres and her book <em>Continuous Discovery Habits</em>. Her big point is in the title: discovery is a habit, not a phase. A "discovery phase" with an end date means you stop learning on a Friday and build for six months on what you knew then. The core sin she names is comparing a solution against nothing. A team falls in love with one idea, and the only question left is "how do we build it." Good teams compare solutions against other solutions, map them to opportunities, and map those to an outcome.</p>
+    <p>The tool for this is the <strong>opportunity solution tree</strong>. You build it top-down and prune it bottom-up. At the root is one <strong>outcome</strong>: the single metric the team is chartered to move. If the root is a feature or a theme, stop and go get the outcome first. Under the outcome sit <strong>opportunities</strong>: needs, pains, and desires you have heard from customers, in their words. The test is simple. An opportunity is something a customer could confirm: "yes, that is annoying." A solution is something only you could confirm. Under each opportunity you target, list at least three <strong>solutions</strong>. Always three. One solution under an opportunity means you are already committed, not deciding. Under each solution go <strong>assumption tests</strong>: the riskiest things that must be true, and the cheapest test for each.</p>
+    <p>Assumption mapping: for a candidate solution, list assumptions across five types: desirability, viability, feasibility, usability, and ethical. Plot each on importance against evidence. Test the top-right corner first, important and no evidence. Testing the comfortable ones is theater. Tests should be the smallest thing that produces evidence: a fake door, a one-question survey, a prototype walkthrough, a concierge run. Days, not sprints.</p>
+    <p>Take our case. Uber Eats is growing overall, but weekday lunch orders between 11:30am and 1:30pm run 30% below dinner. Call it the lunch gap. The outcome at the root is "weekday lunch orders per active customer, 11:30am to 1:30pm." Opportunities we heard in the lunch interviews: "I cannot tell if it will land before my break ends," "by the time I remember to order, the wait is 45 minutes," "I order the same thing every week and still rebuild the cart." Pick the first one. Three solutions: a guaranteed arrival window shown before you pay, a plain "arrives by 12:40" line instead of a range, and a nudge at 11:15 that pre-builds the order. Under the guaranteed window, a big assumption is "people will accept a smaller restaurant list in exchange for a promise they can trust." Cheap test: show the promise on a fake door for a week and count who taps through.</p>
+    <p>The weekly habit is the part people skip. One customer conversation a week, recruited from people who ordered lunch on a weekday, keeps the tree current. Interview for stories, not opinions.</p>
+    <p>The most common mistake is opportunities that are secretly solutions wearing need language: "users need a lunch tab." No customer ever said that. Why does this matter to a PM? Because your job is to make good decisions under uncertainty, and a tree with one branch is not a decision, it is a wish with a deadline.</p>
+  </div>
+
+  <h3 class="steps-title">Build it step by step</h3>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 1</span><h4>What is continuous discovery?</h4><span class="step-time">15 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Explain Teresa Torres's continuous discovery in plain words. What is the difference between a discovery phase and a discovery habit? What does she mean by "comparing a solution against nothing"? Use this case for the example: Uber Eats is growing, but weekday lunch orders from 11:30am to 1:30pm are 30% below dinner.</div></dd>
+      <dt>Get</dt><dd>A short definition, the reason a weekly habit beats a big study, and the core sin of comparing one solution against nothing.</dd>
+      <dt>Build</dt><dd>Write down the first solution that came into your head when you read the lunch gap number. Now write two more that are genuinely different, not variations of the first. Look at the three and notice how quickly you had committed to one.</dd>
+      <dt>Capture</dt><dd>Write into your doc, in your own words, what makes discovery a habit rather than a phase, and your rule about comparing solutions. A starting stem: "A solution only counts as a decision when..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 2</span><h4>Build the opportunity solution tree</h4><span class="step-time">25 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Build an opportunity solution tree for the lunch gap: Uber Eats weekday lunch orders from 11:30am to 1:30pm are 30% below dinner. Use the outcome "weekday lunch orders per active customer." Give me three opportunities in customer language, three solutions under one of them, and the riskiest assumption under each solution. Explain how to tell an opportunity from a solution.</div></dd>
+      <dt>Get</dt><dd>A four-level tree: outcome, opportunities, solutions, assumption tests. Plus the test: an opportunity is something a customer could confirm.</dd>
+      <dt>Build</dt><dd>Build the tree on paper or sticky notes for the lunch gap. Write the outcome at the root. Pull your opportunities straight from the quotes in your Customer Interviews notes and the job statement from JTBD Framing, phrased the way the person said it. Then apply the rule: any opportunity a real person could not have said out loud gets moved down to the solution row. Count how many move. If your notes are thin on lunch specifically, ask Claude to play the two personas you built in Personas and Archetypes and interview each one about last Tuesday's lunch, then use those answers as your quotes.</dd>
+      <dt>Capture</dt><dd>Write your tree rules into your doc in your own words: what sits at the root, the one-line test for an opportunity, and how many solutions a targeted opportunity needs. A starting stem: "An opportunity is real when a customer could..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 3</span><h4>Map and test assumptions</h4><span class="step-time">20 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">For a guaranteed lunch arrival window in Uber Eats, shown before checkout, list assumptions across desirability, viability, feasibility, usability, and ethical. Plot each on importance versus evidence. Tell me which one to test first and the smallest test that would produce evidence in days, not sprints.</div></dd>
+      <dt>Get</dt><dd>A list of assumptions in five types, a two-by-two with importance and evidence, and one cheap test for the top-right corner.</dd>
+      <dt>Build</dt><dd>Pick one solution from the lunch gap tree you just built. List eight assumptions across the five types and plot them on importance against evidence. Mark the one that is important with no evidence behind it, then write the smallest test you could run inside one week. Check yourself: if the test would take a sprint, it is not the smallest one.</dd>
+      <dt>Capture</dt><dd>Write the five assumption types into your doc, plus your rule for which corner you test first and how long a test is allowed to take. A starting stem: "I test the assumption that is..."</dd>
+    </dl>
+  </article>
+  <article class="step">
+    <div class="step-head"><span class="step-num">STEP 4</span><h4>Set the weekly habit</h4><span class="step-time">10 min</span></div>
+    <dl class="rows">
+      <dt>Search</dt><dd><div class="prompt">Design a weekly customer touchpoint for a PM working the lunch gap: how to recruit one weekday lunch customer a week from product usage, what story-based questions to ask instead of opinion questions, and how to feed what I hear back into the opportunity tree.</div></dd>
+      <dt>Get</dt><dd>A simple weekly routine: recruit from usage, ask for stories, update the tree.</dd>
+      <dt>Build</dt><dd>Write one "tell me about the last weekday you ordered lunch" question and one "would you use a lunch subscription" question. Ask Claude to play one of your Personas and Archetypes personas and answer both. Compare the two answers side by side and write down what the second one actually told you, which is nothing you can act on.</dd>
+      <dt>Capture</dt><dd>Write your weekly routine into your doc in one or two sentences: who you talk to, what you ask for, and what you update afterwards. A starting stem: "Every week I talk to one person who..."</dd>
+    </dl>
+  </article>
+
+  <div class="makeit">
+    <h3>Make it a skill</h3>
+    <p>Your doc now holds the definition of discovery as a habit, the four levels of the tree with the opportunity-versus-solution test, the five assumption types with the test-first rule, and a weekly routine.</p>
+    <div class="prompt">Turn this into a Claude skill file called SKILL.md named continuous-discovery. Keep my words and my examples. Add the frontmatter with a name and a description that says when to use it. Do not add rules I did not write.</div>
+    <p>Then test it. Take the one-line brief "leadership wants a lunch loyalty punch card to close the lunch gap" and ask Claude: "use my continuous-discovery skill to put this into an opportunity solution tree and tell me what to test first."</p>
+  </div>
+
+  <div class="smells">
+    <h3>Smells to watch for</h3>
+    <ul>
+      <li>A "discovery phase" with an end date.</li>
+      <li>Opportunities that are secretly solutions wearing need language, like "users need a lunch tab."</li>
+      <li>One solution per opportunity: a decision already made, looking for validation.</li>
+      <li>Assumption tests that all pass. You tested the safe ones.</li>
+      <li>A tree whose root is "ship the lunch promo by Q3."</li>
+    </ul>
+  </div>
+</section>
