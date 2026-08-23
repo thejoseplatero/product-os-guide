@@ -35,6 +35,7 @@ css = open(os.path.join(D, "site.css")).read()
 home = open(os.path.join(D, "home.html")).read()
 out = f"""<title>Product OS Guide</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Product OS Guide">
 <meta property="og:description" content="One real problem, worked end to end. 44 product skills from discovery through go to market.">
 <meta property="og:image" content="https://thejoseplatero.github.io/product-os-guide/og.png">
